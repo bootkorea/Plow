@@ -35,4 +35,14 @@ class GoodsView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["test"] = ''
         return context
+
+class GoodsDevView(TemplateView):
+    template_name = 'goods_shop_page_dev.html'
     
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["test"] = ''
+        return context
