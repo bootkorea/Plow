@@ -1,0 +1,2773 @@
+{% load static%}
+<!doctype html>
+<html lang="ko-KR" xml:lang="ko-KR" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-compatible" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <title>쿠팡! - COLOR OF YOUR DAYS!</title>
+	<link rel="stylesheet" href="{% static "stylesheets/compressed-orderForm_pc.ko-KR.css" %}" type="text/css" />
+    <!-- <script src="//asset2.coupangcdn.com/customjs/jserror/4.0.7-beta-10/jslog.pe.min.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="//asset2.coupangcdn.com/customjs/jserror/4.0.7-beta-10/jslog-iife.filters.pe.cart.min.js" type="text/javascript" crossorigin="anonymous"></script> -->
+
+
+<script type="text/javascript">
+    var jslog = new JsLog('checkout_front_web', 'production', {
+        pageName       : 'head',
+        domain         : 'checkout_front_web',
+        encoder        : 'jserror_order',
+        instanceId     : 'primary-ot-65c9fc5b57-9jn9k',
+        buildTag       : '20240822113936',
+		pathName       : window.location.pathname,
+		memberSrl      : '143847006',
+		hasDeliveryDeal: true,
+		hasOverseaDeal : false,
+        assetTimeStamp : '20240822113936',
+		orderFormType  : '',
+        newController : true,
+        checkoutId    : '1724510811390',
+        sendPageSource: false
+	});
+    if (window.JsLogFilters) {
+        window.JsLogFilters.enableFilterRuleSet(jslog, ['common']);
+    }
+	jslog.enableTrap();
+</script>
+
+
+<script id="coupang-web-log"
+        type="text/javascript"
+        src="js/web-log.umd.min.js"
+        data-platform="web"
+        data-service="coupang"
+        data-auto-send-pageview="false"
+        data-mode="production"
+        data-market="KR"
+        data-tti='{"platformType": "browser", "pageName": "checkout", "screenType":"checkout", "async": true}'
+		
+		crossorigin="anonymous"
+		
+>
+</script>
+
+
+
+<script type="text/javascript">
+	function createXMLHttpRequest() {
+		if (window.XMLHttpRequest) {
+			return new XMLHttpRequest();
+		} else {
+			return new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+
+	if (!window.console) {
+		window.console = {};
+	}
+	if (!window.console.log) {
+		window.console.log = function () {
+		};
+	}
+</script>
+
+
+<!--[if lte IE 9]>
+		<script src="//asset2.coupangcdn.com/cdnjs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" crossorigin="anonymous"></script>
+<![endif]-->
+<script src="{% static "js/json2.min.js" %}" type="text/javascript" crossorigin="anonymous"></script>
+<script src="{% static "js/es5-shim.min.js" %}" type="text/javascript" crossorigin="anonymous"></script>
+<script src="{% static "js/jquery.min.js" %}" type="text/javascript" crossorigin="anonymous"></script>
+<script src="{% static "js/underscore-min.js" %}" type="text/javascript" crossorigin="anonymous"></script>
+<script src="{% static "js/jquery-migrate.min.js" %}" type="text/javascript" crossorigin="anonymous"></script>
+
+<script src="{% static "js/global-ff.min.js" %}" type="text/javascript"></script>
+<script type="text/javascript">
+    
+      try {
+        window.__coupang_ui__ = window.__coupang_ui__ || {};
+        window.__coupang_ui__.webProductGlobalFFData = {"blackList":"PEUI-1707 PEUI-1801 PEUI-1806 PEUI-1691 PEQA-45727 MEMBER-7594"};
+      } catch (e) {
+
+      }
+    
+
+</script>
+
+<script src='{% static "js/pacifik.polyfill.min.js" %}' type="text/javascript"></script>
+<script src='{% static "js/pacifik.min.js" %}' type="text/javascript"></script>
+<script src='{% static "js/pacifik.helpers.min.js" %}' type="text/javascript"></script>
+
+<script src="{% static "js/messages.ko-KR.js" %}" type="text/javascript"></script>
+
+<script>
+    var jsError = window.globalFF && window.globalFF.enable('PEUI-1755');
+    if(jsError){
+        // fix Pacifik is undefined
+        if(!window.Pacifik){
+            window.Pacifik = {}
+        }
+        // Fix Pacifik.formatMessage Pacifik.getSite and Pacifik.setSite is undefined 
+        if(Object.prototype.toString.call(Pacifik.formatMessage)!=='[object Function]'){
+            window.Pacifik.formatMessage = function(key,defaultValue){ return defaultValue}
+        }
+        if(Object.prototype.toString.call(Pacifik.setSite)!=='[object Function]'){
+            window.Pacifik.setSite = function(site){ return site }
+        }
+        if(Object.prototype.toString.call(Pacifik.getSite)!=='[object Function]'){
+            window.Pacifik.getSite = function(site){ return '' }
+        }
+    }
+
+    Pacifik.setSite({"site":"KR","locale":"ko-KR","currency":{"code":"KRW","unit":"원","layout":"price-unit","digitFraction":0,"unitType":"TEXT"}});
+
+    Pacifik.intl({
+        'ko-KR': Pacifik.messages
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var scale = Math.pow(10, Pacifik.getSite().currency.digitFraction) || 1;
+
+        if ('MutationObserver' in window) {
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    $(mutation.target).attr('data-price', Pacifik.formatNumber(window.utility && window.utility.price.removeComma($(mutation.target).text()) / scale));
+                });
+            });
+            $('[data-price]').each(function(index, node) {
+                $(node).attr('data-price', Pacifik.formatNumber(window.utility && window.utility.price.removeComma($(node).text()) / scale));
+                observer.observe(node, { subtree: true, childList: true, characterData: true });
+            });
+        } else {
+            $('body').on('DOMSubtreeModified', '[data-price]', function() {
+                $(this).attr('data-price', Pacifik.formatNumber(window.utility && window.utility.price.removeComma($(this).text()) / scale));
+            });
+        }
+    }, false);
+</script>
+
+<style>
+    [data-price]{
+        text-indent: -9999px;
+        line-height: 0;
+        display: inline-block;
+    }
+
+    [data-price]:after {
+        content: attr(data-price);
+        visibility: visible;
+        text-indent: 0;
+        display: block;
+        line-height: initial;
+    }
+</style>
+
+
+
+
+	<script src="{% static "js/compressed-orderForm_pc.min.js" %}" type="text/javascript"></script>
+
+
+
+
+    
+    
+	<style type="text/css">
+		.tStyle1 td.price {
+			color: #e30d15;
+		}
+		.pay-price.tStyle1 td {
+			padding: 0px;
+		}
+		.pay-price.tStyle1 th {
+			padding: 0px;
+		}
+		.page-pc .pay-price {
+			border-top: 2px solid #cecece;
+		}
+		.page-pc .pay-price caption {
+			display: none;
+		}
+		.page-pc .pay-price tbody {
+		}
+		.page-pc .pay-price tr {
+		}
+		.page-pc .pay-price th {
+			padding: 10px 15px 0 0;
+			border-bottom: 1px solid #e4e4e4;
+		}
+		.page-pc .pay-price td {
+			padding: 10px 0 0 0;
+			border-bottom: 1px solid #e4e4e4;
+		}
+		.page-pc .payInfo__tooltip-button {
+			display:inline-block;
+			vertical-align:-4px;
+		}
+		.page-pc .payInfo__field-tooltip {
+			position:absolute;
+			display:block;
+			padding:6px 9px;
+			border:1px solid #cdcdcd;
+			border-radius:2px;
+			background:#fff;
+			color:#555;
+			font-size:12px;
+			font-weight:normal;
+		}
+		.page-pc .payInfo__field-tooltip.none {
+			display:none;
+		}
+		.page-pc .pay-price .wrap-title {
+			vertical-align: top;
+			text-align: right;
+			border-right: 1px solid #e4e4e4;
+			background: #f4f4f4;
+		}
+		.page-pc .pay-price .price {
+			display: inline-block;
+			width: 100px;
+			padding-left: 15px;
+			padding-bottom: 10px;
+		}
+		.page-pc .pay-price .payPrice {
+			color: #ae0000;
+		}
+		.pay-price .inputWrap.payType {
+			padding: 0 15px;
+		}
+	</style>
+
+
+    
+    <script>
+        
+        window.__ASSET_LOCAL_URL = '/resources/20240822113936//';
+    </script>
+	
+
+	<script src="{% static "js/ajaxView.js" %}" type="text/javascript"></script>
+<script type="text/x-handlebars-template" id="hbs_ajaxView_screen">
+	<div data-ajax-view="screen"></div>
+</script>
+
+
+
+</head>
+<body id="page-order" class="page-order page-pc "
+      data-orderController="OrderController"
+      data-device="WEB"
+      data-tlf=""
+      data-agentType="WEB"
+      data-orderController-data='{&quot;checkoutId&quot;:1724510811390,&quot;memberId&quot;:143847006,&quot;isDirectOrder&quot;:&quot;Y&quot;,&quot;vendorItemPackageIds&quot;:&quot;-1&quot;,&quot;vendorItemIds&quot;:&quot;3000208682:1&quot;}'
+      data-abtest='{"FIX_INVALID_COUPANG_CASH":"B","LOYALTY_AGREEMENT_WOW_FEE_CHANGE_HANDLING_AFTER_EFFECTIVE_DATE":"B","ROCKET_FRESH_SEPARATE":"B","FRESH_DELIVERY_OPT_OUT":"A","LOYALTY_AGREEMENT_WOW_FEE_CHANGE":"NOT_APPLICABLE","LOYALTY_AGREEMENT_WOW_FEE_CHANGE_TEST2":"B","CCID_HANDLING_BLOCK_ORDER":"B","JIKGU_INSTALL":"A"}'
+      data-reference='{"profile":"production"}'
+      data-weblogschema='[{"checkoutPageView":{"data":{"domain":"checkout","logCategory":"view","logType":"page","pageName":"checkout_form","entryType":null,"checkoutType":null,"pageLoadType":null,"checkoutId":0,"defaultPayType":null,"isRocketPayMember":null,"gcRedeemBanner":null,"gcRedeemCount":0,"receiptData":null,"receiptActive":null,"rocket":null,"hasPoint":null,"totalPrice":0,"hasCoupon":0,"possibleOnweekend":null,"dropship":null,"ticket":null,"gcSdpId":null,"useCoupon":0,"realNameVerification":null,"hasCard":null,"hasBank":null,"hasPhone":null,"orderBannerType":null,"unifiedPay":null,"defaultDeliveryAddress":null,"pgBackCount":0,"deliveryAddressDetailSrl":0,"travel":null,"unifiedMoney":null,"hasMoney":null,"moneyBalance":0,"moneyRecommendBox":null,"isRedirected":null,"paymentFailCode":null,"isLoyaltyMember":null,"totalItem":0,"isBestOffer":null,"couponDiscountPrice":0,"ccidOverThreshold":null,"instantDiscount":0,"wowInstantDiscount":0,"wowCouponDiscount":0,"isDeliveryEmail":null,"hasAppleCare":null,"hasJikgu":null,"hasRealNameVerification":null,"vendorItemIds":null,"kycTargetExposed":null,"effectiveDate":null,"defaultPmtOption":null,"pageDesignVersion":null,"hasWowConsentView":false},"meta":{"schemaId":354,"schemaVersion":55}}},{"checkoutImpressionSchema":{"data":{"domain":"checkout","logCategory":"impression","logType":"impression","pageName":"checkout_form","eventName":null,"checkoutId":0,"checkoutType":null,"retailBundles":null,"isReminderPage":null,"mergeScenarioType":null},"meta":{"schemaId":2119,"schemaVersion":6}}},{"objectClickLog":{"data":{"domain":"checkout","logCategory":"event","logType":"click","pageName":"checkout_form","eventName":null,"checkoutId":0,"value":null,"sectionName":null,"moneyBalance":0,"checkoutType":null},"meta":{"schemaId":357,"schemaVersion":14}}},{"purchaseClickLog":{"data":{"domain":"checkout","logCategory":"event","logType":"click","pageName":"checkout_form","eventName":"purchase","checkoutId":0,"buttonType":null,"totalPrice":0,"hasPoint":null,"usePoint":0,"payType":null,"payCode":null,"defaultDeliveryAddress":null,"isPointInPaybox":null,"possibleOnweekend":null,"isPossibleOnweekend":null,"hasCoupon":0,"useCoupon":0,"checkoutType":null,"entryType":null,"gcSdpId":null,"pageLoadType":null,"deliveryAddressDetailSrl":null,"pgBackCount":0,"defaultPayType":null,"isRedirected":null,"paymentFailCode":null,"dawnDeliveryPreference":null,"isLoyaltyMember":null,"coupangCashOption":null,"totalItem":0,"isBestOffer":null,"couponDiscountPrice":0,"cardInstallmentPlan":null,"cardInstallmentInterest":null,"financeCode":null,"ccidAmount":0,"ccidOverThreshold":null,"readyToGetCCID":null,"instantDiscount":0,"wowInstantDiscount":0,"wowCouponDiscount":0,"isSmsOrKakao":null,"isDeliveryEmail":null,"hasAppleCare":null,"hasDesignatedDelivery":null,"isBlockedAddress":null,"isBundleDelivery":null,"isDelayDelivery":null,"mergeScenarioType":null,"wowConsentType":null,"hasJikgu":null,"importTax":0,"paymentPrice":0,"buttonLocation":null,"kycTargetExposed":null,"expirationDates":null,"effectiveDate":null},"meta":{"schemaId":355,"schemaVersion":40}}},{"orderStatusLog":{"data":{"domain":"checkout","logCategory":"event","logType":"processing","pageName":"checkout_form","eventName":"purchase_status","checkoutId":0,"paymentToken":null,"payType":null,"checkoutType":null,"defaultPayType":null,"isRocketPayMember":null,"gcRedeemBanner":null,"gcRedeemCount":0,"receiptData":null,"receiptActive":null,"totalPrice":0,"usePoint":0,"status":null,"inPointInPayBox":null,"possibleOnweekend":null,"isPossibleOnweekend":null,"hasCoupon":0,"useCoupon":0,"orderId":0,"useGcRedeemCount":0,"gcRedeemPrice":0,"gcSdpId":null,"realNameVerification":null,"financeCode":null,"payMethodId":null,"unifiedPay":null,"hasPoint":null,"errorType":null,"unifiedMoney":null,"paymentPrice":0,"moneyBalance":0,"moneyRecommendBox":null,"isRedirected":null,"paymentFailCode":null,"totalItem":0,"isBestOffer":null,"couponDiscountPrice":0,"cardInstallmentPlan":null,"cardInstallmentInterest":null,"isSmsOrKakao":null,"isDeliveryEmail":null,"hasAppleCare":null,"hasJikgu":null,"importTax":0},"meta":{"schemaId":1649,"schemaVersion":10}}},{"changePurchasePriceSchema":{"data":{"domain":"checkout","logCategory":"impression","logType":"impression","pageName":"checkout_form","eventName":null,"checkoutId":0,"totalPrice":0,"hasPoint":null,"usePoint":0,"hasCoupon":0,"useCoupon":0,"couponDiscountPrice":0,"payType":null,"payCode":null,"checkoutType":null,"entryType":null,"ccidOverThreshold":null,"readyToGetCCID":null,"ccidAmount":0,"instantDiscount":0,"wowInstantDiscount":0,"wowCouponDiscount":0},"meta":{"schemaId":3008,"schemaVersion":4}}},{"bundleOptionPageViewSchema":{"data":{"domain":"checkout","logCategory":"view","logType":"page","pageName":"checkout_bundle_page","entryType":null,"checkoutType":null,"pageLoadType":null,"checkoutId":0,"bundleOptionItems":null,"primaryVendorItems":null},"meta":{"schemaId":4111,"schemaVersion":1}}},{"bundleOptionAgreementClickSchema":{"data":{"domain":"checkout","logCategory":"event","logType":"click","pageName":null,"eventName":"bundle_agreement_clcik","checkoutId":0,"bundleOptionItems":null,"primaryVendorItems":null},"meta":{"schemaId":4113,"schemaVersion":1}}},{"checkoutClickSeeMoreTCDetailsSchema":{"data":{"checkoutId":0,"domain":"checkout","logCategory":"event","logType":"click","eventName":"click_see_more_tnc_details","pageName":"checkout_form"},"meta":{"schemaId":10793,"schemaVersion":1}}}]'
+      data-pccc-new-validation="A"
+      data-alert-message-typo="false"
+      data-rnv-group='A'
+      data-rnv-status='true'
+      data-rnv-has='false'
+      data-redis-spof-target='true'
+      data-rocket-luxury-freebie-nudge='true'
+      data-update-import-tax-info='false'
+      data-change-contents-for-pccc='false'
+      data-simplify-payment-method-section="false"
+      data-simplify-payment-method-section-for-rds="false"
+      data-ccid-nudge-on-wow-card="true"
+>
+
+    <div id="wrap">
+
+        <!--[if lte IE 8]>
+        <div id="browserSupportWrap" style="border:1px solid #f0f0f0;">
+            <div class="bs-wrap">
+                <p class="bs-message">고객님의 브라우저에서는 쿠팡이 정상 동작하지 않습니다.<br />
+                    인터넷 익스플로러 업데이트, 크롬 또는 파이어폭스 브라우저를 설치하세요.</p>
+                <ul class="bs-browser-download">
+                    <li class="ie"><a href="http://windows.microsoft.com/ko-kr/internet-explorer/download-ie" target="_blank">인터넷 익스플로러<br /> <em>업데이트하기</em></a></li>
+                    <li class="chrome"><a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">크롬<br /> <em>설치하기</em></a></li>
+                    <li class="firefox"><a href="https://www.mozilla.org/ko/firefox/new/" target="_blank">파이어폭스<br /> <em>설치하기</em></a></li>
+                </ul>
+            </div>
+        </div>
+        <![endif]-->
+
+        <div class="nognb">
+            <div class="logo">
+                <a id="headerLogo" class="icon" href="http://www.coupang.com/">
+                    <img src="//image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png" width="174" height="41" alt="쿠팡">
+                </a>
+            </div>
+        </div>
+
+        <div id="couponViewArea" style="display: none;">
+            
+        </div>
+        <div id="body">
+            <div class="middle">
+                
+
+	<div class="ordTitle">
+		<h3 class="title">주문/결제</h3>
+		<span class="steps">
+			
+                <em>주문결제 ></em>주문완료
+			
+		</span>
+	</div>
+
+    <div data-component="real-name-verification"></div>
+
+	
+	<div data-component="customer"></div>
+
+	
+
+	
+
+	
+	
+    
+        
+        
+        
+        
+    
+
+
+
+    <div data-component="deliveryAddress"></div>
+    <div data-delivery-address__related-table>
+        <div data-component="deliveryRequestMessage"></div>
+        
+    </div>
+
+
+
+
+	
+
+	
+	<div data-ajax-view="box">
+		<div data-delivery-info="rocket"></div>
+		<div data-delivery-info="rocketInstall"></div>
+        <div data-delivery-info="jikguInstall"></div>
+		<div data-delivery-info="body">
+			<div class="empty-space"></div>
+		</div>
+		<div data-delivery-info="freebie"></div>
+	</div>
+
+	
+
+	
+	<div id="pay-price-section" class="order-section orderBox mb10 multiple-coupon">
+	<h2 class="checkout__h2">
+		결제정보
+	</h2>
+	
+	<table class="pay-price">
+		<caption>결제 정보 설정으로 할인쿠폰과 쿠팡캐시의 내용을 수정 할 수 있습니다.</caption>
+		<colgroup>
+			<col width="144"/>
+			<col />
+		</colgroup>
+		<tbody>
+		
+		<tr class="payOrder-wrap">
+			<th class="wrap-title" scope="row">
+				총상품가격
+				<input type="hidden" id="discountCouponUse" value="N"/>
+				<input type="hidden" id="discountCouponDownloadSrl" value="0"/>
+				
+				<input type="hidden" id="tempOriginPrice" value="6900"/>
+				
+			</th>
+
+      		
+
+			<td >
+				<div class="payOrder">
+					   	<strong class="price">
+							
+								<span id="totalPriceDisp" class="use-calculation-for-totalprice" data-price="6,900">6900</span><span class="unit">원</span>
+							
+						</strong>
+				</div>
+			</td>
+		</tr>
+		
+		
+			
+		
+		
+		<tr>
+			<th class="wrap-title" scope="row">할인쿠폰</th>
+			<td>
+				
+					<div class="payCoupon"
+     data-controller="PayCoupon"
+     data-controller-data='{
+        "hasUsableCoupon": false,
+        "hasAppliedCoupons": false,
+        "isCouponFail": false,
+        "selectedCouponId": [],
+        "selectedCouponIds": [],
+        "appliedPromotionIds": [],
+        "appliedMultipleDownloadCouponIdsForOrder": [],
+        "allPromotionIds": ["2cf7128b-708f-4127-b5b3-2c1f41de6fca","69ae0dc1-1d17-4833-85d1-2d9415ab8383"]
+    }'>
+
+    <div class="price">
+        <strong>
+            
+                <span class="value use-calculation-for-totalprice" data-price="0">0</span><span class="unit">원</span>
+            
+        </strong>
+    </div>
+
+    <div class="selected-coupon">
+    
+        <span class="message">적용 가능한 할인쿠폰이 없습니다.</span>
+    
+    </div>
+</div>
+
+					<div class="coupon-selector coupon-selecter"
+	 data-controller="CouponSelector"
+	 data-controller-data='{
+                "requestUrl" : {
+                    "apply" : "/orderChangeDiscountCoupons",
+                    "nonApplied" : "/deleteAllDiscountCoupons"
+                },
+                "isMobile" : "",
+                "totalDiscountPriceDep" : 0,
+                "totalDiscountPrice" : 0,
+                "memberSrl" : 143847006,
+                "disableCouponButton" : false
+            }'>
+	<ul class="coupons">
+		
+	</ul>
+</div>
+
+				
+			</td>
+		</tr>
+
+		
+		
+			<tr>
+				<th class="wrap-title" scope="row">배송비</th>
+				<td class="delivery-total-price">
+					<style>
+	.sku-bundlelist .delivery-type-selections {
+		display: none;
+		width: 100%;
+		font-size: 12px;
+		border-top: 1px solid #d0d0d0;
+	}
+
+	.sku-bundlelist .delivery-type-selection {
+		float: none;
+		padding: 8px 10px;
+		border-bottom: 1px solid #d0d0d0;
+		position: relative;
+		z-index: 1500;
+		background-color: #ffffff;
+	}
+
+	.sku-bundlelist .delivery-type-selection .expl {
+		color: #888;
+	}
+
+	.sku-bundlelist .delivery-sku-info {
+		font-size: 12px;
+		color: #333;
+		padding-bottom: 10px;
+	}
+
+	.order-bundlelist-wrapper .delivery-sku-info {
+		display: none;
+	}
+
+	.order-bundlelist-items .order-bundlelist-item, .baseBox.orderResult .order-bundlelist-item {
+		color: #333;
+	}
+
+	.cart-bundlelist .delivery-info {
+		font-weight: normal;
+	}
+
+	.order-bundlelist .delivery-info {
+		font-weight: normal;
+	}
+
+	.sku-bundlelist .order-bundlelist-header {
+		border-bottom: none;
+	}
+
+	.delivery-info .delivery-notification-wrap .delivery-additional-message {
+		font-weight: normal;
+	}
+
+	.delivery-sku-info.explain {
+		display: none;
+		line-height: 15px;
+		font-size: 11px;
+		margin: 5px 5px 5px 10px;
+		color: #878787;
+	}
+
+	.page-pc .delivery-price-info-wrap {
+		display: none;
+		letter-spacing: -1px;
+	}
+
+	.page-pc .delivery-price-info-wrap,
+	.page-pc .delivery-price-info-wrap span {
+		color: #999;
+	}
+
+	.page-pc .delivery-price-info-wrap .delivery-sku-price-value,
+	.page-pc .delivery-price-info-wrap .delivery-flash-price,
+	.page-pc .delivery-price-info-wrap .won {
+		color: #009a5e;
+	}
+
+	.page-pc .delivery-COD-paraenthese-first,
+	.page-pc .delivery-COD-paraenthese-last,
+	.page-pc .delivery-COD-message {
+		display: none;
+		color: #999;
+	}
+
+	/* mobile ************************************************/
+	.page-mobile .payDelivery-wrap {
+	}
+
+	.page-mobile .payDelivery-wrap .wrap-title {
+		float: left;
+	}
+
+	.page-mobile .pay-price .payDelivery {
+		line-height: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-right: 70px;
+		margin-left: 75px;
+	}
+
+	.page-mobile .pay-price .payDelivery span {
+		font-size: 13px;
+	}
+
+	.page-mobile .delivery-price-info-wrap {
+		display: none;
+	}
+
+	.page-mobile .delivery-COD-paraenthese-first,
+	.page-mobile .delivery-COD-paraenthese-last,
+	.page-mobile .delivery-COD-message {
+		display: none;
+		color: #999;
+	}
+
+</style>
+
+<div class="payDelivery">
+	<strong class="price">
+        
+            <span id="deliveryPriceDisp" class="delivery-total-price-value use-calculation-for-totalprice" data-price="0">0</span><span class="unit">원</span>
+        
+	</strong>
+	
+
+
+	<script type="text/javascript">
+		$(function () {
+            if(typeof window.$.subscribe === 'function'){
+                window.$.subscribe('delivery.shippingFeeChanged', function (e, params) {
+                $('#deliveryPriceDisp, [data-delivery-fee--component="value"]').text(window.utility && window.utility.price.addComma(params.totalFee));
+
+                    orderController.payPrice.displayPayPrice();
+			    });
+            }
+		});
+	</script>
+</div>
+
+				</td>
+			</tr>
+		
+
+		
+		
+<tr id="extraDeliveryFee" class="none" data-extra-delivery-fee="remoteArea">
+  <th class="wrap-title" scope="row">
+    <span class="payInfo__tooltip-button" data-delivery-fee--tooltip-button="remote">
+      <img src="//img1a.coupangcdn.com/image/www/order/icon_tip2.gif" width="17" height="17" alt="TIP"/>
+    </span>
+    추가 배송비
+    <span class="payInfo__field-tooltip none" data-delivery-fee--description="remote"></span>
+  </th>
+  <td class="delivery-total-price--extra-fee">
+    <div class="payDelivery">
+      <strong class="price">
+          
+              <span id="remoteAreaDeliveryPriceDisp" class="delivery-total-price-value use-calculation-for-totalprice" data-price="0">0</span><span class="unit">원</span>
+          
+      </strong>
+    </div>
+  </td>
+</tr>
+
+
+		
+		
+<tr class="payCoupangCash"
+	data-controller="PayCoupangCash"
+	data-controller-data='{
+        "have"  : "0",
+        "haveCashPoint" : false
+     }'>
+	<th class="wrap-title" scope="row">쿠팡캐시</th>
+	<td style="padding-top: 0;">
+		<div>
+			<strong class="price">
+                
+                    <span class="value use-calculation-for-totalprice" data-price="0">0</span><span class="unit">원</span>
+                
+			</strong>
+			
+				<span class="message">
+                    <span class="usable">보유 :
+                        
+                            <strong class="value" data-price="0">0</strong><span class="unit">원</span>
+                        
+                    </span>
+                </span>
+				
+					<button class="insert-cash-toggle">캐시사용하기</button>
+				
+				
+			
+		</div>
+		<div class="coupangCash-insert"
+	 data-controller="CoupangCashInsert"
+	 data-controller-data='{
+                    "have"  : "0",
+                    "usable" : "10000",
+                    "remain" : "1425157470312"}'>
+	<div class="insert">
+        <input type="text" class="using" value="" placeholder="0" title="사용할 쿠팡 캐시">
+		<span class="delimiter">|</span>
+		<input id="cashAllUsing" class="" type="checkbox" value="">
+		<label for="cashAllUsing" class="">모두사용</label>
+	</div>
+	<div class="button-box">
+		<button class="apply active">쿠팡캐시적용</button>
+	</div>
+	<p class="validate-message"></p>
+</div>
+
+	</td>
+</tr>
+
+
+        
+
+		
+		<tr class="payCcid-wrap">
+			<th class="wrap-title" scope="row">카드 즉시할인</th>
+			<td>
+				<div class="payCcid"
+     data-controller="PayCcid"
+     data-controller-data='{
+        "isCcidTarget": false,
+        "hasCcidPromotion" : false,
+        "hasAppliedCcidPromotion" : false,
+        "creditCardBenefitDetailUrl" : "https://payment.coupang.com/payments/card-benefit?sourceType=CHECKOUT&amp;ccidPromotionIds=",
+        "wowOnlyCreditCardBenefitDetailUrl": "https://payment.coupang.com/payments/card-benefit?sourceType=checkout_wow_only_ccid",
+        "wowOnlyCcidCardCodes": "",
+        "wowOnlyCcidAppliedMessage": "",
+        "wowOnlyCcidNotAppliedMessage": "",
+        "wowOnlyCcid": false,
+        "promotionMember": false,
+        "wowMember": false
+     }'>
+    <strong class="price">
+        
+            <span id="payCcidAmount" class="value use-calculation-for-totalprice" data-price="0">0</span><span class="unit">원</span>
+        
+    </strong>
+
+    
+    <div id="payCcid-tooltip" class="payCcid-tooltip">
+        <p class="payCcid-tooltip-message">
+            <span class="payCcid-tooltip-message__txt">카드사별 즉시할인 혜택을 확인해보세요</span>
+            <a class="payCcid-tooltip-message__link" data-credit-card-benefit-popup>자세히 보기</a>
+        </p>
+    </div>
+    
+</div>
+
+			</td>
+		</tr>
+		<div id="creditCardBenefitPopup" class="card-benefit-popup" style="display: none">
+    <div class="card-benefit-popup__header">
+        <strong class="card-benefit-popup__header-title">카드 혜택</strong>
+        <span class="card-benefit-popup__header-close">닫기</span>
+    </div>
+    <div id="creditCardBenefitContent" class="card-benefit-popup__content"></div>
+</div>
+
+
+		
+		<tr>
+			<th class="wrap-title">총결제금액</th>
+			<td>
+				<div class="payPrice">
+					<strong class="price">
+                        
+                            <span id="totalPayPriceDisp" data-price="0">0</span><span class="unit">원</span>
+                        
+					</strong>
+					<div class="payPrice-benefit">
+						<span class="txt-savingCash"></span>
+					</div>
+					
+                         
+                             
+                         
+                    
+
+				</div>
+			</td>
+		</tr>
+        
+		
+		<tr id="paySel" class="payType-wrap" >
+			<th class="wrap-title">결제방법</th>
+			<td class="inputWrap payType">
+				
+				<div id="payBox" class="pay-box">
+					
+<div class="pay-type-selector"
+     data-controller="PayTypeSelector"
+     data-controller-data='{
+        "orderPayTypeSelectors" : [{&quot;payType&quot;:&quot;ROCKET_BALANCE&quot;,&quot;save&quot;:false,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null,null,null,null,{&quot;payType&quot;:&quot;ROCKET_BALANCE&quot;,&quot;paySubType&quot;:&quot;KFCC&quot;,&quot;startedAt&quot;:1464100800000,&quot;endedAt&quot;:1924874100000,&quot;pcDescription&quot;:&quot;새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},{&quot;payType&quot;:&quot;ROCKET_BALANCE&quot;,&quot;paySubType&quot;:&quot;POST_OFFICE&quot;,&quot;startedAt&quot;:1469716200000,&quot;endedAt&quot;:1924873200000,&quot;pcDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},null,null,null,null,null,null,{&quot;payType&quot;:&quot;ROCKET_BALANCE&quot;,&quot;paySubType&quot;:&quot;SUHYUB&quot;,&quot;startedAt&quot;:1458916800000,&quot;endedAt&quot;:1924873260000,&quot;pcDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},null,null,null,null,null,null],&quot;order&quot;:1},{&quot;payType&quot;:&quot;ROCKET_BANK&quot;,&quot;save&quot;:false,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null,null,null,null,{&quot;payType&quot;:&quot;ROCKET_BANK&quot;,&quot;paySubType&quot;:&quot;KFCC&quot;,&quot;startedAt&quot;:1464100800000,&quot;endedAt&quot;:1924874100000,&quot;pcDescription&quot;:&quot;새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},{&quot;payType&quot;:&quot;ROCKET_BANK&quot;,&quot;paySubType&quot;:&quot;POST_OFFICE&quot;,&quot;startedAt&quot;:1469716200000,&quot;endedAt&quot;:1924873200000,&quot;pcDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},null,null,null,null,null,null,{&quot;payType&quot;:&quot;ROCKET_BANK&quot;,&quot;paySubType&quot;:&quot;SUHYUB&quot;,&quot;startedAt&quot;:1458916800000,&quot;endedAt&quot;:1924873260000,&quot;pcDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},null,null,null,null,null,null],&quot;order&quot;:1},{&quot;payType&quot;:&quot;ROCKET_CARD&quot;,&quot;save&quot;:true,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],&quot;order&quot;:1},{&quot;payType&quot;:&quot;CARD&quot;,&quot;save&quot;:true,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null,null,null,null,null,null],&quot;order&quot;:2},{&quot;payType&quot;:&quot;PHONE&quot;,&quot;save&quot;:false,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null],&quot;order&quot;:3},{&quot;payType&quot;:&quot;VIRTUALACCOUNT&quot;,&quot;save&quot;:false,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null,null,null,null,null,{&quot;payType&quot;:&quot;VCNT&quot;,&quot;paySubType&quot;:&quot;POST_OFFICE&quot;,&quot;startedAt&quot;:1469716200000,&quot;endedAt&quot;:1924873200000,&quot;pcDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},null,null,null,{&quot;payType&quot;:&quot;VCNT&quot;,&quot;paySubType&quot;:&quot;SUHYUB&quot;,&quot;startedAt&quot;:1458916800000,&quot;endedAt&quot;:1924873260000,&quot;pcDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;}],&quot;order&quot;:4}],
+        "savedPrevPaymentPayType" : "ROCKET_CARD",
+		"isVirtualAccountAvailable" : true,
+		"moneyBalance" : 0,
+        "corporateCard": false,
+        "hasCcidPromotion": false
+     }'>
+
+    <div id="payTypeInfoList" class="balloon-wrap"></div>
+
+    <div class="type-selector-list-wrapper">
+        <ul id="payTypeList" class="type-selector-list">
+
+            <li id="rocketPayBox" class="type-selector-li">
+                <input class="type-selector-radio" type="radio" name="payType" id="payType8" value="ROCKET_BANK">
+                <label class="type-selector-label type-selector-label--bank" for="payType8">
+                    <span class="type-selector-label__text">계좌이체</span>
+                </label>
+            </li>
+            <li id="rocketPayBalanceBox" class="type-selector-li">
+                <input class="type-selector-radio" type="radio" name="payType" id="payType9" value="ROCKET_BALANCE" disabled="disabled">
+                <label class="type-selector-label type-selector-label--balance" for="payType9">
+                    <span class="type-selector-label__text">쿠페이 머니</span>
+                    <img class="rpay-badge rpay-icon-2percent" src="//image7.coupangcdn.com/image/rocketpay/order/icon_max_cashback_v2.png" width="66" height="14" alt="최대 캐시적립">
+                </label>
+            </li>
+
+            
+                <li id="rocketPayCardBox" class="type-selector-li">
+                    <input class="type-selector-radio" type="radio" name="payType" id="payType10" value="ROCKET_CARD">
+                    <label class="type-selector-label type-selector-label--card" for="payType10">
+                        <span class="type-selector-label__text">신용/체크카드</span>
+                        <img class="rpay-badge rpay-icon-instant-discount" src="//image7.coupangcdn.com/image/rocketpay/order/icon_ccid_v2.png" width="66" height="14" alt="즉시 할인혜택">
+                    </label>
+                </li>
+            
+            
+                <li id="cardPayBox" class="type-selector-li">
+                    <input class="type-selector-radio" type="radio" name="payType" id="payType1" value="CARD" disabled="disabled">
+                    <label class="type-selector-label disabled" for="payType1">
+                        <span class="type-selector-label__text">법인카드</span>
+                    </label>
+                </li>
+            
+            
+                
+                    <li id="phonePayBox" class="type-selector-li">
+                        <input class="type-selector-radio" type="radio" name="payType" id="payType6" value="PHONE" disabled="disabled">
+                        <label class="type-selector-label disabled" for="payType6">
+                            <span class="type-selector-label__text">휴대폰</span>
+                        </label>
+                    </li>
+                
+            
+            
+                <li id="virtualAccountPayBox" class="type-selector-li">
+                    <input class="type-selector-radio" type="radio" name="payType" id="payType7" value="VIRTUALACCOUNT">
+                    <label class="type-selector-label" for="payType7">
+                        <span class="type-selector-label__text">무통장입금(가상계좌)</span>
+                    </label>
+                </li>
+            
+        </ul>
+        <p class="validate-message"></p>
+    </div>
+</div>
+
+
+					<div id="payTypeContent" class="pay-box-contents">
+						
+							<div class="phonePayBox pay-box-content">
+								<h3 class="title">휴대폰</h3>
+								
+
+<div class="cellphone-payment pay-type-content"
+	 data-controller="CellphonePayment"
+	 data-controller-data='{
+    }'>
+    <ul class="pay-type-sections">
+        <li class="pay-type-section last-section" data-pay-type-section="cellphone">
+            <label for="cellphoneTelecom" class="payment-cellphone__line-title">통신사 종류</label>
+            <div class="payment-cellphone__line-data">
+                <select name="cellphoneTelecom" id="cellphoneTelecom" class="payment-cellphone__select">
+                    <option value="" selected>선택</option>
+                    
+                        <option value="SKT" 
+                            data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">SKT</option>
+                    
+                        <option value="KT" 
+                            data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">KT</option>
+                    
+                        <option value="CJH" 
+                            data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">헬로모바일</option>
+                    
+                        <option value="KCT" 
+                            data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">KCT</option>
+                    
+                </select>
+                <p class="payment-cellphone__validate-message">통신사 정보를 추가해주세요</p>
+                <p class="payment-cellphone__validate-message--invalid limit-pay-price-message">50만원 초과 결제 시, 휴대폰 결제가 불가합니다.</p>
+            </div>
+            <p class="pay-box__deactivated-payment-notice" id="phonePayTypeLimitMsg"></p>
+            
+        </li>
+    </ul>
+</div>
+
+
+							</div>
+						
+						<div class="virtualAccountPayBox pay-box-content selected-pay-type">
+							<h3 class="title">무통장입금(가상계좌)</h3>
+							
+
+<div class="virtual-account-payment pay-type-content"
+     data-controller="vaPayment"
+     data-controller-data='{
+        "savedBankKcpCode" : ""
+    }'>
+    <p class="validate-message"></p>
+    <ul class="pay-type-sections">
+        <li class="deposit-bank-wrap pay-type-section">
+            <label for="depositBank" class="line-title">입금은행</label>
+            <div class="line-data">
+                <select id="depositBank" class="" name="depositBank">
+                    <option value="" selected="" data-limitmsg="">선택</option>
+                    
+                        
+                            <option value="NH" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">농협은행</option>
+                        
+                    
+                        
+                            <option value="KB" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">국민은행</option>
+                        
+                    
+                        
+                            <option value="SHINHAN" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">신한은행</option>
+                        
+                    
+                        
+                            <option value="WOORI" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">우리은행</option>
+                        
+                    
+                        
+                            <option value="HANA" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">KEB하나은행</option>
+                        
+                    
+                        
+                            <option value="IBK" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">기업은행</option>
+                        
+                    
+                        
+                            <option value="DAEGU" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">대구은행</option>
+                        
+                    
+                        
+                            <option value="BUSAN" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">부산은행</option>
+                        
+                    
+                        
+                            <option value="POST_OFFICE" 
+                                data-limitmsg="* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다." data-messagecolor="#E7223D" data-paymentdisabled="false">우체국</option>
+                        
+                    
+                        
+                            <option value="KYONGNAM" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">경남은행</option>
+                        
+                    
+                        
+                            <option value="KWANGJU" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">광주은행</option>
+                        
+                    
+                        
+                            <option value="SC" 
+                                data-limitmsg="" data-messagecolor="" data-paymentdisabled="false">SC제일은행</option>
+                        
+                    
+                        
+                            <option value="SUHYUB" 
+                                data-limitmsg="* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다." data-messagecolor="#E7223D" data-paymentdisabled="false">수협은행</option>
+                        
+                    
+                </select>
+                <p class="validate-message"></p>
+                <p class="pay-box__deactivated-payment-notice" id="virtualAccountPayTypeLimitMsg"></p>
+                
+            </div>
+        </li>
+        <li class="payBox-section  pay-type-section">
+            <span class="line-title">입금기한</span>
+
+            <div class="line-data">
+                <span class="depositDueTxt">2024년 08월 25일 23시 47분까지</span>
+                
+            </div>
+        </li>
+        <li class="pay-type-explain">
+            <p class="cash-receipt-explain">* 현금으로 결제한 모든 금액은 우리은행과 채무지급보증계약을 체결하여 고객님의 안전거래를 보장하고 있습니다.</p>
+        </li>
+    </ul>
+</div>
+<dl class="virtual-account-payment-explain">
+    <dt>무통장입금 시 유의사항</dt>
+    <dd>입금완료 후 상품품절로 인해 자동취소된 상품은 환불 처리해 드립니다.</dd>
+    <dd>무통장입금 결제 시 부분취소가 불가하며 전체취소 후 다시 주문하시기 바랍니다.</dd>
+    <dd>은행 이체 수수료가 발생될 수 있습니다. 입금시 수수료를 확인해주세요.</dd>
+</dl>
+
+
+						</div>
+
+						<div class="rocketPayBalanceBox pay-box-content">
+							<h3 class="title">쿠팡 간편결제(쿠페이 머니)</h3>
+							<script type="text/javascript">
+    var fromServerState = window.fromServerState || {};
+    fromServerState.unifiedMoney = {
+        unifiedMoney: true,
+        basicAutoTopUpAccountId: null,
+        memberBankAccountList: [],
+        registrableBankAccountList: [{"name":"카카오뱅크","code":"KAKAO","onMaintenance":false},{"name":"농협은행","code":"NH","onMaintenance":false},{"name":"국민은행","code":"KB","onMaintenance":false},{"name":"신한은행","code":"SHINHAN","onMaintenance":false},{"name":"우리은행","code":"WOORI","onMaintenance":false},{"name":"기업은행","code":"IBK","onMaintenance":false},{"name":"하나은행","code":"HANA","onMaintenance":false},{"name":"새마을금고","code":"KFCC","onMaintenance":false},{"name":"우체국","code":"POST_OFFICE","onMaintenance":false},{"name":"SC제일은행","code":"SC","onMaintenance":false},{"name":"대구은행","code":"DAEGU","onMaintenance":false},{"name":"부산은행","code":"BUSAN","onMaintenance":false},{"name":"경남은행","code":"KYONGNAM","onMaintenance":false},{"name":"광주은행","code":"KWANGJU","onMaintenance":false},{"name":"신협","code":"SHINHYUP","onMaintenance":false},{"name":"수협은행","code":"SUHYUB","onMaintenance":false},{"name":"산업은행","code":"KDB","onMaintenance":false},{"name":"전북은행","code":"JB","onMaintenance":false},{"name":"제주은행","code":"JEJU","onMaintenance":false},{"name":"씨티은행","code":"CITI","onMaintenance":false},{"name":"케이뱅크","code":"KBANK","onMaintenance":false},{"name":"토스뱅크","code":"TOSSBANK","onMaintenance":false}],
+        balanceAmount : 0,
+        accumulationAmount: 100000,
+        accumulationAmountStr: "10만원",
+        limitNotifications: {
+            payTypeInfos: [{"bankCode":"KAKAO","limitNotification":null,"pcLimitNotification":"","identifier":"KAKAO","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"NH","limitNotification":null,"pcLimitNotification":"","identifier":"NH","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"KB","limitNotification":null,"pcLimitNotification":"","identifier":"KB","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"SHINHAN","limitNotification":null,"pcLimitNotification":"","identifier":"SHINHAN","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"WOORI","limitNotification":null,"pcLimitNotification":"","identifier":"WOORI","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"IBK","limitNotification":null,"pcLimitNotification":"","identifier":"IBK","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"HANA","limitNotification":null,"pcLimitNotification":"","identifier":"HANA","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"KFCC","limitNotification":{"payType":"ROCKET_BALANCE","paySubType":"KFCC","startedAt":1464100800000,"endedAt":1924874100000,"pcDescription":"새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescription":"새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","messageColor":"#E7223D","paymentDisabled":false,"pcDescriptionWithStarPrefix":"* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescriptionWithStarPrefix":"* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다."},"pcLimitNotification":"* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","identifier":"KFCC","messageColor":"#E7223D","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","paymentDisabled":false},{"bankCode":"POST_OFFICE","limitNotification":{"payType":"ROCKET_BALANCE","paySubType":"POST_OFFICE","startedAt":1469716200000,"endedAt":1924873200000,"pcDescription":"우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescription":"우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","messageColor":"#E7223D","paymentDisabled":false,"pcDescriptionWithStarPrefix":"* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescriptionWithStarPrefix":"* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다."},"pcLimitNotification":"* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","identifier":"POST_OFFICE","messageColor":"#E7223D","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","paymentDisabled":false},{"bankCode":"SC","limitNotification":null,"pcLimitNotification":"","identifier":"SC","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"DAEGU","limitNotification":null,"pcLimitNotification":"","identifier":"DAEGU","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"BUSAN","limitNotification":null,"pcLimitNotification":"","identifier":"BUSAN","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"KYONGNAM","limitNotification":null,"pcLimitNotification":"","identifier":"KYONGNAM","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"KWANGJU","limitNotification":null,"pcLimitNotification":"","identifier":"KWANGJU","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"SHINHYUP","limitNotification":null,"pcLimitNotification":"","identifier":"SHINHYUP","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"SUHYUB","limitNotification":{"payType":"ROCKET_BALANCE","paySubType":"SUHYUB","startedAt":1458916800000,"endedAt":1924873260000,"pcDescription":"수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescription":"수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","messageColor":"#E7223D","paymentDisabled":false,"pcDescriptionWithStarPrefix":"* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescriptionWithStarPrefix":"* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다."},"pcLimitNotification":"* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","identifier":"SUHYUB","messageColor":"#E7223D","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","paymentDisabled":false},{"bankCode":"KDB","limitNotification":null,"pcLimitNotification":"","identifier":"KDB","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"JB","limitNotification":null,"pcLimitNotification":"","identifier":"JB","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"JEJU","limitNotification":null,"pcLimitNotification":"","identifier":"JEJU","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"CITI","limitNotification":null,"pcLimitNotification":"","identifier":"CITI","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"KBANK","limitNotification":null,"pcLimitNotification":"","identifier":"KBANK","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"TOSSBANK","limitNotification":null,"pcLimitNotification":"","identifier":"TOSSBANK","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false}],
+            commonLimitNotifications: []
+        },
+        paymentAbTest: {"6593":"A","7573":"A","48663":"A"}
+    };
+</script>
+
+
+<div class="rocketpay-payment pay-type-content"
+     data-controller="UnifiedMoney"
+     data-node="pay-typeContent">
+    <ul class="pay-type-sections">
+
+        <!-- common -->
+        <li class="pay-type-section" data-node="balance-title-row">
+            <div class="line-title" style="letter-spacing:-1px;" data-node="balance-title">잔액</div>
+            <div class="line-data">
+                
+                    <strong>0원</strong>
+                
+            </div>
+        </li>
+
+        <!-- balance sufficient case -->
+        <li class="pay-type-section last-section balance-sufficient">
+            <div class="line-note" data-node="balance-sufficient-message">* 잔액이 부족할 경우, 결제 진행 시에 충전됩니다.</div>
+        </li>
+
+        <!-- balance insufficient case -->
+        <li data-node="acc-row"
+            class="pay-type-section balance-insufficient"
+            style="display:none;">
+            <div class="line-title">충전</div>
+            <div class="line-data">
+                <strong data-node="acc-value"></strong>
+                <span class="info-message">* 결제 시 자동 충전</span>
+                <span class="info-message-weak">(10만원 단위로 충전, 잔액은 언제든지 인출 가능)</span>
+            </div>
+        </li>
+        <li class="pay-type-section last-section balance-insufficient" data-node="bank-selection-row">
+            <label for="label_unifiedMoney_bankList" class="line-title">은행 선택</label>
+            <div class="line-data">
+                <select id="label_unifiedMoney_bankList"
+                        data-node="bankList-select"
+                        style="min-width:255px;">
+                </select>
+                <div class="validate-message" data-node="bankList-error-msg"></div>
+                <div data-node="bank-limit-common-msg"></div>
+                <div data-node="bank-limit-msg"></div>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+
+<script type="text/javascript">
+        var Handlebars = window.Handlebars || {}
+        (function() {
+  var template = Handlebars.template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"unifiedMoney-benefit-landing-wrapper\">\n    <button class=\"unifiedMoney-benefit-close\" data-button=\"closeButton\"></button>\n    <div class=\"unifiedMoney-benefit-landing\">\n    <img class=\"unifiedMoney-benefit-landing-img\"\n         src=\""
+    + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"vCdnHttpsImage") || (depth0 != null ? lookupProperty(depth0,"vCdnHttpsImage") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"vCdnHttpsImage","hash":{},"data":data,"loc":{"start":{"line":5,"column":14},"end":{"line":5,"column":32}}}) : helper)))
+    + "rocketpay/order/unifiedMoney/unified_money_intro_landing_v3.jpg\">\n    </div>\n</div>\n";
+},"useData":true});
+  var templates = Handlebars.templates = Handlebars.templates || {};
+  templates['component/payment.pc/promotion/unifiedMoneyBenefitLanding'] = template;
+  var partials = Handlebars.partials = Handlebars.partials || {};
+  partials['component/payment.pc/promotion/unifiedMoneyBenefitLanding'] = template;
+})();
+</script>
+
+						</div>
+						<div class="rocketPayBox pay-box-content">
+							<h3 class="title">쿠팡 간편결제(계좌이체)</h3>
+							<script type="text/javascript">
+    var fromServerState = window.fromServerState || {};
+    fromServerState.rocketpayPayment = {
+        memberBankAccountList: [],
+        registrableBankAccountList: [{"name":"카카오뱅크","code":"KAKAO","onMaintenance":false},{"name":"농협은행","code":"NH","onMaintenance":false},{"name":"국민은행","code":"KB","onMaintenance":false},{"name":"신한은행","code":"SHINHAN","onMaintenance":false},{"name":"우리은행","code":"WOORI","onMaintenance":false},{"name":"기업은행","code":"IBK","onMaintenance":false},{"name":"하나은행","code":"HANA","onMaintenance":false},{"name":"새마을금고","code":"KFCC","onMaintenance":false},{"name":"우체국","code":"POST_OFFICE","onMaintenance":false},{"name":"SC제일은행","code":"SC","onMaintenance":false},{"name":"대구은행","code":"DAEGU","onMaintenance":false},{"name":"부산은행","code":"BUSAN","onMaintenance":false},{"name":"경남은행","code":"KYONGNAM","onMaintenance":false},{"name":"광주은행","code":"KWANGJU","onMaintenance":false},{"name":"신협","code":"SHINHYUP","onMaintenance":false},{"name":"수협은행","code":"SUHYUB","onMaintenance":false},{"name":"산업은행","code":"KDB","onMaintenance":false},{"name":"전북은행","code":"JB","onMaintenance":false},{"name":"제주은행","code":"JEJU","onMaintenance":false},{"name":"씨티은행","code":"CITI","onMaintenance":false},{"name":"케이뱅크","code":"KBANK","onMaintenance":false},{"name":"토스뱅크","code":"TOSSBANK","onMaintenance":false}],
+        limitNotifications: {
+            payTypeInfos: [{"bankCode":"KAKAO","limitNotification":null,"pcLimitNotification":"","identifier":"KAKAO","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"NH","limitNotification":null,"pcLimitNotification":"","identifier":"NH","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"KB","limitNotification":null,"pcLimitNotification":"","identifier":"KB","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"SHINHAN","limitNotification":null,"pcLimitNotification":"","identifier":"SHINHAN","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"WOORI","limitNotification":null,"pcLimitNotification":"","identifier":"WOORI","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"IBK","limitNotification":null,"pcLimitNotification":"","identifier":"IBK","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"HANA","limitNotification":null,"pcLimitNotification":"","identifier":"HANA","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"KFCC","limitNotification":{"payType":"ROCKET_BANK","paySubType":"KFCC","startedAt":1464100800000,"endedAt":1924874100000,"pcDescription":"새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescription":"새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","messageColor":"#E7223D","paymentDisabled":false,"pcDescriptionWithStarPrefix":"* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescriptionWithStarPrefix":"* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다."},"pcLimitNotification":"* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","identifier":"KFCC","messageColor":"#E7223D","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","paymentDisabled":false},{"bankCode":"POST_OFFICE","limitNotification":{"payType":"ROCKET_BANK","paySubType":"POST_OFFICE","startedAt":1469716200000,"endedAt":1924873200000,"pcDescription":"우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescription":"우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","messageColor":"#E7223D","paymentDisabled":false,"pcDescriptionWithStarPrefix":"* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescriptionWithStarPrefix":"* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다."},"pcLimitNotification":"* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","identifier":"POST_OFFICE","messageColor":"#E7223D","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","paymentDisabled":false},{"bankCode":"SC","limitNotification":null,"pcLimitNotification":"","identifier":"SC","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"DAEGU","limitNotification":null,"pcLimitNotification":"","identifier":"DAEGU","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"BUSAN","limitNotification":null,"pcLimitNotification":"","identifier":"BUSAN","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"KYONGNAM","limitNotification":null,"pcLimitNotification":"","identifier":"KYONGNAM","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"KWANGJU","limitNotification":null,"pcLimitNotification":"","identifier":"KWANGJU","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"SHINHYUP","limitNotification":null,"pcLimitNotification":"","identifier":"SHINHYUP","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"SUHYUB","limitNotification":{"payType":"ROCKET_BANK","paySubType":"SUHYUB","startedAt":1458916800000,"endedAt":1924873260000,"pcDescription":"수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescription":"수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","messageColor":"#E7223D","paymentDisabled":false,"pcDescriptionWithStarPrefix":"* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","mobileDescriptionWithStarPrefix":"* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다."},"pcLimitNotification":"* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","identifier":"SUHYUB","messageColor":"#E7223D","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.","paymentDisabled":false},{"bankCode":"KDB","limitNotification":null,"pcLimitNotification":"","identifier":"KDB","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"JB","limitNotification":null,"pcLimitNotification":"","identifier":"JB","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"JEJU","limitNotification":null,"pcLimitNotification":"","identifier":"JEJU","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"CITI","limitNotification":null,"pcLimitNotification":"","identifier":"CITI","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"KBANK","limitNotification":null,"pcLimitNotification":"","identifier":"KBANK","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false},{"bankCode":"TOSSBANK","limitNotification":null,"pcLimitNotification":"","identifier":"TOSSBANK","messageColor":"","isShowPc":false,"isShowMobile":false,"mobileLimitNotification":"","paymentDisabled":false}],
+            commonLimitNotifications: []
+        }
+    };
+</script>
+
+
+    <div class="rocketpay-payment pay-type-content"
+        data-controller="RocketpayPayment">
+        <ul class="pay-type-sections">
+            <li class="pay-type-section last-section">
+                <label for="label_rocketBank_bankList" class="line-title">은행선택</label>
+                <div class="line-data">
+                    <select id="label_rocketBank_bankList"
+                            data-node="bankList-select">
+                    </select>
+                    <div class="validate-message" data-node="bankList-error-msg"></div>
+                    <div data-node="bank-limit-common-msg"></div>
+                    <div data-node="bank-limit-msg"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+						</div>
+
+						
+							<div class="cardPayBox pay-box-content">
+								<h3 class="title">신용카드</h3>
+								
+
+<div class="card-payment pay-type-content"
+	 data-controller="CardPayment"
+	 data-controller-data='{
+        "cardHubMode" : true,
+        "installmentsConditions" : "50000",
+        "savedCardId" : "TOSSBANK",
+        "cardPaymentPriceLimit" : "100",
+        "isCcidTarget": false
+    }'>
+	<ul class="pay-type-sections">
+		<li class="pay-type-section">
+			<label for="cardTypeSelect" class="line-title">카드선택</label>
+			<div class="line-data">
+				<select name="cardCode" id="cardTypeSelect" class="corporate-card__cardList">
+					<option value="" selected data-limitmsg="">선택</option>
+					
+						<option value="KB" 
+								data-limitmsg="" data-messagecolor="" data-paymentdisabled="false" data-maxInstallmentMonth="24"
+								data-acquirerCode="KB">KB국민카드</option>
+					
+						<option value="SAMSUNG" 
+								data-limitmsg="" data-messagecolor="" data-paymentdisabled="false" data-maxInstallmentMonth="24"
+								data-acquirerCode="SAMSUNG">삼성카드</option>
+					
+						<option value="LOTTE" 
+								data-limitmsg="" data-messagecolor="" data-paymentdisabled="false" data-maxInstallmentMonth="24"
+								data-acquirerCode="LOTTE">롯데카드</option>
+					
+						<option value="SHINHAN" 
+								data-limitmsg="" data-messagecolor="" data-paymentdisabled="false" data-maxInstallmentMonth="24"
+								data-acquirerCode="SHINHAN">신한카드</option>
+					
+						<option value="HANA_SK" 
+								data-limitmsg="" data-messagecolor="" data-paymentdisabled="false" data-maxInstallmentMonth="24"
+								data-acquirerCode="HANA_SK">하나카드</option>
+					
+						<option value="BC" 
+								data-limitmsg="" data-messagecolor="" data-paymentdisabled="false" data-maxInstallmentMonth="24"
+								data-acquirerCode="BC">BC카드</option>
+					
+						<option value="HYUNDAI" 
+								data-limitmsg="" data-messagecolor="" data-paymentdisabled="false" data-maxInstallmentMonth="18"
+								data-acquirerCode="HYUNDAI">현대카드</option>
+					
+						<option value="NH" 
+								data-limitmsg="" data-messagecolor="" data-paymentdisabled="false" data-maxInstallmentMonth="24"
+								data-acquirerCode="NH">NH농협카드</option>
+					
+						<option value="TOSSBANK" selected 
+								data-limitmsg="" data-messagecolor="" data-paymentdisabled="false" data-maxInstallmentMonth="24"
+								data-acquirerCode="TOSSBANK">토스뱅크카드</option>
+					
+				</select>
+                
+				<p class="validate-message"></p>
+				
+				
+			</div>
+		</li>
+		<li class="pay-type-section last-section">
+			<label for="quotaSelect" class="line-title">할부기간</label>
+			<div class="line-data">
+				<select name="quota" id="quotaSelect" class="quotaSelect corporate-card__quotaList" disabled="disabled">
+					<option value="00" selected>일시불</option>
+				</select>
+				<span class="note-install">법인카드는 일시불 결제만 가능합니다</span>
+			</div>
+		</li>
+	</ul>
+</div>
+
+
+							</div>
+						
+						
+							<div class="rocketPayCardBox pay-box-content">
+								<h3 class="title">쿠페이 신용/체크카드</h3>
+								<script type="text/javascript">
+	var fromServerState = window.fromServerState || {};
+	fromServerState.rocketCard = {
+		displayRocketCard: true,
+        
+            cardPaymentPriceLimit: 100,
+        
+        
+            cardInstallmentsConditions: 50000,
+        
+		rocketCardList: [],
+		registrableRocketCardListJson: [],
+		cardInstallments: [{"code":"KB","name":"KB국민카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"05","name":"5개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"06","name":"6개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}],"1300000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"05","name":"5개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"06","name":"6개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"07","name":"7개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"08","name":"8개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"09","name":"9개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"10","name":"10개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"11","name":"11개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"12","name":"12개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"13","name":"13개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"14","name":"14개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"15","name":"15개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"16","name":"16개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"17","name":"17개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"18","name":"18개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"19","name":"19개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"20","name":"20개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"21","name":"21개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"22","name":"22개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}},{"code":"SAMSUNG","name":"삼성카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"05","name":"5개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월","freeInstallment":false,"partInstallment":false},{"month":"11","name":"11개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"12","name":"12개월","freeInstallment":false,"partInstallment":false},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}],"1300000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"05","name":"5개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"08","name":"8개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"09","name":"9개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"10","name":"10개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"11","name":"11개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"12","name":"12개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"13","name":"13개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"14","name":"14개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"15","name":"15개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"16","name":"16개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"17","name":"17개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"18","name":"18개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"19","name":"19개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"20","name":"20개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"21","name":"21개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"22","name":"22개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}},{"code":"LOTTE","name":"롯데카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"05","name":"5개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월","freeInstallment":false,"partInstallment":false},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월","freeInstallment":false,"partInstallment":false},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}],"1300000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"05","name":"5개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"08","name":"8개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"09","name":"9개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"10","name":"10개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"11","name":"11개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"12","name":"12개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"13","name":"13개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"14","name":"14개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"15","name":"15개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"16","name":"16개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"17","name":"17개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"18","name":"18개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"19","name":"19개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"20","name":"20개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"21","name":"21개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"22","name":"22개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}},{"code":"SHINHAN","name":"신한카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"05","name":"5개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}},{"code":"HANA_SK","name":"하나카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월","freeInstallment":false,"partInstallment":false},{"month":"05","name":"5개월","freeInstallment":false,"partInstallment":false},{"month":"06","name":"6개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}],"1300000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월","freeInstallment":false,"partInstallment":false},{"month":"05","name":"5개월","freeInstallment":false,"partInstallment":false},{"month":"06","name":"6개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"07","name":"7개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"08","name":"8개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"09","name":"9개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"10","name":"10개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"11","name":"11개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"12","name":"12개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"13","name":"13개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"14","name":"14개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"15","name":"15개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"16","name":"16개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}},{"code":"BC","name":"BC카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"05","name":"5개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}},{"code":"HYUNDAI","name":"현대카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월","freeInstallment":false,"partInstallment":false},{"month":"05","name":"5개월","freeInstallment":false,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월","freeInstallment":false,"partInstallment":false},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월","freeInstallment":false,"partInstallment":false},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false}]}},{"code":"WOORI","name":"우리카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"05","name":"5개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}},{"code":"NH","name":"NH농협카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"03","name":"3개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"04","name":"4개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"05","name":"5개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"06","name":"6개월 (무이자)","freeInstallment":true,"partInstallment":false},{"month":"07","name":"7개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"08","name":"8개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"09","name":"9개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"10","name":"10개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월 (부분무이자)","freeInstallment":false,"partInstallment":true},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월 (부분무이자)","freeInstallment":false,"partInstallment":true}]}},{"code":"CITY","name":"씨티카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월","freeInstallment":false,"partInstallment":false},{"month":"03","name":"3개월","freeInstallment":false,"partInstallment":false},{"month":"04","name":"4개월","freeInstallment":false,"partInstallment":false},{"month":"05","name":"5개월","freeInstallment":false,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월","freeInstallment":false,"partInstallment":false},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월","freeInstallment":false,"partInstallment":false},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}},{"code":"KakaoBank","name":"카카오뱅크카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월","freeInstallment":false,"partInstallment":false},{"month":"03","name":"3개월","freeInstallment":false,"partInstallment":false},{"month":"04","name":"4개월","freeInstallment":false,"partInstallment":false},{"month":"05","name":"5개월","freeInstallment":false,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월","freeInstallment":false,"partInstallment":false},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월","freeInstallment":false,"partInstallment":false},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}},{"code":"TOSSBANK","name":"토스뱅크카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월","freeInstallment":false,"partInstallment":false},{"month":"03","name":"3개월","freeInstallment":false,"partInstallment":false},{"month":"04","name":"4개월","freeInstallment":false,"partInstallment":false},{"month":"05","name":"5개월","freeInstallment":false,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월","freeInstallment":false,"partInstallment":false},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월","freeInstallment":false,"partInstallment":false},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}},{"code":"ETC","name":"기타(은행/증권)카드","cardInstallmentMap":{"50000":[{"month":"00","name":"일시불","freeInstallment":false,"partInstallment":false},{"month":"02","name":"2개월","freeInstallment":false,"partInstallment":false},{"month":"03","name":"3개월","freeInstallment":false,"partInstallment":false},{"month":"04","name":"4개월","freeInstallment":false,"partInstallment":false},{"month":"05","name":"5개월","freeInstallment":false,"partInstallment":false},{"month":"06","name":"6개월","freeInstallment":false,"partInstallment":false},{"month":"07","name":"7개월","freeInstallment":false,"partInstallment":false},{"month":"08","name":"8개월","freeInstallment":false,"partInstallment":false},{"month":"09","name":"9개월","freeInstallment":false,"partInstallment":false},{"month":"10","name":"10개월","freeInstallment":false,"partInstallment":false},{"month":"11","name":"11개월","freeInstallment":false,"partInstallment":false},{"month":"12","name":"12개월","freeInstallment":false,"partInstallment":false},{"month":"13","name":"13개월","freeInstallment":false,"partInstallment":false},{"month":"14","name":"14개월","freeInstallment":false,"partInstallment":false},{"month":"15","name":"15개월","freeInstallment":false,"partInstallment":false},{"month":"16","name":"16개월","freeInstallment":false,"partInstallment":false},{"month":"17","name":"17개월","freeInstallment":false,"partInstallment":false},{"month":"18","name":"18개월","freeInstallment":false,"partInstallment":false},{"month":"19","name":"19개월","freeInstallment":false,"partInstallment":false},{"month":"20","name":"20개월","freeInstallment":false,"partInstallment":false},{"month":"21","name":"21개월","freeInstallment":false,"partInstallment":false},{"month":"22","name":"22개월","freeInstallment":false,"partInstallment":false},{"month":"23","name":"23개월","freeInstallment":false,"partInstallment":false},{"month":"24","name":"24개월","freeInstallment":false,"partInstallment":false}]}}]
+	}
+</script>
+
+
+<div class="rocketpay-card pay-type-content"
+	 data-controller="RocketpayCard"
+	 data-controller-data='{ "hasCcidPromotion": false }'
+	 data-payment-promotions='[]'>
+	<ul class="pay-type-sections">
+		<li class="pay-type-section">
+			<label for="rocketCard-select" class="line-title">카드선택</label>
+			<div class="line-data">
+				<select name="rocketCardCode"
+						id="rocketCard-select"
+						class="rocketpay-card__cardList">
+					
+						
+							<option value="73911182"
+									data-member-card-id="73911182"
+									data-card-type="CHECK"
+									data-card-name="토스뱅크카드"
+									data-card-code="TOSSBANK"
+									data-card-acquirer-code="TOSSBANK"
+									data-card-support-type="ROCKET_PAY"
+									data-card-max-installment-month=""
+									data-wow-card="false"
+									selected="selected">
+								토스뱅크카드 / ****************
+							</option>
+					
+						
+							<option value="KB"
+								
+									data-card-type="CREDIT"
+									data-card-code="KB"
+									data-card-acquirer-code="KB"
+									data-card-name="KB국민카드"
+									data-card-support-type="PAYMENT@ROCKET_PAY"
+									data-card-max-installment-month="24">
+								KB국민카드
+							</option>
+						
+							<option value="SAMSUNG"
+								
+									data-card-type="CREDIT"
+									data-card-code="SAMSUNG"
+									data-card-acquirer-code="SAMSUNG"
+									data-card-name="삼성카드"
+									data-card-support-type="PAYMENT@ROCKET_PAY"
+									data-card-max-installment-month="24">
+								삼성카드
+							</option>
+						
+							<option value="LOTTE"
+								
+									data-card-type="CREDIT"
+									data-card-code="LOTTE"
+									data-card-acquirer-code="LOTTE"
+									data-card-name="롯데카드"
+									data-card-support-type="PAYMENT@ROCKET_PAY"
+									data-card-max-installment-month="24">
+								롯데카드
+							</option>
+						
+							<option value="SHINHAN"
+								
+									data-card-type="CREDIT"
+									data-card-code="SHINHAN"
+									data-card-acquirer-code="SHINHAN"
+									data-card-name="신한카드"
+									data-card-support-type="PAYMENT@ROCKET_PAY"
+									data-card-max-installment-month="24">
+								신한카드
+							</option>
+						
+							<option value="HANA_SK"
+								
+									data-card-type="CREDIT"
+									data-card-code="HANA_SK"
+									data-card-acquirer-code="HANA_SK"
+									data-card-name="하나카드"
+									data-card-support-type="PAYMENT@ROCKET_PAY"
+									data-card-max-installment-month="24">
+								하나카드
+							</option>
+						
+							<option value="BC"
+								
+									data-card-type="CREDIT"
+									data-card-code="BC"
+									data-card-acquirer-code="BC"
+									data-card-name="BC카드"
+									data-card-support-type="PAYMENT@ROCKET_PAY"
+									data-card-max-installment-month="24">
+								BC카드
+							</option>
+						
+							<option value="HYUNDAI"
+								
+									data-card-type="CREDIT"
+									data-card-code="HYUNDAI"
+									data-card-acquirer-code="HYUNDAI"
+									data-card-name="현대카드"
+									data-card-support-type="PAYMENT@ROCKET_PAY"
+									data-card-max-installment-month="18">
+								현대카드
+							</option>
+						
+							<option value="WOORI"
+								
+									data-card-type="CREDIT"
+									data-card-code="WOORI"
+									data-card-acquirer-code="WOORI"
+									data-card-name="우리카드"
+									data-card-support-type="ROCKET_PAY"
+									data-card-max-installment-month="24">
+								우리카드
+							</option>
+						
+							<option value="NH"
+								
+									data-card-type="CREDIT"
+									data-card-code="NH"
+									data-card-acquirer-code="NH"
+									data-card-name="NH농협카드"
+									data-card-support-type="PAYMENT@ROCKET_PAY"
+									data-card-max-installment-month="24">
+								NH농협카드
+							</option>
+						
+							<option value="CITY"
+								
+									data-card-type="CREDIT"
+									data-card-code="CITY"
+									data-card-acquirer-code="CITY"
+									data-card-name="씨티카드"
+									data-card-support-type="ROCKET_PAY"
+									data-card-max-installment-month="24">
+								씨티카드
+							</option>
+						
+							<option value="KakaoBank"
+								
+									data-card-type="CREDIT"
+									data-card-code="KakaoBank"
+									data-card-acquirer-code="KakaoBank"
+									data-card-name="카카오뱅크카드"
+									data-card-support-type="ROCKET_PAY"
+									data-card-max-installment-month="24">
+								카카오뱅크카드
+							</option>
+						
+							<option value="TOSSBANK"
+								
+									data-card-type="CREDIT"
+									data-card-code="TOSSBANK"
+									data-card-acquirer-code="TOSSBANK"
+									data-card-name="토스뱅크카드"
+									data-card-support-type="PAYMENT@ROCKET_PAY"
+									data-card-max-installment-month="24">
+								토스뱅크카드
+							</option>
+						
+							<option value="ETC"
+								
+									data-card-type="CREDIT"
+									data-card-code="ETC"
+									data-card-acquirer-code="BC"
+									data-card-name="기타(은행/증권)카드"
+									data-card-support-type="ROCKET_PAY"
+									data-card-max-installment-month="24">
+								기타(은행/증권)카드
+							</option>
+						
+					
+				</select>
+				<span class="note-install note-install-important">
+                    <label id="rocketCard-myCard-label">
+                        <input type="checkbox" id="rocketCard-myCard-check" checked="checked" />
+						강**님 명의 카드
+                    </label>
+                    <span id="rocketCard-myCard-only">
+                        * 강**님 명의 카드만 사용 가능합니다
+                    </span>
+                </span>
+				<div class="validate-message validate-message--minPrice"></div>
+				<div class="validate-message validate-message--selectCard"></div>
+			</div>
+		</li>
+		<li class="pay-type-section last-section">
+			<label for="rocketCard-select" class="line-title">할부기간</label>
+			<div class="line-data">
+				<select name="quota"
+						id="rocketCard-quota-select"
+						class="rocketpay-card__quotaList">
+				</select>
+				<span id="rocketCard-installment-notice" class="note-install"></span>
+			</div>
+		</li>
+	</ul>
+</div>
+<div id="rocketPayModal" style="display: none">
+    <iframe src="" width="100%" height="100%" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" topmargin="0" id="rocketPayIFrame" name="rocketPayModal" allowTransparency="true"></iframe>
+</div>
+
+
+<div id="rocketpay-card-limit-notification">
+	
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+	
+</div>
+
+
+								
+								<style type="text/css">
+    /* 페이지별 분류 */
+    /* 공통 */
+    .paymentBenefitWrap { position: relative; margin-top: 10px; z-index: 3000; }
+    .paymentBenefitWrap .paymentBenefit {}
+    .paymentBenefitWrap .wrapBenefitLayerPop { display: inline-block; line-height: 17px; font-size: 11px; }
+    .paymentBenefitWrap .paymentBenefit .promotionBenefitTitle { display: none; }
+    .paymentBenefitWrap .benefitPopupTrigger { display: inline-block; height: 14px; padding: 2px 13px 0 5px; border: solid 1px #b6b9c1; font-size: 11px; line-height: 13px; letter-spacing: -1px; text-decoration: none; color: #55575f; cursor: default; background-position: 100% 0; background-color: #fff; background-image: url(//img1a.coupangcdn.com/image/static/common/bg_cardBenefit.png); background-repeat: no-repeat; }
+    .paymentBenefitWrap .benefitLayerPop { position: absolute; bottom: 18px; left: 0px; display: none; overflow-y: auto; overflow-x: hidden; border: 1px solid #787882; padding: 20px 20px 0px 20px; background-color: #fff; }
+    .paymentBenefitWrap .wrapBenefitLayerPop:hover .benefitLayerPop { display: inline-block; width: auto; }
+    .paymentBenefitWrap .benefitLayerPop:hover { display: inline-block; }
+    .paymentBenefitWrap .benefitLayerPop .benefitRemarks { margin: 10px 0px 20px; color: #787878; white-space: nowrap; font-size: 11px; letter-spacing: -1px; line-height: 17px; }
+    .paymentBenefitWrap .benefitLayerPop table:first-child { margin-top: 20px; }
+    .paymentBenefitWrap .benefitLayerPopTable { position: relative; min-width: 410px; width: 100%; margin-top: 50px; color: #5f5f5f; border-left: 2px solid #fff; font-size: 11px; letter-spacing: -1px; }
+    .paymentBenefitWrap .benefitLayerPopTable caption { position: absolute; top: -20px; display: block; visibility: visible; font-size: 12px; line-height: 20px; text-indent: 0px; font-weight: bold; color: #5f5f5f; text-align: left; }
+    .paymentBenefitWrap .benefitLayerPopTable thead { overflow: hidden; }
+    .paymentBenefitWrap .benefitLayerPopTable tbody { overflow: hidden; }
+    .paymentBenefitWrap .benefitLayerPopTable tr { width: 100%; margin-left: -1px; }
+    .paymentBenefitWrap .benefitLayerPopTable th { background-color: #f2f3f7; padding: 8px; margin-right: -10px; border-bottom: 1px solid #dce0e3; border-top: 1px solid #787882; border-left: 1px solid #dce0e3; white-space: nowrap; text-align: center; }
+    .paymentBenefitWrap .benefitLayerPopTable td { padding: 8px; border-bottom: 1px solid #dce0e3; border-left: 1px solid #dce0e3; white-space: nowrap; }
+    .paymentBenefitWrap .benefitLayerPopTable tr .creditCardCompany { text-align: center; }
+    .paymentBenefitWrap .benefitLayerPopTable img.logoImg { width: 72px; }
+    .paymentBenefitWrap .benefitLayerPopTable span.scopeNecessaryCondition,
+    .paymentBenefitWrap .promotionBenefitLayer { height: auto; }
+    .paymentBenefitWrap .promotionBenefitLayer { left: -150px; min-width: 460px; max-height: 300px; }
+    .paymentBenefitWrap .red { color: red; }
+    .paymentBenefitWrap .blue { color: blue; }
+    .paymentBenefitWrap .black { color: #5f5f5f; }
+    .paymentBenefitWrap .promotionBenefit { position: relative; display: block; }
+    .paymentBenefitWrap .promotionBenefit:hover .benefitLayerPop { display: none; }
+    .paymentBenefitWrap .promotionBenefit .subTitle {}
+    .paymentBenefitWrap .promotionBenefit .promotionBenefitList { position: relative; display: block; overflow: hidden; padding-bottom: 10px; }
+    .paymentBenefitWrap .promotionBenefit .promotionBenefitList li { position: relative; float: left; padding: 10px 0px 10px 95px; margin: 0px; width: 265px; margin-right: 6px; margin-top: 6px; border: 1px solid #eee; font-size: 11px; letter-spacing: -1px; }
+    .paymentBenefitWrap .promotionBenefit .promotionBenefitList .logoImg { position: absolute; top: 0px; left: 0px; margin: 10px; width: 72px; }
+    .paymentBenefitWrap .promotionBenefit .promotionBenefitList .benefit {}
+    .paymentBenefitWrap .promotionBenefit .promotionBenefitList .scope { display: block; }
+    .paymentBenefitWrap .promotionBenefit .promotionBenefitList .date {}
+    .paymentBenefitWrap .promotionBenefit .benefitPopupTrigger { display: none; }
+    .paymentBenefitWrap .installmentCreditBenefits .subTitle { display: none; }
+    .promotionBenefitList [class*="bold"],
+    .cardBenefitContent [class*="bold"] { font-weight: bold; }
+</style>
+
+<div class="paymentBenefitWrap orderForm">
+    <div class="paymentBenefit" id="paymentBenefit">
+		<h5 class="promotionBenefitTitle">카드혜택</h5>
+		
+    </div>
+</div>
+
+								<style type="text/css">
+	.installmentCreditBenefits { position: relative; margin-top: 10px; z-index: 3000; }
+	.installmentCreditBenefits .benefitPopupTrigger { display: inline-block; height: 14px; padding: 2px 18px 0 5px; border: solid 1px #b6b9c1; font-size: 11px; line-height: 13px; letter-spacing: -1px; text-decoration: none; color: #55575f; background-position: 100% 0; background-color: #fff; background-image: url(//img1a.coupangcdn.com/image/static/common/bg_cardBenefit.png); background-repeat: no-repeat; }
+	.installmentCreditBenefits .benefitPopupTrigger.payCcid-tooltip-message__link { margin-left: 0; }
+</style>
+<div class="installmentCreditBenefits wrapBenefitLayerPop">
+	
+		<a class="benefitPopupTrigger payCcid-tooltip-message__link" data-credit-card-benefit-popup>카드 할인 및 무이자할부 안내</a>
+	
+</div>
+
+
+								
+									<div class="overseas-cards-unavailable-message">
+										해외발급 카드는 쿠팡 앱, 모바일 웹에서 사용 가능합니다
+									</div>
+								
+							</div>
+						
+					</div>
+					
+					
+<div class="savePaymentOption"
+	 data-controller="SavePaymentOption"
+	 data-controller-data='{
+        "savePaymentOption" : true
+     }'>
+
+	
+		<input class="savePaymentOption-checkbox" type="checkbox" id="savePaymentOption" checked>
+	
+
+	<label class="savePaymentOption-message" for="savePaymentOption">선택한 통신사, 휴대폰 번호로 향후 결제 이용에 동의 합니다.</label>
+</div>
+
+
+				</div>
+
+				
+
+				
+			</td>
+		</tr>
+        
+		</tbody>
+	</table>
+
+
+	
+
+</div>
+
+
+    
+
+    
+
+	
+	<div data-component="cash-receipt"></div>
+
+	
+	<div class="wow-reward-cash-box"></div>
+
+    
+    
+
+	
+	<div class="orderBox wrap-order-agree">
+    <div data-component="agreements"></div>
+    <div class="confirm-agreements-message">
+        위 주문 내용을 확인 하였으며, 회원 본인은 개인정보 이용 및 제공(해외직구의 경우 국외제공) 및 결제에 동의합니다.
+    </div>
+
+    
+
+    
+
+    <div class="agreeBtn " id="btn_all">
+        
+            
+                
+                
+                    <button type="button" id="paymentRocketpayBtn">
+                        <img class="paymentRocketpayBtn__tooltip-2percent-cashback"
+                            src="//image10.coupangcdn.com/image/rocketpay/checkout/ico_cashback_tip.png" width="96" height="36" alt="최대 캐시적립"/>
+                        <img src="//image7.coupangcdn.com/image/rocketpay/checkout/btn_coupay_payment.png" width="250" height="60"
+                            alt="쿠페이 머니 결제"/>
+                        <span class="wow-selection-txt"></span>
+                    </button>
+                
+            
+        
+        
+        
+        
+
+
+        <button type="button" 
+                id="paymentBtn" 
+                >
+            
+                
+                    <img src="//image7.coupangcdn.com/image/rocketpay-order-image/pc/btn_payment.gif" width="260" height="60" alt="결제하기"/>
+                
+            
+        </button>
+        
+    </div>
+    <div class="agree_btn none" id="btn_all_ing">
+        
+            <span style="background:url('//image10.coupangcdn.com/image/www/newBuy/loading.gif') no-repeat"></span>
+        
+    </div>
+
+</div>
+
+
+            </div>
+            <div class="bot"></div>
+        </div>
+        <link rel="stylesheet" href="{% static "stylesheets/common.ko-KR.css" %}" type="text/css" />
+
+<!--notice ahead of login header-->
+       
+        
+<div id="plugin_field"></div>
+
+<div class="coupangPayment"
+	 data-controller="CoupangPayment"
+	 data-controller-data='{
+        "checkoutId" : "1724510811390",
+        "nppMock" : "false",
+        "agentType" : "WEB",
+        "tenancy" : "origin",
+        "sourceType" : "order"
+     }'>
+	
+	<div id="modal-callLGPayment">
+		<div id="modal-callLGPayment__contents">
+			<div class="modal-callLGPayment__loading">
+				<div class="modal-callLGPayment__loading__contents">
+					<p class="modal-callLGPayment__loading__contents__img">
+                        <img src="//image10.coupangcdn.com/image/www/newBuy/loading.gif" width="81" height="81" alt=""/>
+                    </p>
+				</div>
+			</div>
+			
+			<iframe src="" width="100%" height="100%" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" topmargin="0" id="callLGPayment"
+                    onload="window.callLGPaymentIframeRerender && window.callLGPaymentIframeRerender.onloadHandler()"
+					name="callLGPayment" allowTransparency="true"></iframe>
+		</div>
+	</div>
+	
+</div>
+
+
+<div id="modal-loading" class="none">
+    <div><img src="//image8.coupangcdn.com/image/www/member/box_top02.png" width="585" height="20" alt=""/></div>
+    <div class="modal-loading__contents">
+        
+            <p class="modal-loading__contents__img"><img src="//image10.coupangcdn.com/image/www/newBuy/loading.gif" width="81" height="81" alt=""/></p>
+        
+        <p class="modal-loading__contents__text"><img src="//image6.coupangcdn.com/image/www/newBuy/txt.gif" width="150" height="24" alt="결제 진행 중입니다!"/></p>
+    </div>
+    <div><img src="//image9.coupangcdn.com/image/www/member/box_bottom02.png" width="585" height="20" alt=""/></div>
+</div>
+<div id="modalViolationErrorDialog" class="modal-fraud-detector"
+	 data-controller-data='{
+        "checkoutId" : "1724510811390"
+     }'>
+
+	<div class="modal-fraud-detector-contents">
+		<div class="modal-fraud-detector-top-section"></div>
+		<img src="//img1a.coupangcdn.com/image/coupang/order/orderForm/fds/pc_top.png" width="560"/>
+
+		<div id="modalViolationErrorDialogLegacyContent" class="modal-fraud-detector-message">
+			<div id="messageVendorItemName"></div>
+			<div id="messageOrderLimit">고객님은 주문가능 횟수를 초과하였습니다. (동일 카테고리 상품 중복구매)</div>
+			<div id="messageCouponLimit">고객님은 주문가능 횟수를 초과하였습니다. (할인쿠폰 중복사용)</div>
+			<div>도움이 필요하시면 고객센터(1577-7011) 또는 1:1 쿠팡문의를 이용해 주시기 바랍니다.</div>
+			<div>불편을 드려 죄송합니다.</div>
+		</div>
+        <div id="modalViolationErrorDialogHTMLContent" class="modal-fraud-detector-message" style="display:none;"></div>
+        <div style="text-align:center;">
+            <button type="button" style="width: 200px; height: 55px; font-size: 21px; vertical-align: middle; border-radius: 2px; letter-spacing: 1px; border: 1px solid rgb(0, 115, 232) !important; background-color: rgb(255, 255, 255); color: rgb(0, 115, 232);" onclick="fraudDetector.onClickContactBtn()">1:1 문의하기</button>
+            <span style="width:13px">&nbsp;</span>
+            <button type="button" style="width: 200px; height: 55px; font-size: 21px; vertical-align: middle; background: rgb(0, 115, 232) none repeat scroll 0% 0%; color: rgb(255, 255, 255); letter-spacing: 1px; border: 1px solid rgb(0, 115, 232);" onclick="fraudDetector.onClickCartBtn()">장바구니 가기</button>
+        </div>
+	</div>
+</div>
+
+
+<div id="fraudDetectorErrorDialogPageWrapper" class="modal-fraud-detector"></div>
+
+<iframe src="" width='0' height='0' scrolling="no" frameborder="0" id='payTypeInflow' name='payTypeInflow'></iframe>
+<iframe src="" width='0' height='0' scrolling="no" frameborder="0" id='payTypeABInflow' name='payTypeABInflow'></iframe>
+<iframe id="nonActiveXIframe" frameBorder="0" style="display:none;" scrolling="no"></iframe>
+<iframe name="paymentHubFrame" id="paymentHubFrame" frameBorder="0" style="display:none;" scrolling="no"></iframe>
+
+    </div>
+
+
+    
+
+	<script src="{% static "js/order-form.pc.bundle.js" %}" type="text/javascript"></script>
+	
+	<script src="{% static "js/deliveryRequestMessage.js" %}" type="text/javascript"></script>
+
+
+	
+
+    
+
+	<script type="text/javascript">
+		window.checkoutId = '1724510811390';
+		window.checkoutType = 'DEFAULT';
+		window.vCdnHttpsImage = 'https://image6.coupangcdn.com/image/';
+
+        window.requestItems = {};
+        
+        try {
+            window.requestItems = {"bundleItems":"","relationKey":"","item[]":"3000208682:1"};
+        } catch (e) {}
+        
+		var uxlogger = window.Bundle && window.Bundle.uxLogCreator && window.Bundle.uxLogCreator({ page: 'checkout.pc' });
+
+		window.Bundle && window.Bundle.weblog && window.Bundle.weblog.init();
+
+		$(function () {
+			window.Bundle && window.Bundle.abTestCtrl && window.Bundle.abTestCtrl.init({
+			group: {"FIX_INVALID_COUPANG_CASH":"B","LOYALTY_AGREEMENT_WOW_FEE_CHANGE_HANDLING_AFTER_EFFECTIVE_DATE":"B","ROCKET_FRESH_SEPARATE":"B","FRESH_DELIVERY_OPT_OUT":"A","LOYALTY_AGREEMENT_WOW_FEE_CHANGE":"NOT_APPLICABLE","LOYALTY_AGREEMENT_WOW_FEE_CHANGE_TEST2":"B","CCID_HANDLING_BLOCK_ORDER":"B","JIKGU_INSTALL":"A"},
+				data: {},
+				isMobile: false
+			});
+			window.Bundle && window.Bundle.platform && window.Bundle.platform.build({pc:true});
+
+			var components = {};
+
+			var postSecret = '';
+
+            var abTestGroup = {"FIX_INVALID_COUPANG_CASH":"B","LOYALTY_AGREEMENT_WOW_FEE_CHANGE_HANDLING_AFTER_EFFECTIVE_DATE":"B","ROCKET_FRESH_SEPARATE":"B","FRESH_DELIVERY_OPT_OUT":"A","LOYALTY_AGREEMENT_WOW_FEE_CHANGE":"NOT_APPLICABLE","LOYALTY_AGREEMENT_WOW_FEE_CHANGE_TEST2":"B","CCID_HANDLING_BLOCK_ORDER":"B","JIKGU_INSTALL":"A"};
+
+			
+				postSecret = 'eDvhse8xC5G+lCu/eBdBiDytwpXY656FVlZcX3i2h70rSQ==';
+			
+
+            components.postSecret = {
+                state: {
+                    postSecret: postSecret
+                }
+            };
+
+			/** TODO: $.publish('delivery.zipcodeChanged') 에 의존성이 있어 첫번째로 build. */
+			components.bundleInfo = {
+				locale: 'ko',
+				$parent: $('[data-delivery-info="body"]'),
+
+			    stockBundleMap: {"RETAIL":{"vendorItemPackageViews":[{"vendorItemPackageId":-1,"hasVendorItemPackage":false,"vendorItemPackageName":null,"vendorItemViews":[{"vendorItemName":"오랄비 프로엑스퍼트 클리니컬 프로플렉스 칫솔, 4개입, 1개","productName":"오랄비 프로엑스퍼트 클리니컬 프로플렉스 칫솔","vendorItemId":3000208682,"vendorItemPackageName":null,"vendorItemPackageId":-1,"quantity":1,"salePrice":0,"quantityPrice":0,"impendSoldOut":false,"offerCondition":"","displayTitle":null,"displayReservationPropertyInfos":null,"hasAppleCare":false,"displayQuantity":"1","displayTotalPrice":"0"}]}]}},
+				hasRetail: true,
+				hasDropship: false,
+				hasNonShipping: false,
+				hasRocketJikgu: false,
+				hasReservation: false,
+				hasRocketInstall: false,
+				onlyNonShipping: false,
+
+				q2EcommerceTireLegalIsB: false,
+            	q2EcommerceTireYellowBoxIsB: false,
+
+            	rocketInstallWithCE: false,
+
+				rocketBadgeImage: 'cmg/icon/ios/logo_rocket_large@3x.png',
+				rocketDPlus2BadgeImage: 'badges/rocket-plus2/default/pc/rocket_plus_16_bi@2x.png',
+				rocketJikguBadgeImage: 'delivery_badge/default/pc/global_b/global_b.png',
+				rocketInstallBadgeImage: 'badges/rocket-install/v2/web/vf_bi_16@2x.png',
+
+				checkoutId: '1724510811390',
+				agentType: 'WEB',
+				baseShippingFee: 0,
+				isVendorDirectDelivery: false,
+				exposeRocketJikguSection: false,
+				cashIssueDaysAfterNow: 7,
+				currentTime: 1724510879279,
+			    freebies: [],
+				normalNonWeekendsDelivery: false,
+				retailShippingType : 'NORMAL',
+				loyaltyMemberStatus: 'MEMBER',
+				pc: true,
+				hasDeliveryAddressInfo: true,
+				cartLink : "",
+				isNonRocketWowAddress : false,
+				hasDawnOnly : false,
+				emphasizedButtonForRocketInstall: false,
+                deliveryDetailSeq: "151743898",
+                migrateAppleCareInsurance: true,
+                coolerBagServicePattern: '',
+                coolerBagOrderOptIn: true,
+                freshBagValidMember: false,
+                freshBagAddressZipCodeAvailable: false,
+                freshBagCheckoutFreshProduct: false,
+                freshBagServiceBGroup: false,
+                freshBagAddressOptIn: false,
+                freshBagExceedThreshold: false,
+                abImportTax: false,
+				authenticityForTwoBrands: true,
+				delayedPddDesignChange: true
+            };
+
+            
+                
+                    components.customer = {
+                        $parent : $('[data-component="customer"]'),
+
+                        name  : '강**',
+                        email : 'r*****@naver.com',
+                        tel   : '010-****-****',
+
+                        needAuth   : !(true),
+                        useSmsAuth : false,
+                        needDeliveryEmail: false,
+                        isCeInsurance: false
+                    };
+                
+            
+
+            
+
+            
+                
+            
+
+            
+            
+
+			
+				components.deliveryAddress = {
+					state: {
+						deliveryListPopupUrl        : 'https://id.coupang.com/addressbook/picker?dawnOnly=false&returnUrl=https://checkout.coupang.com/deliveryAddress/popUp/resultSelectDeliveryAddress%3FcheckoutId%3D1724510811390',
+						checkRemoteAreaDelivery     : false,
+						currentDeliveryAddrSrl      : '151743898',
+						checkoutId                  : '1724510811390',
+						pageLoadDetailSrl           : '151743898',
+						hasDawnOnly : false,
+						cartLink : "",
+						isNonRocketWowAddress : false,
+						isRocketWowMember: true,
+						isRocketWowAddress: true,
+						separateRocketFreshMvp2: true,
+						isRocketFreshAddress: true,
+                        jsonDeliveryPrefs: (JSON.parse(
+                            "{\"deliveryPreferences\":\"[{\\\"code\\\":\\\"AA01_PUT_FRONT_OF_DOOR\\\",\\\"label\\\":\\\"문 앞\\\",\\\"type\\\":\\\"REQUIRED\\\",\\\"deliveryType\\\":\\\"STANDARD\\\"}]\",\"text\":\"문 앞\"}" )).deliveryPreferences,
+                        jsonDawnDeliveryPrefs: (JSON.parse(
+                            "{\"deliveryPreferences\":\"[{\\\"code\\\":\\\"AA04_NOTI_SMS_AFTER_SEVEN_AM\\\",\\\"label\\\":\\\"오전 7시 이후\\\",\\\"type\\\":\\\"OPTIONAL\\\",\\\"deliveryType\\\":\\\"OVERNIGHT\\\"},{\\\"code\\\":\\\"AA04_REQUEST_PUT_FRONT_OF_DOOR\\\",\\\"label\\\":\\\"문 앞\\\",\\\"type\\\":\\\"REQUIRED\\\",\\\"deliveryType\\\":\\\"OVERNIGHT\\\"},{\\\"code\\\":\\\"AA04_REQUEST_FOD_ADDITIONAL_EASY_ACCESS_LOBBY\\\",\\\"message\\\":\\\"true\\\",\\\"label\\\":\\\"자유 출입가능\\\",\\\"type\\\":\\\"REQUIRED\\\",\\\"deliveryType\\\":\\\"OVERNIGHT\\\"},{\\\"code\\\":\\\"AA04_OPT_OUT_FRESH\\\",\\\"message\\\":\\\"false\\\",\\\"label\\\":\\\"opt-out for fresh vendorItems\\\",\\\"type\\\":\\\"OPTIONAL\\\",\\\"deliveryType\\\":\\\"OVERNIGHT\\\"}]\",\"text\":\"문 앞 (자유 출입가능)\"}" )).deliveryPreferences
+					},
+					context: {
+						$parent                     : $('[data-component="deliveryAddress"]')
+					}
+				};
+
+				
+					
+
+					components.deliveryAddress.state.mobile = [
+						'010',
+						'****',
+						'****'
+					];
+				
+
+				(function () {
+					var address = {};
+
+					
+						address.detailSrl = '151743898';
+					
+
+					
+						address.defaultShipping = true;
+					
+
+					
+
+					
+						address.name = _.unescape('강**');
+					
+
+					
+						
+							address.post = '54896';
+						
+					
+
+					
+						var roadName = _.unescape('전라북도 전주시 *** **** **');
+						if (roadName.length > 0) {
+							address.roadName = roadName;
+						}
+					
+
+					
+						var reference = _.unescape('*****');
+
+						if (reference.length > 0) {
+							address.reference = reference;
+						}
+					
+
+					
+						var jibun = _.unescape('전라북도 전주시 ****** **** ***** ****');
+						if (jibun.length > 0) {
+							address.jibun = jibun;
+						}
+					
+
+					
+						address.detail = _.unescape('**** ***');
+					
+
+					if (!_.isEmpty(address)) {
+						components.deliveryAddress.state.address = address;
+					}
+				})();
+
+				
+				components.deliveryRequestMessage = {
+					state: {
+						currentDeliveryAddrSrl          : '151743898',
+						deliveryRequestMessagePopupUrl  : 'https://id.coupang.com/deliverypreferences/picker?returnUrl=https://checkout.coupang.com/deliveryRequestMessage/popUp/resultSelectDeliveryRequestMessage%3FcheckoutId%3D1724510811390',
+                        deliveryRequestMessageMainPopupUrl  : 'https://id.coupang.com/deliverypreferences/main?returnUrl=https://checkout.coupang.com/dawn/deliveryRequestMessage/popUp/resultSelectDeliveryRequestMessage%3FcheckoutId%3D1724510811390',
+                        selectedMessage                 : JSON.parse("{\"deliveryPreferences\":\"[{\\\"code\\\":\\\"AA01_PUT_FRONT_OF_DOOR\\\",\\\"label\\\":\\\"문 앞\\\",\\\"type\\\":\\\"REQUIRED\\\",\\\"deliveryType\\\":\\\"STANDARD\\\"}]\",\"text\":\"문 앞\"}"),
+                        dawnSelectedMessage: JSON.parse(
+                            "{\"deliveryPreferences\":\"[{\\\"code\\\":\\\"AA04_NOTI_SMS_AFTER_SEVEN_AM\\\",\\\"label\\\":\\\"오전 7시 이후\\\",\\\"type\\\":\\\"OPTIONAL\\\",\\\"deliveryType\\\":\\\"OVERNIGHT\\\"},{\\\"code\\\":\\\"AA04_REQUEST_PUT_FRONT_OF_DOOR\\\",\\\"label\\\":\\\"문 앞\\\",\\\"type\\\":\\\"REQUIRED\\\",\\\"deliveryType\\\":\\\"OVERNIGHT\\\"},{\\\"code\\\":\\\"AA04_REQUEST_FOD_ADDITIONAL_EASY_ACCESS_LOBBY\\\",\\\"message\\\":\\\"true\\\",\\\"label\\\":\\\"자유 출입가능\\\",\\\"type\\\":\\\"REQUIRED\\\",\\\"deliveryType\\\":\\\"OVERNIGHT\\\"},{\\\"code\\\":\\\"AA04_OPT_OUT_FRESH\\\",\\\"message\\\":\\\"false\\\",\\\"label\\\":\\\"opt-out for fresh vendorItems\\\",\\\"type\\\":\\\"OPTIONAL\\\",\\\"deliveryType\\\":\\\"OVERNIGHT\\\"}]\",\"text\":\"문 앞 (자유 출입가능)\"}" ),
+                        isOverNightDeliveryMember       : false,
+                        deliveryRelevantButtonClicked: false,
+                        covidNudgeMessage: ''
+                    },
+                    context: {
+                        $parent: $('[data-component="deliveryRequestMessage"]'),
+                        $focus: $('[data-component="deliveryAddress"]')
+                    }
+                };
+            
+
+			
+
+			
+			
+
+			components.cellphone = {
+				context: {},
+				state: {
+					savedTelecomType: ''
+				}
+			};
+
+			
+			
+
+			components['rewardCash'] = {
+				state : {
+					checkoutId: '1724510811390',
+					reservationId: '',
+					payType : 'ROCKET_CARD',
+					paymentPromotions : [{"promotionId":"2cf7128b-708f-4127-b5b3-2c1f41de6fca","applicableMethods":["ROCKET_BALANCE"],"maximumAmount":0,"expiredDate":"2099-01-01T14:59:59.000Z","promotionType":"ITEM_REWARD_CASH","remainDays":0,"budget":10000,"boostPromotion":false,"paymentMethodPromotion":true,"manageCode":"COUPAY_MONEY_CASHBACK","discountAmount":0,"discountPercentage":1.0,"i18nMaximumAmount":{"amount":"0","rawAmount":0,"fractionDigits":0,"currency":"KRW"},"i18nBudget":{"amount":"10000","rawAmount":10000,"fractionDigits":0,"currency":"KRW"},"i18nDiscountAmount":{"amount":"0","rawAmount":0,"fractionDigits":0,"currency":"KRW"}}],
+					promotionApplyDate: '2024-08-24T23:47:59.087',
+                    totalRewardCashPrice : 0,
+                    
+                        i18nTotalRewardCashPrice : 0,
+                    
+                    abImportTax: false,
+                    distributedDiscount: null,
+				}
+			};
+
+			components['paymentMethodPromotions'] = {
+				state : {
+					checkoutId: '1724510811390',
+				    reservationId: '',
+					payType: '',
+					payCode: '',
+					promotions: null,
+					paymentRewardCashPromotions: [{"promotionId":"2cf7128b-708f-4127-b5b3-2c1f41de6fca","applicableMethods":["ROCKET_BALANCE"],"maximumAmount":0,"expiredDate":"2099-01-01T14:59:59.000Z","promotionType":"ITEM_REWARD_CASH","remainDays":0,"budget":10000,"boostPromotion":false,"paymentMethodPromotion":true,"manageCode":"COUPAY_MONEY_CASHBACK","discountAmount":0,"discountPercentage":1.0,"i18nMaximumAmount":{"amount":"0","rawAmount":0,"fractionDigits":0,"currency":"KRW"},"i18nBudget":{"amount":"10000","rawAmount":10000,"fractionDigits":0,"currency":"KRW"},"i18nDiscountAmount":{"amount":"0","rawAmount":0,"fractionDigits":0,"currency":"KRW"}}],
+					promotionApplyDate: '2024-08-24T23:47:59.087',
+					defaultLogData: {
+						checkoutType: 'DEFAULT',
+						entryType: 'direct',
+						hasCoupon: 0,
+						hasPoint: false
+					},
+                    totalRewardCashPrice : 0,
+                    abImportTax: false,
+                    distributedDiscount: null,
+                    
+                        i18nTotalRewardCashPrice : 0,
+                    
+				}
+			};
+
+			
+			components['cashReceipt'] = {
+				$parent: $('[data-component="cash-receipt"]'),
+				cashReceiptRegisterOption: false,
+				agreeSaveCashReceiptOption: true,
+				agreeSaveCashReceiptOptionDelete: true,
+				cashReceiptRequestTypeName: '',
+				cashReceiptRequestTypeDesc: '',
+				cashReceiptRegisterTypeName: '',
+				cashReceiptRegisterTypeDesc: '',
+				cashReceiptRequestNo: '',
+				allMatchOverseaDeal: false,
+				anyMatchOverseaDeal: false,
+				overseasItemMessage: '해외구매대행/로켓직구 구매금액은 신청 제외.',
+				availableCashReceiptRequestTypes: [{"cashReceiptRequestTypeName":"DEDUCTION","cashReceiptRequestTypeDesc":"소득공제"},{"cashReceiptRequestTypeName":"EXPENSE","cashReceiptRequestTypeDesc":"지출증빙"}],
+				checkoutId: '1724510811390',
+				hasTravelEcoupon: false,
+
+			};
+
+			components.agreements = {
+				context: {
+					$parent: $('[data-component="agreements"]')
+				},
+				state: {
+                    spinOffTncTarget: true
+                }
+			};
+
+			components.agreements.state.hasOverseaDeal = false;
+            components.agreements.state.hasOverseaVendor = false;
+            components.agreements.state.isGroupBForHasOverseaVendor = true;
+
+			
+				components.agreements.state.memberAgreementsMap = {"CT_PERSONAL_INFORMATION_COLLECTION_BIZ":{"version":1713,"content":"<table class=\"agreements__content__table_new\" style=\"border: 1px solid rgb(237, 237, 237); margin: -7px -16px 0px; font-family: Roboto, HelveticaNeue-Light, AppleSDGothicNeo-Light, sans-serif, arial;\"><thead><tr><th class=\"agreements__content__th_new\" width=\"33%\" style=\"border: 1px solid rgb(237, 237, 237); border-collapse: collapse; padding: 10px 8px; background-color: rgb(246, 246, 246); color: rgb(69, 79, 91); height: 23px; text-align: center; font-size: 11px;\">수집 항목</th><th class=\"agreements__content__th_new\" width=\"33%\" style=\"border: 1px solid rgb(237, 237, 237); border-collapse: collapse; padding: 10px 8px; background-color: rgb(246, 246, 246); color: rgb(69, 79, 91); height: 23px; text-align: center; font-size: 11px;\">수집 목적</th><th class=\"agreements__content__th_new\" width=\"34%\" style=\"border: 1px solid rgb(237, 237, 237); border-collapse: collapse; padding: 10px 8px; background-color: rgb(246, 246, 246); color: rgb(69, 79, 91); height: 23px; text-align: center; font-size: 11px;\">보유 기간</th></tr></thead><tbody><tr><td class=\"agreements__content__td_new\" rowspan=\"2\" style=\"border: 1px solid rgb(237, 237, 237); border-collapse: collapse; padding: 10px 8px; font-size: 11px; line-height: 14px; vertical-align: top;\">이름, 이메일, 휴대폰번호<br>※ 추가 수집하는 필수항목<br>- 배송 및 방문이 필요한 상품 구매 시: 주소<br>- 숙박상품 예약 시: 투숙객 대표자 정보(이름, 이메일, 휴대폰번호)<br>- 항공권 예약 시: 탑승객 정보(이름, 생년월일, 성별, 국적)<br>- 여객선 예약 시: 탑승객 정보(이름, 생년월일, 성별, 연락처, 주소)<br></td><td class=\"agreements__content__td_new\" style=\"border: 1px solid rgb(237, 237, 237); border-collapse: collapse; padding: 10px 8px; font-size: 11px; line-height: 14px; vertical-align: top;\">상품/서비스의 배송 또는 예약 업무 처리 및 고객상담/해피콜, 맞춤형 컨텐츠 및 서비스 제공</td><td class=\"agreements__content__td_new\" style=\"border: 1px solid rgb(237, 237, 237); border-collapse: collapse; padding: 10px 8px; line-height: 14px; vertical-align: top;\"><span class=\"agreements__content__td__em_new\" style=\"font-weight: bold; font-size: 13px; line-height: 15px; color: rgb(69, 79, 91);\">회원탈퇴 시 환불처리를 위해 90일간 보관 후 지체없이 파기 **</span></td></tr><tr><td class=\"agreements__content__td_new\" style=\"border: 1px solid rgb(237, 237, 237); border-collapse: collapse; padding: 10px 8px; font-size: 11px; line-height: 14px; vertical-align: top;\">이상행위 탐지 및 방지</td><td class=\"agreements__content__td_new\" style=\"border: 1px solid rgb(237, 237, 237); border-collapse: collapse; padding: 10px 8px; line-height: 14px; vertical-align: top; font-size: 10px;\"><span class=\"agreements__content__td__em_new\" style=\"font-weight: bold; font-size: 13px; line-height: 15px; color: rgb(69, 79, 91);\">회원 탈퇴 시 180일간 보관 후 파기</span></td></tr></tbody></table><p class=\"agreements__desc\" style=\"font-size: 10px; line-height: 14px; color: rgb(69, 79, 91); margin-top: 10px; font-family: Roboto, HelveticaNeue-Light, AppleSDGothicNeo-Light, sans-serif, arial;\">* 이용자는 개인정보의 수집 및 이용 동의를 거부할 권리가 있으나, 이 경우 상품 및 서비스 배송/예약이 제한될 수 있습니다.<br>** 단 전자상거래법에 의해 대금결제 및 재화 등의 공급에 관한 기록은 5년간 보관 후 파기 합니다.</p>"},"POLICIES_THIRD_PARTY_OVERSEAS_AGENCY_AGREEMENT":{"version":1406,"content":"<h3>해외구매대행 서비스 이용시 유의사항</h3>\r\n<ul>\r\n    <li>\r\n        <strong>1. 해외구매대행 서비스(이하 “본 서비스”) 주요내용</strong>\r\n        <ul>\r\n            <li>가. 본 서비스는 구매대행업자를 통해 소개된 상품에 대하여 회원이 구매를 의뢰하면, 구매대행업자가 회원을 대신하여 해외에서 구매 및 결제를 하고 국제운송 및 수입통관을 거쳐 회원이 국내 수취처에서 해당 상품을 수령할 수 있는 서비스를\r\n                말합니다.\r\n            </li>\r\n            <li>나. 회원은 <a href=\"http://www.coupang.com/np/policies/terms\" title=\"쿠팡 이용약관\">쿠팡 이용약관</a>(이하 “쿠팡 이용약관”)에 동의한 개인 이용자를 말하며, 법인이나 회사 명의로 본\r\n                서비스 이용은 불가합니다.\r\n            </li>\r\n            <li>다. 구매대행업자는 본 서비스 제공시 상품 등 재고를 보유하지 않고 있으며, 회원이 본인 스스로 자가 사용 목적으로 상품을 구매하는 경우에만 본 서비스를 이용할 수 있습니다.</li>\r\n            <li>라. 회원이 본 서비스의 유의사항(이하 “유의사항”)을 읽고 동의하는 경우, 해외구매, 국제운송, 수입통관, 운송 및 수령의 전과정에 대한 일체 권한이 구매대행업자에게 위임되고 수입통관 등의 진행에 있어 구매대행업자의 요청이 있을 경우\r\n                회원이 이를 이행하여야 합니다.\r\n            </li>\r\n            <li>마. 회원은 본 서비스에 따른 수입거래에 대한 일체의 책임을 부담하는 자로서 홈페이지에 명시된 내용 및 사용조건을 확인하여야 하고, 그에 따라 본 서비스를 이용할 수 있습니다. 쿠팡은 고객이 홈페이지에 명시한 내용 및 사용조건을 준수하지\r\n                않아 발생한 문제에 대해서는 일체의 책임을 지지 않습니다.\r\n            </li>\r\n        </ul>\r\n    </li>\r\n    <li>\r\n        <strong>2. 상품가격</strong>\r\n        <p>본 서비스 이용시 상품가격은 해외 상품판매가격, 해외 현지 운송료, sales tax, 국제운송료, 수입관세, 수입부가세, 기타 세금을 위한 회원예치금, 대행수수료, 국내 운송료 등이 모두 포함된 가격입니다.</p>\r\n\r\n    </li>\r\n    <li>\r\n        <strong>3. 통관 및 과세</strong>\r\n        <ul>\r\n            <li>가. 개인수입통관원칙에 의하여 회원이 납세의무자가 되며, 운송 또는 통관업무 제휴사가 회원을 대리하여 운송 또는 통관절차를 이행합니다. 이 때 발생하는 관세 및 수입부가세 등 제세금은 제휴사가 회원을 대리하여 납부합니다.</li>\r\n            <li>나. 총 과세가격 15만원 이하의 상품은 소액면세 기준에 해당되어 과세가 면세될 수 있습니다(소액면세 기준은 관련 법령에 따름). 단, 주문한 상품의 과세가격이 소액면세 기준에 해당하지 않거나 소액면세 기준 이하라 하더라도 회원 명의로\r\n                구입한 다른 상품과 합산되어 과세 대상이 결정되는 경우 이로 인하여 관세 및 부가세 등이 발생할 수 있으며, 추가로 발생하는 관세 및 부가세 등은 회원이 직접 납부하여야 합니다.\r\n            </li>\r\n        </ul>\r\n    </li>\r\n    <li>\r\n        <strong>4. 청약철회 및 반품</strong>\r\n        <ul>\r\n            <li>구매대행업자는 회원이 주문한 상품이 품절 등의 사유로 회원에게 인도할 수 없는 경우에는 지체없이 회원에게 품절사실 등을 통지하여야 하고, 대금을 받은 경우에는 대금을 받은 날로부터 2영업일 이내에, 그렇지 않은 경우에는 통지한 날로부터\r\n                2영업일 이내에 환불하거나 환불에 필요한 조치를 취하여야 합니다. 단, 대금을 받은 날로부터 2영업일을 경과한 후에 쿠팡이 인도불가 사실을 알게 된 경우에는 알게 된 날을 기준으로 합니다.\r\n            </li>\r\n        </ul>\r\n    </li>\r\n    <li>\r\n        <strong>5. 반품 및 환급규정은 다음과 같습니다.</strong>\r\n        <ul>\r\n            <li>가. 해외 판매처의 귀책사유로 인하여 수령 상품이 실제 상품과 다른 경우 및 회원이 지정한 국내 수취처에 도착하기 이전에 상품이 훼손, 파손된 경우 구매대행업자는 회원을 대신하여 해외 구매처에게 클레임을 제기할 수 있습니다.</li>\r\n            <li>나. 회원의 단순변심에 의한 반품, 교환일 경우 원칙적으로 불가능합니다. 다만, 예외적인 경우에는 회원이 구매, 반품, 교환하는데 소요한 제반 비용(해외배송료 포함)을 회원이 부담하는 것을 조건으로 반품, 교환받을 수 있습니다.</li>\r\n        </ul>\r\n    </li>\r\n</ul>"},"CHECKOUT_PCCC_QUERY_AGREEMENT":{"version":1,"content":""},"POLICY_KOREAN_TRADITIONAL_LIQUOR":{"version":1246,"content":"<table class=\"join__table\" summary=\"제공받는 자, 제공 목적, 제공 정보, 보유 및 이용기간\" style=\"border-collapse: collapse; border-spacing: 0px; border-style: solid; border-color: #ededed; border-image: initial; border-width: 1px 0px 0px 1px; background-color: #ffffff; white-space: normal; overflow-wrap: break-word; word-break: break-all; color: #555555; font-family: dotum,sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;\" width=\"100%\">\r\n    <tbody>\r\n    <tr class=\"join__table__row\">\r\n        <td class=\"join__table__cell join__table__cell--row-title\" style=\"padding: 8px 12px; border-style: solid; border-color: #ededed; border-image: initial; border-width: 0px 1px 1px 0px; background-color: #F6F6F6; vertical-align: middle; text-align: center;\">\r\n            항목\r\n        </td>\r\n        <td class=\"join__table__cell\" style=\"padding: 8px 12px; border-style: solid; border-color: #ededed; border-image: initial; border-width: 0px 1px 1px 0px; vertical-align: top;\">\r\n            구입자 인적사항(성명, 생년월일, 주소)\r\n        </td>\r\n    </tr>\r\n    <tr class=\"join__table__row\">\r\n        <td class=\"join__table__cell join__table__cell--row-title\" style=\"padding: 8px 12px; border-style: solid; border-color: #ededed; border-image: initial; border-width: 0px 1px 1px 0px; background-color: #F6F6F6; vertical-align: middle; text-align: center;\">\r\n            목적\r\n        </td>\r\n        <td class=\"join__table__cell\" style=\"padding: 8px 12px; border-style: solid; border-color: #ededed; border-image: initial; border-width: 0px 1px 1px 0px; vertical-align: top;\">\r\n            전통주 구매 관리 및 신고\r\n        </td>\r\n    </tr>\r\n    <tr class=\"join__table__row\">\r\n        <td class=\"join__table__cell join__table__cell--row-title\" style=\"padding: 8px 12px; border-style: solid; border-color: #ededed; border-image: initial; border-width: 0px 1px 1px 0px; background-color: #F6F6F6; vertical-align: middle; text-align: center;\">\r\n            보유기간\r\n        </td>\r\n        <td class=\"join__table__cell\" style=\"padding: 8px 12px; border-style: solid; border-color: #ededed; border-image: initial; border-width: 0px 1px 1px 0px; vertical-align: top;\">\r\n            회원 탈퇴 시 세무서 신고과 완료된 후 즉시 삭제\r\n        </td>\r\n    </tr>\r\n    <tr class=\"join__table__row\">\r\n        <td colspan=\"2\" class=\"join__table__cell\" style=\"padding: 8px 12px; border-style: solid; border-color: #ededed; border-image: initial; border-width: 0px 1px 1px 0px; vertical-align: top;\">\r\n            ※ 귀하께서는 쿠팡이 위와 같이 수집이용 및 저장하는 개인정보에 대해, 동의하지 않거나 개인정보를 기재하지 않음으로써 거부할 수 있습니다. 다만, 이때 회원에게 제공되는 서비스가 제한될 수 있습니다.\r\n        </td>\r\n    </tr>\r\n    </tbody>\r\n</table>"}};
+			
+			components.agreements.state.checkoutId = '1724510811390';
+			components.agreements.state.allRetailItems = true;
+            components.agreements.state.isRocketJikgu = false;
+			components.agreements.state.isDropship = false;
+            components.agreements.state.hasAppleCare = false;
+            components.agreements.state.hasCeInsurance = false;
+            components.agreements.state.hasCoupangLLCUSProduct = false;
+            components.agreements.state.hasNonLiquorDomestic3p = false;
+            components.agreements.state.hasNonAppleCareDomestic3p = false;
+            components.agreements.state.hasNonCeInsuranceDomestic3p = false;
+			components.agreements.state.hasGoldFishItem = false;
+			components.agreements.state.isShow3PDisclaimer = false;
+
+            components.agreements.state.abGroup = {"FIX_INVALID_COUPANG_CASH":"B","LOYALTY_AGREEMENT_WOW_FEE_CHANGE_HANDLING_AFTER_EFFECTIVE_DATE":"B","ROCKET_FRESH_SEPARATE":"B","FRESH_DELIVERY_OPT_OUT":"A","LOYALTY_AGREEMENT_WOW_FEE_CHANGE":"NOT_APPLICABLE","LOYALTY_AGREEMENT_WOW_FEE_CHANGE_TEST2":"B","CCID_HANDLING_BLOCK_ORDER":"B","JIKGU_INSTALL":"A"};
+            components.agreements.state.pcccNewValidation = 'A';
+			components.agreements.state.jikguTextAbTest = false;
+			components.agreements.state.jikguTextAbTestV2 = false;
+            components.agreements.state.kycSectionVisible = false;
+            components.agreements.state.kycBlockTargetChange = true;
+            
+
+			
+			
+				
+					components.agreements.state.savedPaymentType = 'ROCKET_CARD';
+				
+			
+			components.agreements.state.has3pmDeal = false;
+			components.agreements.state.hasKoreanTraditionalLiquorDeal = false;
+			
+
+
+            components["wowSelection"] = {
+                context: {
+                    $parent: $('[data-component="wow-selection"]'),
+                    checkoutId : '1724510811390'
+                },
+                state: {
+                }
+            }
+
+            
+
+            components['paymentMethod'] = {
+                context: {
+                    $parent: $('[data-component="payment-method"]')
+                },
+                state: {
+                    displayRocketCard: true,
+                    displayCard: true,
+                    showPhonePayBox: true,
+                    displayPhone: true,
+                    isVirtualAccountAvailable : true,
+                    savedPaymentOption: {
+                        wowCard:{
+                            cardAccount: "",
+                            cardName: ""
+                        }
+                    },
+                    orderPayTypeSelectors: '[{&quot;payType&quot;:&quot;ROCKET_BALANCE&quot;,&quot;save&quot;:false,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null,null,null,null,{&quot;payType&quot;:&quot;ROCKET_BALANCE&quot;,&quot;paySubType&quot;:&quot;KFCC&quot;,&quot;startedAt&quot;:1464100800000,&quot;endedAt&quot;:1924874100000,&quot;pcDescription&quot;:&quot;새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},{&quot;payType&quot;:&quot;ROCKET_BALANCE&quot;,&quot;paySubType&quot;:&quot;POST_OFFICE&quot;,&quot;startedAt&quot;:1469716200000,&quot;endedAt&quot;:1924873200000,&quot;pcDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},null,null,null,null,null,null,{&quot;payType&quot;:&quot;ROCKET_BALANCE&quot;,&quot;paySubType&quot;:&quot;SUHYUB&quot;,&quot;startedAt&quot;:1458916800000,&quot;endedAt&quot;:1924873260000,&quot;pcDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},null,null,null,null,null,null],&quot;order&quot;:1},{&quot;payType&quot;:&quot;ROCKET_BANK&quot;,&quot;save&quot;:false,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null,null,null,null,{&quot;payType&quot;:&quot;ROCKET_BANK&quot;,&quot;paySubType&quot;:&quot;KFCC&quot;,&quot;startedAt&quot;:1464100800000,&quot;endedAt&quot;:1924874100000,&quot;pcDescription&quot;:&quot;새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 새마을금고 점검으로, 23:40~00:15 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},{&quot;payType&quot;:&quot;ROCKET_BANK&quot;,&quot;paySubType&quot;:&quot;POST_OFFICE&quot;,&quot;startedAt&quot;:1469716200000,&quot;endedAt&quot;:1924873200000,&quot;pcDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},null,null,null,null,null,null,{&quot;payType&quot;:&quot;ROCKET_BANK&quot;,&quot;paySubType&quot;:&quot;SUHYUB&quot;,&quot;startedAt&quot;:1458916800000,&quot;endedAt&quot;:1924873260000,&quot;pcDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},null,null,null,null,null,null],&quot;order&quot;:1},{&quot;payType&quot;:&quot;ROCKET_CARD&quot;,&quot;save&quot;:true,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],&quot;order&quot;:1},{&quot;payType&quot;:&quot;CARD&quot;,&quot;save&quot;:true,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null,null,null,null,null,null],&quot;order&quot;:2},{&quot;payType&quot;:&quot;PHONE&quot;,&quot;save&quot;:false,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null],&quot;order&quot;:3},{&quot;payType&quot;:&quot;VIRTUALACCOUNT&quot;,&quot;save&quot;:false,&quot;hide&quot;:false,&quot;notifications&quot;:[],&quot;disabledReasons&quot;:[],&quot;detailReason&quot;:{},&quot;commonLimitNotifications&quot;:[null,null,null,null,null,null,null,null,{&quot;payType&quot;:&quot;VCNT&quot;,&quot;paySubType&quot;:&quot;POST_OFFICE&quot;,&quot;startedAt&quot;:1469716200000,&quot;endedAt&quot;:1924873200000,&quot;pcDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 우체국 점검으로, 23:30~00:00 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;},null,null,null,{&quot;payType&quot;:&quot;VCNT&quot;,&quot;paySubType&quot;:&quot;SUHYUB&quot;,&quot;startedAt&quot;:1458916800000,&quot;endedAt&quot;:1924873260000,&quot;pcDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescription&quot;:&quot;수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;messageColor&quot;:&quot;#E7223D&quot;,&quot;paymentDisabled&quot;:false,&quot;pcDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;,&quot;mobileDescriptionWithStarPrefix&quot;:&quot;* 수협은행 점검으로, 23:40~00:01 동안 결제가 불가합니다. 다른 결제수단을 이용해주시기 바랍니다.&quot;}],&quot;order&quot;:4}]',
+                    hasWowCard: '',
+                    finalPrice: '6900',
+                    balanceAmount: '',
+                    ccidOverThreshold: false
+                }
+            };
+
+			Bundle.checkoutForm.build({
+				$submit          : $('#paymentBtn'),
+				$submitRocketPay : $('#paymentRocketpayBtn'),
+				isRocketPayMember : 'true',
+				$decideLaterSubmit: $('#decideLaterBtn'),
+				landingPageUrl : '',
+				$landingAgreement: $('#landingAgreement'),
+				checkoutId : '1724510811390',
+				defaultPayType : 'ROCKET_CARD',
+				componentOptions : components,
+				fromBackend      : {
+
+					
+					useSmsAuth : false
+				},
+				useMoneyPayment: true,
+				moneyBalance : 0,
+                
+                kycBlockTargetChange: true,
+				loginUrl: 'https://login.coupang.com/login/login.pang',
+				logoutUrl: 'https://login.coupang.com/login/logout.pang'
+			});
+
+			Bundle.ttiLogger.stop({
+				entryType: 'reEntry',
+				abTest: '',
+				isDirectOrder: 'Y',
+				createCheckout: '',
+				checkoutFormTime: '194',
+				tuningHistoryNo: '1',
+				ixId: ''
+			});
+
+			Bundle.cOneTracer.validation('1724510811390', '{&quot;3000208682&quot;:1}');
+		});
+
+		// show rocket money popup if necessary
+		window.Bundle && window.Bundle.rocketMoneyPopup && window.Bundle.rocketMoneyPopup.build({
+			payType : 'ROCKET_CARD',
+			hasRocketMoneyPromotion: true,
+			isLoyaltyMember : true
+		});
+
+		$(document).ready(function () {
+			//추가정보 입력 필드 추가, 제거
+			$('div.dealExtraInquiry').each(function () {
+				var self = this;
+				var template = $('div.etcInfoArea script.template', this).html();
+				$('button.extra-info__add', this).click(function () {
+					uxlogger && uxlogger.log && uxlogger.log({ action: 'essential-info_add_pc' });
+					window.Bundle && window.Bundle.weblog && window.Bundle.weblog.objectClick('essentialInfoAdd');
+					var moreAnswer = $(template);
+					$('button.extra-info__remove', moreAnswer).click(function () {
+						moreAnswer.remove();
+						return false;
+					});
+					$('div.etcInfoArea', self).append(moreAnswer);
+					return false;
+				});
+			});
+
+			// 가상계좌 팝업 지우기
+			$(window).on("beforeunload", function () {
+				try {
+					var nonActivexVirtualAcccountPopup = $('#callLGPayment').get(0).contentWindow.tgv;
+					if (nonActivexVirtualAcccountPopup) {
+						nonActivexVirtualAcccountPopup.close();
+					}
+				} catch (e) {
+				}
+			});
+		});
+
+		var pcPgBackCount = 0;
+		var landingTime = new Date().getTime();
+
+		payment = {
+			paySetup: function (data) {
+				function addWarningMessage($input, message) {
+					var $warningMessage = $input.parent().parent('.extra-info__wrapper').find('.extra-info__warning');
+					$warningMessage.show();
+					$warningMessage.text(message);
+
+					uxlogger && uxlogger.log && uxlogger.log({
+						area:'extra-info.pc',
+						code: 'invalid',
+						value: message
+					});
+				}
+				$('.dealExtraInquiry').on('input', '.extra-info__wrapper .etcInfo', function (e) {
+					var $warningMessage = $(this).parent().parent('.extra-info__wrapper').find('.extra-info__warning');
+					$warningMessage.hide();
+					$warningMessage.text('');
+				});
+				
+				var etcInfoInput = $("input.etcInfo");
+				var isValidEtc = true;
+				etcInfoInput.each(function () {
+					if ($(this).val() === '') {
+						if (isValidEtc) {
+							addWarningMessage($(this), "입력해 주세요.");
+							$(window).scrollTop(0);
+							$(this).focus();
+						}
+						isValidEtc = false;
+					} else if ($(this).val().indexOf('/') > -1) { // consumer 약속구분자로 지정되어 있어 입력 제어
+						if (isValidEtc) {
+							addWarningMessage($(this), "아래 특수문자만 입력 가능합니다. 다시 확인해 주세요.");
+							$(this).focus();
+						}
+						isValidEtc = false;
+					} else if (!inputStringValidate($(this).val())) {
+						if (isValidEtc) {
+							addWarningMessage($(this), "아래 특수문자만 입력 가능합니다. 다시 확인해 주세요.");
+							$(this).focus();
+						}
+						isValidEtc = false;
+					}
+				});
+				if (!isValidEtc) {
+					return;
+				}
+				
+					data['promotionApplyDate'] = '2024-08-24T23:47:59.087';
+					data['promotionCacheId'] = '9a1ca5fa4b7c45f087b62f93b262ce96';
+				
+				
+				
+
+				data['totalSalePrice'] = '6900';
+				
+
+				var i = 0;
+				var etcInfoArr = [];
+				etcInfoInput.each(function () {
+					var vendorItemId = $(this).data('vendor-item-id');
+					etcInfoArr[i] = vendorItemId + ':::' + encodeURIComponent($(this).val());
+					i++;
+				});
+				data['extInfo'] = etcInfoArr;
+
+				
+
+				
+
+				<!-- 리테일 상품에 대하여 선택 정보 (일반, 당일, 새벽, 2시간) 저장-->
+				data['chosenVendorItemBundleTypes[0].quantity'] = 1;
+
+				
+				var $deliveryTypeSelection = $('input[name="delivery-type-selection"]:visible:checked');
+				if ($deliveryTypeSelection.size()) {
+					data['paidSameDayShippingYn'] = ($deliveryTypeSelection.attr('id') === 'delivery-sameDay-type') ? 'Y' : 'N';
+				}
+				
+
+				
+				
+
+				
+
+				var preOrderParameter = "";
+				
+					preOrderParameter += "?directOrder=true";
+				
+
+				var url = '/order' + preOrderParameter;
+				var isIEE = 'false' === 'true';
+
+				// 결제 전, 결제 데이터 제어를 위한 핸들러 추가
+				function orderDataHandler(overrideData) {
+					$.extend(data, overrideData);
+				}
+
+				// 선택한 카드사의 기등록된 카드로 결제를 유도하는 모달
+				var registeredCardOfferModal = Bundle.registeredCardOfferModal;
+				registeredCardOfferModal.inject({
+					orderContinue: order,
+					orderDataHandler: orderDataHandler,
+					
+						rocketCardInstance: orderController.controllers.RocketpayCard.instance
+					
+				});
+
+				
+
+                
+                    $.extend(data,  window.requestItems);
+                
+
+				if (data['payType'] === "ROCKET_CARD" && registeredCardOfferModal.needPopup()) {
+					registeredCardOfferModal.show();
+				} else {
+					order();
+				}
+
+				// PC Pay2 로직이 추가되기 전에 존재하던 이후 실행 로직을 order 함수로 분리
+				function order() {
+					// 신용/체크카드로 결제 시, Coupay or LegacyPayment 여부 설정
+                    var isBlockedDeliveryAddress = false;
+					
+						var rocketCardInstance = orderController.controllers.RocketpayCard.instance;
+					
+					
+					if (data['payType'] === "ROCKET_CARD" && rocketCardInstance.useLegacyCard()) {
+						orderDataHandler({
+							payType: "CARD"
+						});
+					}
+					var paymentPrice = 0;
+
+					payment.startPreOrder();
+
+					
+
+					$.ajax({
+						type: "POST",
+						url: url,
+						data: data,
+						contentType: 'application/x-www-form-urlencoded; charset=utf-8;',
+						success: function (response) {
+							var resultObj = response.data || {};
+							var orderResultStatus = resultObj.status;
+						    
+
+							if ('GOOD' === orderResultStatus) {
+                                payment.orderSuccess(resultObj.object, data);
+                                paymentPrice = resultObj.object.payAmount;
+                                pcPgBackCount ++;
+                            } else {
+							    payment.handleFailStatus(orderResultStatus, resultObj);
+                                payment.finishPreOrder();
+                                if ('BLOCKED_FOR_COMPLIANCE' === orderResultStatus) {
+                                    isBlockedDeliveryAddress = true;
+                                    $(window).scrollTop(0);
+                                    window.Bundle && window.Bundle.weblog && window.Bundle.weblog.blockedDeliveryAddress();
+                                }
+                            }
+						},
+						error: function (jqXHR, status, errorThrown) {
+							var payType = orderController.payBox.getPayType();
+
+							
+								var couponLogData = orderController.getCouponLogData();
+							
+							window.Bundle && window.Bundle.weblog && window.Bundle.weblog.orderStatus({
+								payType: payType,
+								
+									hasCoupon: 0,
+									useCoupon: couponLogData.useCoupon,
+									isBestOffer: couponLogData.isBestOffer,
+									couponDiscountPrice: couponLogData.couponDiscountPrice,
+									totalItem: couponLogData.totalItem,
+									totalPrice: couponLogData.totalPrice,
+								
+								status: 'error',
+                                isDeliveryEmail: !!data.deliveryEmail,
+                                hasAppleCare: false,
+                                hasJikgu: false,
+                                importTax: data.totalImportTax
+							});
+
+							/** @type string */
+							var response = jqXHR.responseText || '';
+
+							
+
+							if (jqXHR.status === 401) {
+								alert(response);
+								document.location.href = "https://login.coupang.com/login/login.pang?rtnUrl=https%3A%2F%2Fcheckout.coupang.com%2Fdirect%2Fcheckout%2F1724510811390%3Fitem%255B%255D%3D3000208682%253A1";
+							} else {
+								// alert(response.message || "주문중 오류가 발생하였습니다. 다시 시도해 주세요.");
+								alert(response.message || "주문 완료"); // TEST
+								document.location.href = "{% url 'done_page' %}" // TEST
+							}
+							payment.finishPreOrder();
+						},
+                        complete: function () {
+							var effectiveDate = '';
+                            var purchaseLogData = {
+                                entryType: 'direct',
+                                
+                                    hasCoupon: 0,
+                                    useCoupon: couponLogData.useCoupon,
+                                    isBestOffer: couponLogData.isBestOffer,
+                                    couponDiscountPrice: couponLogData.couponDiscountPrice,
+                                    totalItem: couponLogData.totalItem,
+                                    totalPrice: couponLogData.totalPrice,
+                                
+                                hasPoint: false,
+                                usePoint: (data.usePoint ? data.usePoint : 0),
+                                isPointInPaybox: false,
+                                payType: orderController.payBox.getPayType(),
+                                payCode: orderController.payBox.getPayCode(),
+                                isLoyaltyMember : true,
+                                pageLoadType: (pcPgBackCount == 0 ? 'load' : 'pg_back'),
+                                pgBackCount: (pcPgBackCount == 0 ? null : pcPgBackCount),
+                                deliveryAddressDetailSrl: (data.deliveryDetailSrl != null ? parseInt(data.deliveryDetailSrl) : null),
+                                defaultDeliveryAddress: (data.defaultDeliveryAddress != null ? data.defaultDeliveryAddress : null),
+                                buttonType: data.buttonType,
+                                checkoutType: 'DEFAULT',
+                                ccidAmount: data.ccidAmount || 0,
+                                ccidOverThreshold: false,
+                                readyToGetCCID: data.ccidAmount > 0,
+                                isDeliveryEmail: !!data.deliveryEmail,
+                                hasAppleCare: false,
+                                isBlockedAddress: isBlockedDeliveryAddress,
+                                hasJikgu: false,
+                                importTax: data.totalImportTax,
+                                
+                                    kycTargetExposed: '',
+                                
+                                paymentPrice: paymentPrice,
+								effectiveDate: effectiveDate ? new Date(Number(effectiveDate)).toLocaleDateString('en-GB').split('/').reverse().join('') : '-1'
+                            };
+							purchaseLogData.wowConsentType = '-1';
+                            
+
+                            if ($("#bundleDeliveryMessage").length > 0) {
+                                var isChecked = document.getElementById("overnightOptOut").checked;
+                                purchaseLogData.isBundleDelivery = isChecked ? 'true' : 'false';
+                            }
+
+                            if ($("#samedayBundleDeliveryMessage").length > 0) {
+                                var isChecked = document.getElementById("samedayOptIn").checked;
+                                purchaseLogData.isBundleDelivery = isChecked ? 'true' : 'false';
+                            }
+
+                            if ($("#cdmBundleDelivery").length > 0) {
+                                var isChecked = document.getElementById("cdmOptIn").checked;
+                                purchaseLogData.isDelayDelivery = isChecked ? 'true' : 'false';
+                                purchaseLogData.mergeScenarioType = "M:DAWN_D1:D1";
+                            }
+
+                            window.Bundle && window.Bundle.weblog && window.Bundle.weblog.purchaseClick(purchaseLogData);
+                        }
+					});
+
+					
+						var couponLogData = orderController.getCouponLogData();
+					
+				}
+			},
+			orderSuccess: function(paymentRequestParam, data) {
+				var payType = orderController.payBox.getPayType();
+
+				
+					var couponLogData = orderController.getCouponLogData();
+				
+				// effective time =  ack time - landing time + respose time(server time from BE) to make sure the acknowledge time is right
+				// fix dangerous for default helper when call fallback func
+				// when responseTime is null, it will cause js error.
+				var responseTime = 1724510879268;
+				var clickTime = new Date().getTime();
+				var effectiveTime = responseTime ? clickTime - landingTime + Number(responseTime) : clickTime;
+				
+				window.Bundle && window.Bundle.weblog && window.Bundle.weblog.orderStatus({
+					payType: payType,
+					status: 'success',
+					paymentToken: paymentRequestParam.paymentToken,
+					checkoutType: 'DEFAULT',
+					defaultPayType : 'ROCKET_CARD',
+					
+						hasCoupon: 0,
+						useCoupon: couponLogData.useCoupon,
+						isBestOffer: couponLogData.isBestOffer,
+						couponDiscountPrice: couponLogData.couponDiscountPrice,
+						totalItem: couponLogData.totalItem,
+						totalPrice: couponLogData.totalPrice,
+					
+					hasPoint: false,
+					isRocketPayMember : true,
+					orderId: paymentRequestParam.orderId,
+					receiptData : false,
+					receiptActive : false,
+					moneyBalance: 0,
+					usePoint: (data.usePoint ? data.usePoint : 0),
+					realNameVerification: true,
+					financeCode: paymentRequestParam.financeCode,
+					payMethodId: paymentRequestParam.rocketPayMemberAccountId == null ? 'null' : paymentRequestParam.rocketPayMemberAccountId,
+                    isDeliveryEmail: !!data.deliveryEmail,
+                    hasAppleCare: false,
+                    hasJikgu: false,
+                    importTax: data.totalImportTax,
+                    paymentPrice: paymentRequestParam.payAmount
+				});
+
+				payment.finishPreOrder();
+
+				Bundle.metricCounterLog.log('paymentStart', {isDirectOrder: 'Y'});
+
+				orderController.controllers.CoupangPayment.instance.setCoupangPayment(paymentRequestParam);
+			},
+            handleFailStatus: function (orderResultStatus, resultObj) {
+                if ('RESERVATION_FAILURE' === orderResultStatus|| 'PAYMENT_ALREADY_COMPLETED' === orderResultStatus) {
+                    alert(resultObj.message);
+                    document.location.href = resultObj.redirectUrl;
+                } else if ('OUT_OF_STOCK' === orderResultStatus || 'NOT_EXIST_INSTALL_DATE' === orderResultStatus || 'ALERT_AND_REDIRECT' === orderResultStatus) {
+                    alert(resultObj.message);
+                    document.location.href = resultObj.redirectUrl;
+                } else if ('INCLUDE_UNAVAILABLE_VENDORITEM' === orderResultStatus) {
+                    payment.finishPreOrder();
+                    Bundle.remoteAreaDelivery.buildView(resultObj.remoteAreaDeliveryView);
+                } else if ('CHANGED_REMOTE_AREA_DELIVERY_PRICE' === orderResultStatus) {
+                    Bundle.remoteAreaDelivery.buildView(resultObj.remoteAreaDeliveryView, {
+                        finishPayment : function() {
+                            payment.finishPreOrder()
+                        },
+                        startPayment : function() {
+                            $('#paymentBtn').trigger('click');
+                        }
+                    });
+                } else if ('TOTAL_SALE_PRICE_CHANGE' === orderResultStatus) {
+                    alert(resultObj.message);
+                    document.location.reload();
+                } else if ('BUNDLE_CUT_OFF_DATE' === orderResultStatus) {
+                    Bundle.modal.yesOrNo({
+                        title: "배송예정일 변경",
+                        message: resultObj.message,
+                        callback: {
+                            yes: function() {
+                                payment.finishPreOrder();
+                                Bundle.checkoutForm.formSubmit();
+                                Bundle.modal.close();
+                                return false;
+                            },
+                            no: function() {
+                                document.location.reload();
+                            }
+                        }
+                    });
+                } else if ('BUNDLE_CUT_OFF_DATE_OVERNIGHT' === orderResultStatus) {
+                    Bundle.modal.alert({
+                        title: "배송예정일 변경",
+                        message: resultObj.message,
+                        callback: {
+                            confirm: function() {
+                                document.location.reload();
+                            }
+                        }
+                    });
+                } else if ('DETECTED' === orderResultStatus) {
+                    var violation = resultObj.fdsViolation;
+                    if (violation) {
+                        fraudDetector.showErrorDialog(violation.type, violation.vendorItemName, violation.htmlContent, violation.htmlType);
+                    }
+                } else if ('BLOCKED_FOR_COMPLIANCE' === orderResultStatus) {
+                    $('#blocked-address-error-message').show();
+                } else if ('IMPORT_TAX_PRICE_CHANGE' === orderResultStatus) {
+                    Bundle.modal.alert({
+                        title: "결제를 다시 시도해주세요",
+                        message: resultObj.message,
+                        callback: {
+                            confirm: function() {
+                                document.location.reload();
+                            }
+                        }
+                    });
+                } else {
+                    alert(resultObj.message);
+                }
+            },
+			//검색에 노출되지 않음 지워야할 것.
+			hideNonActiveXIframe: function () {
+				$('#nonActiveXIframe').hide();
+				payment.finishPreOrder();
+			},
+			startPreOrder: function () {
+				$('#modal-loading').modal('show');
+				//$('#btn_all').hide();
+			},
+			finishPreOrder: function () {
+				$('#modal-loading').modal('hide');
+				//$('#btn_all').show();
+			},
+			payResult: function (rtn) {
+				if (rtn == 'NOT_LOGIN') {
+					alert("세션이 종료 되었습니다.");
+					document.location.href = "https://login.coupang.com/login/login.pang?rtnUrl=https://checkout.coupang.com/direct/checkout/1724510811390?item%5B%5D=3000208682%3A1";
+				} else {
+					alert(rtn);
+				}
+				orderController.controllers.CoupangPayment.instance.finishPaymentDialogue();
+			},
+			orderComplete: function (orderId) {
+				payment.finishPreOrder();
+				document.location.href = '/orderResult.pang?orderId=' + orderId;
+			}
+		};
+
+		fraudDetector = {
+			showErrorDialog: function (type, vendorItemName, htmlContent, htmlType) {
+				if("PAGE" === htmlType){
+					$("#fraudDetectorErrorDialogPageWrapper").html(htmlContent).modal('show');
+					return ;
+				}
+				$('#messageVendorItemName').hide();
+				$('#messageOrderLimit').hide();
+				$('#messageCouponLimit').hide();
+				$('#modalViolationErrorDialogHTMLContent').hide()
+				if (type === 'ORDER_LIMIT') {
+					if (vendorItemName) {
+						$('#messageVendorItemName').html(vendorItemName);
+						$('#messageVendorItemName').show();
+					}
+					$('#messageOrderLimit').show();
+				}
+				if (type === 'COUPON_LIMIT') {
+					$('#messageCouponLimit').show();
+				}
+
+				if(htmlContent && htmlContent.trim()) {
+					$('#modalViolationErrorDialogHTMLContent').html(htmlContent).show();
+					$("#modalViolationErrorDialogLegacyContent").hide();
+				}else{
+					$("#modalViolationErrorDialogLegacyContent").show();
+					$('#modalViolationErrorDialogHTMLContent').hide();
+				}
+				$('#modalViolationErrorDialog').modal('show');
+			},
+
+			hideErrorDialog: function () {
+				$('#modalViolationErrorDialog').modal('hide');
+			},
+
+			onClickContactBtn: function () {
+				fraudDetector.hideErrorDialog();
+				document.location.href = "http://www.coupang.com/voiceOfCustomer.pang";
+			},
+
+			onClickCartBtn: function () {
+				fraudDetector.hideErrorDialog();
+				document.location.href = "http://www.coupang.com/cartView.pang";
+			}
+		};
+	</script>
+	
+
+	<script type="text/javascript">
+
+		function optView(id) {
+			$('#' + id).show();
+		}
+		function cntView(num) {
+			$('#cntSelSub' + num).show();
+		}
+
+		function dealOpen(id, parentId) {
+			var parentElementById = $("#" + parentId);
+			var elementById = $("#" + id + "View");
+
+			elementById.css({
+				left: parentElementById.position().left + (parentElementById.outerWidth()),
+				top: parentElementById.position().top - (parentElementById.outerHeight() / 2)
+			});
+
+			elementById.show();
+		}
+		function dealClose(id) {
+			$("#" + id + "View").hide();
+		}
+
+		function popFindPostOpen() {
+			window.open('/popFindPost.pang', 'zipcode_pop', 'width=414px, height=400px, left=100px, top=200px, scrollbars=1').focus();
+		}
+
+		//이미지 체크박스
+		$(document).ready(function () {
+			$('label.checkbox input').attr('checked', false).click(function () {
+				if ($(this).is(':checked')) {
+					$(this).parent().addClass('on');
+				} else {
+					$(this).parent().removeClass('on');
+				}
+			});
+		});
+
+		function isAgreeCheck() {
+			$("#isAgreeArea").css("border", "0");
+		}
+
+		function isTermAreaCheck(obj) {
+			$("#" + obj + "Area").css("border", "0");
+		}
+
+		var payTypeMap = {
+				'ROCKET_BANK':'acct_transfer',
+				'ROCKET_BALANCE':'coupay',
+				'ROCKET_CARD':'credit_or_check_card',
+				'CARD':'corporate_card',
+				'PHONE':'mobile_phone',
+				'VIRTUALACCOUNT':'bank_transfer',
+			};
+
+        window.payTypeMap = payTypeMap;
+
+		var effectiveDate = '';
+
+		window.Bundle && window.Bundle.weblog && window.Bundle.weblog.pageView({
+			checkoutType: 'DEFAULT',
+			entryType: 'direct',
+			totalPrice: 6900,
+			
+				defaultDeliveryAddress : true,
+				deliveryAddressDetailSrl: 151743898,
+			
+			hasCard: true,
+			hasBank: false,
+			hasPhone: false,
+			pageLoadType: 'load',
+			hasPoint: false,
+			
+				hasCoupon: 0,
+				useCoupon: 0,
+				isBestOffer: false,
+				couponDiscountPrice: 0,
+				totalItem: 1,
+			
+			isRocketPayMember : true,
+			isLoyaltyMember : true,
+			receiptData : false,
+			receiptActive : false,
+			defaultPayType : 'ROCKET_CARD',
+			unifiedMoney: true,
+			hasMoney: false,
+			moneyBalance: 0,
+			moneyRecommendBox: false,
+			realNameVerification: true,
+			ccidOverThreshold: false,
+            isDeliveryEmail: (false) && (!!'' || !!'rkdbg11752@naver.com'),
+            hasAppleCare: false,
+            hasJikgu: false,
+            
+                kycTargetExposed: '',
+            
+            hasRealNameVerification: true,
+            vendorItemIds: Object.keys({"3000208682":1}).join(','),
+
+            defaultPmtOption: payTypeMap['ROCKET_CARD'] || 'coupay',
+            pageDesignVersion:  'legacy',
+			effectiveDate: effectiveDate ? new Date(Number(effectiveDate)).toLocaleDateString('en-GB').split('/').reverse().join('') : '-1',
+            hasWowConsentView: false
+		});
+		
+
+		Bundle.metricCounterLog.log('orderFormLoadSuccess', {isDirectOrder: 'Y'});
+
+		$(window).load(function(){
+			Bundle.compareAbGroup.compare('1724510811390',  '{FIX_INVALID_COUPANG_CASH=B, LOYALTY_AGREEMENT_WOW_FEE_CHANGE_HANDLING_AFTER_EFFECTIVE_DATE=B, ROCKET_FRESH_SEPARATE=B, FRESH_DELIVERY_OPT_OUT=A, LOYALTY_AGREEMENT_WOW_FEE_CHANGE=NOT_APPLICABLE, LOYALTY_AGREEMENT_WOW_FEE_CHANGE_TEST2=B, CCID_HANDLING_BLOCK_ORDER=B, JIKGU_INSTALL=A}');
+
+			
+
+
+		});
+	</script>
+
+
+<script type="text/javascript"  src="{% static "js/gbYXZjRXs" %}"></script></body>
+<script type="text/javascript">
+
+    var resourceErrorLogger = new Image();
+    var resourceErrorLoggerUrl = '/m/check/invalidResource?cdnType=';
+    if (typeof window.jslog === "undefined") {
+        resourceErrorLogger.src = resourceErrorLoggerUrl + 'common_cdn';
+    }
+
+    if (typeof window.Bundle === "undefined") {
+        resourceErrorLogger.src = resourceErrorLoggerUrl + 'checkout_cdn';
+    }
+
+
+</script>
+
+</html>
