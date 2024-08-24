@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from wasted.views.main_view import MainView, DoneView, GoodsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    path('buy/', MainView.as_view()),
+    path('done', DoneView.as_view(), name='done_page'),
+    path('goods', GoodsView.as_view(), name='goods_page')
 ]
