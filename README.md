@@ -1,3 +1,3 @@
 # WASTE.D.
 
-## bootkorea branch
+## develop branch
