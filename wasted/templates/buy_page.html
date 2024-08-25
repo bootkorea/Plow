@@ -1,4 +1,4 @@
-{% load static%}
+{% load static %}
 <!doctype html>
 <html lang="ko-KR" xml:lang="ko-KR" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -320,36 +320,48 @@
 
     <div data-component="real-name-verification"></div>
 
-	
 	<div data-component="customer"></div>
-
-	
-
-	
-
-	
-	
-    
-        
-        
-        
-        
-    
-
-
 
     <div data-component="deliveryAddress"></div>
     <div data-delivery-address__related-table>
         <div data-component="deliveryRequestMessage"></div>
-        
     </div>
-
-
-
-
 	
+	<div id="pay-price-section" class="order-section orderBox mb10 multiple-coupon">
+		<h2 class="checkout__h2">
+			쿠팡 플로우
+		</h2>
 
-	
+		<table class="pay-price">
+			<caption>결제 정보 설정으로 할인쿠폰과 쿠팡캐시의 내용을 수정 할 수 있습니다.</caption>
+			<colgroup>
+				<col width="144"/>
+				<col />
+			</colgroup>
+			<tbody>
+
+			<tr id="plowSel", class="payType-wrap">
+				<th class="wrap-title" style="vertical-align: middle; padding: 0px 5px 0px 0px;">
+					플로우 참여여부		
+				</th>
+				<td id="plowTypeList" class="type-selector-list" style="padding: 10px 0px 10px 5px">
+					<li id="TruePlowBox" class="type-selector-li" style="padding: 0px 0px 0px 0px">
+						<input class="type-selector-radio" type="radio" name="plowType" id="plowType1" value="ROCKET_BANK">
+						<label class="type-selector-label type-selector-label--bank" for="plowType8">
+							<span class="type-selector-label__text">회수</span>
+						</label>
+					</li>
+					<li id="FalsePlowBox" class="type-selector-li" style="padding: 5px 0px 0px 0px">
+						<input class="type-selector-radio" type="radio" name="plowType" id="plowType0" value="ROCKET_BALANCE">
+						<label class="type-selector-label type-selector-label--balance" for="payType0">
+							<span class="type-selector-label__text">회수 거부</span>
+						</label>
+					</li>
+				</td>
+			</tr>
+		</table>
+	</div>
+
 	<div data-ajax-view="box">
 		<div data-delivery-info="rocket"></div>
 		<div data-delivery-info="rocketInstall"></div>
@@ -1938,11 +1950,6 @@
                         $focus: $('[data-component="deliveryAddress"]')
                     }
                 };
-            
-
-			
-
-			
 			
 
 			components.cellphone = {

@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from wasted.views.main_view import MainView, DoneView, GoodsView, GoodsDevView
+from wasted.views.main_view import MainView, DoneView, GoodsView, RiderView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +24,5 @@ urlpatterns = [
     path('buy/', MainView.as_view()),
     path('done', DoneView.as_view(), name='done_page'),
     path('goods', GoodsView.as_view(), name='goods_page'),
-    path('goods_dev', GoodsDevView.as_view(), name='goods_page_dev')
+    path('rider', RiderView.as_view(), name='rider_page')
 ]

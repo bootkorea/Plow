@@ -35,9 +35,9 @@ class GoodsView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["test"] = ''
         return context
-
-class GoodsDevView(TemplateView):
-    template_name = 'goods_shop_page_dev.html'
+    
+class RiderView(TemplateView):
+    template_name = 'rider_page.html'
     
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
@@ -46,3 +46,4 @@ class GoodsDevView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["test"] = ''
         return context
+    
