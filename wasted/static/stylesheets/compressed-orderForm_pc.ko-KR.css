@@ -1,0 +1,3499 @@
+@charset "UTF-8";html.modal-open,html.modal-open body {
+    overflow: hidden !important
+}
+
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: .6;
+    z-index: 9000;
+    pointer-events: none
+}
+
+html.modal-open .agreements-wrapper--no-background .modal-backdrop {
+    background: 0
+}
+
+.modal-scrollArea {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9001;
+    -webkit-overflow-scrolling: touch
+}
+
+.modal {
+    display: none;
+    padding: 50px 0
+}
+
+.modal-inner {
+    position: relative;
+    margin: 0 30px;
+    background: #fff
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 1px solid #000;
+    background: #fafafa
+}
+
+@media print {
+    .modal-backdrop {
+        display: none
+    }
+
+    .modal-scrollArea>div {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important
+    }
+}
+
+#modal-callLGPayment {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: 0;
+    z-index: 99999
+}
+
+#modal-callLGPayment__contents {
+    width: 100%;
+    height: 100%
+}
+
+#callLGPayment {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    z-index: 2;
+    overflow: hidden
+}
+
+.modal-callLGPayment__loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -70px 0 0 -145px;
+    border-radius: 150px;
+    z-index: 1
+}
+
+.modal-callLGPayment__loading__contents {
+    width: 290px;
+    height: 140px;
+    text-align: center;
+    background: url(//img1a.coupangcdn.com/image/www/newBuy/callLGPayment__loading__contents.png) 0 0 no-repeat
+}
+
+.modal-callLGPayment__loading__contents__img {
+    padding-top: 30px;
+    vertical-align: top
+}
+
+.modal-callLGPayment__loading__contents__text {
+    vertical-align: top
+}
+
+.modal-callLGPayment__loading__contents__text__mobile {
+    vertical-align: top;
+    font-size: 12px
+}
+
+.modal-callLGPayment__close {
+    position: absolute;
+    overflow: hidden;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    font-family: tahoma,verdana,helvetica,arial,sans-serif;
+    color: #000;
+    border: 0;
+    background-color: #fff
+}
+
+#modal-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -80px;
+    margin-left: -250px;
+    z-index: 99999
+}
+
+.modal-loading__contents {
+    width: 585px;
+    height: 100px;
+    text-align: center;
+    background: url(//img1a.coupangcdn.com/image/www/hp_img/member/box_mt02.png) repeat-y
+}
+
+.modal-loading__contents__img.loading--new {
+    width: 81px;
+    height: 81px
+}
+
+.nice-select {
+    -webkit-tap-highlight-color: transparent;
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 1px #e8e8e8;
+    box-sizing: border-box;
+    clear: both;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    height: 42px;
+    line-height: 40px;
+    outline: 0;
+    padding-left: 18px;
+    padding-right: 30px;
+    position: relative;
+    text-align: left !important;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: auto
+}
+
+.nice-select:hover {
+    border-color: #dbdbdb
+}
+
+.nice-select.open,.nice-select:active,.nice-select:focus {
+    border-color: #999
+}
+
+.nice-select:after {
+    border-bottom: 2px solid #999;
+    border-right: 2px solid #999;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    -webkit-transform-origin: 66% 66%;
+    -ms-transform-origin: 66% 66%;
+    transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    width: 5px
+}
+
+.nice-select.open:after {
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg)
+}
+
+.nice-select.open .list {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0)
+}
+
+.nice-select.disabled {
+    border-color: #dfe3e8;
+    color: #aab5c0;
+    pointer-events: none
+}
+
+.nice-select.disabled:after {
+    border-color: #dfe3e8
+}
+
+.nice-select.wide {
+    width: 100%
+}
+
+.nice-select.wide .list {
+    left: 0 !important;
+    right: 0 !important
+}
+
+.nice-select.right {
+    float: right
+}
+
+.nice-select.right .list {
+    left: auto;
+    right: 0
+}
+
+.nice-select.small {
+    font-size: 12px;
+    height: 36px;
+    line-height: 34px
+}
+
+.nice-select.small:after {
+    height: 4px;
+    width: 4px
+}
+
+.nice-select.small .option {
+    line-height: 34px;
+    min-height: 34px
+}
+
+.nice-select .list {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgba(68,68,68,.11);
+    box-sizing: border-box;
+    margin-top: 4px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    -webkit-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform: scale(.75) translateY(-21px);
+    -ms-transform: scale(.75) translateY(-21px);
+    transform: scale(.75) translateY(-21px);
+    -webkit-transition: all .2s cubic-bezier(.5,0,0,1.25),opacity .15s ease-out;
+    transition: all .2s cubic-bezier(.5,0,0,1.25),opacity .15s ease-out;
+    z-index: 9
+}
+
+.nice-select .list:hover .option:not(:hover) {
+    background-color: transparent !important
+}
+
+.nice-select .option {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 40px;
+    list-style: none;
+    min-height: 40px;
+    outline: 0;
+    padding-left: 18px;
+    padding-right: 29px;
+    font-size: 14px;
+    text-align: left;
+    -webkit-transition: all .2s;
+    transition: all .2s
+}
+
+.nice-select .option.focus,.nice-select .option.selected.focus,.nice-select .option:hover {
+    background-color: #f6f6f6
+}
+
+.nice-select .option.selected {
+    font-weight: 700
+}
+
+.nice-select .option.disabled {
+    background-color: transparent;
+    color: #999;
+    cursor: default
+}
+
+.no-csspointerevents .nice-select .list {
+    display: none
+}
+
+.no-csspointerevents .nice-select.open .list {
+    display: block
+}
+
+@charset "UTF-8";* {
+    margin: 0;
+    padding: 0
+}
+
+body,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,li,ol,pre,ul {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: #333;
+    font-family: "돋움",Dotum,sans-serif
+}
+
+html {
+    overflow-y: initial !important
+}
+
+body {
+    min-width: 1040px
+}
+
+ul {
+    list-style: none
+}
+
+button,fieldset,img {
+    border: 0
+}
+
+button {
+    background: 0;
+    cursor: pointer;
+    font-family: "돋움",Dotum,sans-serif
+}
+
+table {
+    border-collapse: collapse
+}
+
+input[type=password],input[type=tel],input[type=text] {
+    height: 16px;
+    padding: 2px 0 0 5px;
+    font-family: "돋움",Dotum,sans-serif
+}
+
+select {
+    font-family: "돋움",Dotum,sans-serif
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+em {
+    font-style: normal
+}
+
+label {
+    cursor: pointer
+}
+
+.block {
+    display: block
+}
+
+.inline {
+    display: inline
+}
+
+.none {
+    display: none
+}
+
+.l {
+    text-align: left
+}
+
+.c {
+    text-align: center
+}
+
+.r {
+    text-align: right
+}
+
+.fl {
+    float: left
+}
+
+.clear {
+    clear: both
+}
+
+.tm2 {
+    margin-top: 2px
+}
+
+.tm8 {
+    margin-top: 8px
+}
+
+.lm20 {
+    margin-left: 20px
+}
+
+.top {
+    vertical-align: top
+}
+
+.mid {
+    vertical-align: middle
+}
+
+.bot {
+    vertical-align: bottom
+}
+
+.vam2 {
+    vertical-align: -2px
+}
+
+.vam4 {
+    vertical-align: -4px
+}
+
+.color09 {
+    color: #999
+}
+
+.imeD {
+    ime-mode: disabled
+}
+
+.inp {
+    border: 1px solid #ccc
+}
+
+#wrap {
+    position: relative;
+    clear: both;
+    width: 100%;
+    height: 100%
+}
+
+#body {
+    position: relative;
+    clear: both;
+    font-size: 12px;
+    z-index: 20
+}
+
+fieldset dl {
+    float: left;
+    display: inline;
+    width: 668px
+}
+
+fieldset dt {
+    float: left;
+    width: 78px;
+    height: 41px;
+    font: bold 12px "돋움",dotum;
+    color: #474747;
+    padding: 0 15px;
+    line-height: 300%;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf
+}
+
+fieldset dd {
+    float: left;
+    width: 529px;
+    height: 41px;
+    font: bold 12px "돋움",dotum;
+    font-size: 12px;
+    color: #474747;
+    padding: 0 15px;
+    line-height: 300%;
+    background-color: #fbfbfb;
+    border-bottom: 1px solid #dfdfdf
+}
+
+.logo {
+    width: 1020px;
+    margin: 0 auto;
+    padding-top: 30px
+}
+
+.logo a {
+    display: block;
+    float: left;
+    width: 174px;
+    height: 41px
+}
+
+.logo .tagline {
+    float: left;
+    width: 78px;
+    height: 28px;
+    margin: 1px 0 0 8px;
+    background: url(//img1a.coupangcdn.com/image/static/header/newgnb/bg_gnb_sprite_130513.png) no-repeat;
+    text-indent: -100em
+}
+
+@charset "UTF-8";.section-title {
+    overflow: hidden;
+    width: 130px;
+    margin-bottom: 10px
+}
+
+.section-title .title {
+    float: left;
+    width: 130px;
+    display: block;
+    text-indent: -9999px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-image: url(//img1a.coupangcdn.com/image/www/order2015/desktop/order/img_order_title.png)
+}
+
+.section-title.order-profile .title {
+    background-position: 0 1px
+}
+
+.section-title.address {
+    float: left
+}
+
+.section-title.address .title {
+    background-position: 0 -44px
+}
+
+.section-title.deal-info .title {
+    background-position: 0 -89px
+}
+
+.section-title.payment .title {
+    background-position: 0 -134px
+}
+
+.page-pc.page-order {
+    background-color: #fff
+}
+
+.page-pc.page-order .none {
+    display: none
+}
+
+.page-pc.page-order button {
+    padding: 4px 8px;
+    border: 1px solid #999;
+    color: #333;
+    border-radius: 2px;
+    box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset;
+    font-size: 11px
+}
+
+.page-pc.page-order button.active {
+    border: 1px solid #0085da;
+    color: #0085da
+}
+
+.page-pc.page-order button.enable {
+    background: -webkit-linear-gradient(#fefefe,#d8d8d8);
+    background: -moz-linear-gradient(#fefefe,#d8d8d8);
+    background: linear-gradient(#fefefe,#d8d8d8);
+    box-shadow: none
+}
+
+.page-pc.page-order .validate-message {
+    display: none;
+    color: #f80600;
+    padding-left: 17px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    line-height: 21px;
+    background-image: url(//img1a.coupangcdn.com/image/www/order2015/icon-alert.png);
+    background-repeat: no-repeat;
+    background-position: 0 3px
+}
+
+.page-pc.page-order input[type=password],.page-pc.page-order input[type=tel],.page-pc.page-order input[type=text] {
+    height: 22px;
+    padding: 0 0 0 5px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    color: #333
+}
+
+.page-order button.mid {
+    padding: 0;
+    border: 0;
+    color: #333
+}
+
+.checkout__h2 {
+    padding-left: 2px;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333
+}
+
+.checkout__h2--delivery-select {
+    float: left
+}
+
+#paymentBtn {
+    padding: 0;
+    border: 0;
+    box-shadow: none
+}
+
+#paymentBtn .paymentBtn-v2-style {
+    width: 300px;
+    height: 60px;
+    background-color: #346aff;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 60px;
+    border-radius: 4px
+}
+
+#paymentBtn .paymentBtn-v2-style:hover {
+    background-color: #2954cc
+}
+
+#paymentBtn .paymentBtn-v2-style:active {
+    background-color: #1f3f99
+}
+
+#paymentRocketpayBtn {
+    display: none;
+    overflow: visible;
+    position: relative;
+    padding: 0;
+    margin-right: 10px;
+    border: 0;
+    box-shadow: none
+}
+
+.wow-selection-btn {
+    min-width: 260px;
+    height: 60px;
+    background: #346aff;
+    color: #fff !important;
+    font-size: 2em !important;
+    padding: 0 32px !important;
+    vertical-align: top;
+    border-radius: 3px
+}
+
+.wow-selection-coupay-btn {
+    border: 2px solid #037bc7 !important;
+    background: #fff
+}
+
+.wow-selection-coupay-btn span {
+    color: #037bc7 !important
+}
+
+.paymentRocketpayBtn__tooltip-2percent-cashback {
+    position: absolute;
+    top: -29px;
+    left: 50%;
+    margin-left: -48px
+}
+
+.ordTitle {
+    height: 70px;
+    overflow: hidden;
+    border-bottom: 3px solid #777
+}
+
+.ordTitle .title {
+    float: left;
+    margin-top: 5px;
+    padding-left: 0;
+    line-height: 70px;
+    font-size: 30px;
+    color: #111
+}
+
+.ordTitle .steps {
+    float: right;
+    padding-right: 5px;
+    margin-top: 20px;
+    line-height: 50px;
+    font-size: 15px;
+    color: #bbb;
+    font-weight: 700
+}
+
+.ordTitle .steps em {
+    font-weight: 700;
+    color: #346aff
+}
+
+.orderBox {
+    margin-top: 30px
+}
+
+.orderBox.reservation-container {
+    margin: 0;
+    padding: 30px 0
+}
+
+.orderBox table.pay-price {
+    width: 100%
+}
+
+.orderBox.wrap-order-agree {
+    margin-top: 20px
+}
+
+.orderBox td.nb {
+    border-bottom: 0
+}
+
+.orderBox .title {
+    position: relative
+}
+
+.orderBox .title span {
+    position: absolute;
+    top: -5px;
+    left: 140px;
+    line-height: 130%
+}
+
+.orderBox .left-floating-box {
+    float: left
+}
+
+.tStyle1 {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid #cecece
+}
+
+.tStyle1 th {
+    width: 104px;
+    padding: 7px 0 7px 15px;
+    background: #f4f4f4;
+    font-weight: 700;
+    border-bottom: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    text-align: left
+}
+
+.tStyle1 th.imp {
+    background: #f4f4f4
+}
+
+.tStyle1 th.imp span {
+    padding: 0 10px 0 0;
+    background: url(//img1a.coupangcdn.com/image/www/common/icon_arrow.gif) no-repeat 100% 0;
+    font-weight: 700
+}
+
+.tStyle1 th.opt {
+    padding-left: 25px
+}
+
+.tStyle1 th.vTop {
+    padding-top: 10px;
+    vertical-align: top
+}
+
+.tStyle1 td {
+    padding: 10px 0 10px 16px;
+    border-bottom: 1px solid #e4e4e4
+}
+
+.tStyle1 td.extra-info__extra-content {
+    padding: 0
+}
+
+.tStyle1 td img.ty1 {
+    vertical-align: bottom
+}
+
+.tStyle1 td img.layer1 {
+    position: absolute;
+    left: 19px;
+    top: -116px
+}
+
+.tStyle1 td img.layer2 {
+    position: absolute;
+    left: 18px;
+    top: 15px
+}
+
+.tStyle1 td label.noCheck {
+    color: #acacac;
+    cursor: default
+}
+
+.tStyle1 td label.noCheck img {
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+.tStyle1 td.nb {
+    border-bottom: 0
+}
+
+.tStyle1 td.price {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    color: #fc7077
+}
+
+.payPrice-benefit {
+    display: inline;
+    margin-right: 12px
+}
+
+.txt-savingCash {
+    font-weight: 400
+}
+
+.txt-savingCash.show {
+    content: '/'
+}
+
+.tStyle1 .inp1 {
+    width: 155px;
+    height: 19px;
+    padding: 4px 0 0 5px;
+    border: 1px solid #ccc;
+    line-height: 16px;
+    color: #666;
+    vertical-align: middle
+}
+
+.tStyle1 .inp2 {
+    width: 63px;
+    height: 19px;
+    padding: 4px 0 0 5px;
+    border: 1px solid #ccc;
+    line-height: 16px;
+    color: #666;
+    vertical-align: middle
+}
+
+.tStyle1 .inp3 {
+    width: 120px;
+    height: 19px;
+    padding: 4px 0 0 5px;
+    border: 1px solid #ccc;
+    line-height: 16px;
+    color: #666;
+    vertical-align: middle
+}
+
+.tStyle1 .inp4 {
+    width: 50px;
+    height: 19px;
+    padding: 4px 0 0 5px;
+    border: 1px solid #ccc;
+    line-height: 16px;
+    color: #666;
+    vertical-align: 4px;
+    vertical-align: middle
+}
+
+.tStyle1 .inp5 {
+    width: 300px;
+    height: 19px;
+    padding: 4px 0 0 5px;
+    border: 1px solid #ccc;
+    line-height: 16px;
+    color: #666;
+    vertical-align: middle
+}
+
+.tStyle1 .select {
+    width: 300px;
+    height: 20px;
+    border: 1px solid #ccc;
+    line-height: 16px;
+    color: #666
+}
+
+.tStyle1 .sel {
+    width: 71px;
+    height: 25px;
+    vertical-align: middle
+}
+
+.tStyle1 .readonly {
+    height: 19px;
+    padding: 4px 0 0 5px;
+    background: #ececec;
+    border: 1px solid #ddd;
+    color: #333
+}
+
+.tStyle1 .order-input {
+    height: 19px;
+    padding: 4px 0 0 5px;
+    border: 1px solid #ddd;
+    color: #333
+}
+
+.tStyle1 .pnoneNum {
+    height: 19px;
+    padding: 4px 0 0 5px;
+    background: #fff;
+    border: 1px solid #ececec;
+    color: #333
+}
+
+.tStyle1 select.pnoneNum {
+    height: 24px;
+    padding: 4px 0 0 5px;
+    background: #fff;
+    border: 1px solid #ececec;
+    color: #333
+}
+
+.tStyle1 .g_12 {
+    color: #aaa
+}
+
+.tStyle1 select.readonly {
+    height: 25px
+}
+
+.tStyle1 select.order-mobile {
+    height: 25px
+}
+
+.tStyle1 .message.order-input {
+    width: 613px;
+    height: 18px;
+    padding: 4px 0 0 5px;
+    border: 1px solid #ccc
+}
+
+.tStyle1 td .c1 {
+    color: #fc7077
+}
+
+.tStyle1 td .dTxt {
+    margin-top: 15px;
+    letter-spacing: -.03em
+}
+
+.tStyle1 td .refundNoti {
+    padding-top: 6px
+}
+
+.tStyle1 td .refundNoti span {
+    text-decoration: underline
+}
+
+.tStyle1 td .account {
+    float: left;
+    margin-top: 15px
+}
+
+.tStyle1 td .account li {
+    float: left;
+    padding: 0 18px 0 8px;
+    background: url(//img1a.coupangcdn.com/image/www/icon/bul_5.gif) no-repeat 2px 9px;
+    line-height: 150%
+}
+
+.tStyle1 td .account select {
+    height: 23px;
+    border: 1px solid #d7d7d7
+}
+
+.tStyle1 td .account input {
+    height: 19px;
+    background: url(//img1a.coupangcdn.com/image/www/order/bg_account_input.gif) no-repeat 0 -2px;
+    color: #000;
+    border: 1px solid #d7d7d7
+}
+
+.tStyle1 td .account .accountName {
+    padding-top: 3px;
+    color: #999
+}
+
+.tStyle1 td .account .no {
+    padding: 0 8px 0 0;
+    background: 0;
+    line-height: 200%
+}
+
+.tStyle1 td .alert {
+    padding-top: 5px;
+    color: #f80600
+}
+
+.confirm-agreements-message {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    text-align: center
+}
+
+.agreeBtn {
+    position: relative;
+    text-align: center
+}
+
+.agreeBtn.hasRocketPayCheckoutButton {
+    margin-top: 40px
+}
+
+#overSeasAgreeBox {
+    color: #9a9a9a
+}
+
+.cboth {
+    clear: both
+}
+
+#body .bot {
+    clear: both;
+    width: 980px;
+    height: 5px;
+    background: url(//img1a.coupangcdn.com/image/www/newBuy/bottom.png) no-repeat;
+    overflow: hidden
+}
+
+#body .middle {
+    clear: both;
+    padding: 0 0 40px;
+    background: #fff
+}
+
+.safeNumberTip {
+    position: relative;
+    margin-top: 6px;
+    padding-left: 10px;
+    color: #888;
+    font-size: 11px
+}
+
+.safeNumberTip .tip-wrap {
+    display: inline-block;
+    position: relative
+}
+
+.wow-confidential {
+    border-top: 1px solid #dfe3e8;
+    padding-top: 30px;
+    margin-top: 30px !important
+}
+
+.wow-confidential-popup {
+    max-height: 760px !important
+}
+
+.wow-confidential-landing {
+    margin-bottom: 14px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    padding-left: 2px
+}
+
+.wow-confidential-landing .wow-confidential-term {
+    width: 400px;
+    text-align: center;
+    display: inline-block
+}
+
+.wow-confidential-landing .wow-confidential-term span {
+    cursor: pointer
+}
+
+.wow-confidential-landing span:first-child {
+    float: left
+}
+
+.wow-confidential-landing span:last-child {
+    float: right
+}
+
+.wow-confidential-payment-btn {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.8px;
+    color: #fff;
+    height: 60px;
+    background: #346aff;
+    width: 400px;
+    line-height: 60px;
+    border-radius: 4px
+}
+
+.wow-confidential-payment-btn.v2 {
+    font-size: 20px
+}
+
+.wow-confidential-payment-btn.v2:hover {
+    background: #2954cc
+}
+
+.wow-confidential-payment-btn.v2:active {
+    background: #1f3f99
+}
+
+.wow-confidential-decide-later {
+    margin-top: 24px
+}
+
+.wow-confidential-decide-later button {
+    font-size: 16px !important;
+    font-weight: 700;
+    line-height: 19px;
+    cursor: pointer;
+    border: none !important;
+    box-shadow: none !important;
+    color: #454f5b !important
+}
+
+.wow-confidential-scroll {
+    overflow: hidden
+}
+
+.wow-confidential-decide-later-c {
+    margin-top: 24px
+}
+
+.wow-confidential-decide-later-c button {
+    width: 400px;
+    height: 44px;
+    border: 1px solid #637381 !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    font-size: 16px !important;
+    color: #637381 !important;
+    font-weight: 700;
+    line-height: 19px
+}
+
+.wow-confidential-decide-later-d {
+    margin-top: 14px
+}
+
+.wow-confidential-decide-later-d button {
+    width: 400px;
+    height: 60px;
+    border: 1px solid #919eab !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    font-size: 20px !important;
+    color: #454f5b !important;
+    font-weight: 700;
+    line-height: 23px
+}
+
+.wow-confidential-decide-later-d button:hover {
+    background: #f9fafb
+}
+
+.wow-confidential-decide-later-d button:active {
+    background: #f1f4f6
+}
+
+.safeNumberTip .tip {
+    display: none;
+    position: absolute;
+    top: -277px;
+    left: -154px;
+    width: 324px;
+    height: 277px;
+    background: url(//img1a.coupangcdn.com/image/www/order/bg_safenumber_tip.png) no-repeat;
+    cursor: pointer
+}
+
+.agreeThrid {
+    border-collapse: collapse;
+    margin: 10px 0
+}
+
+.agreeThrid th {
+    background-color: #f0f6f9
+}
+
+.agreeThrid td,.agreeThrid th {
+    border: 1px solid #e4e4e4;
+    padding: 10px 8px;
+    text-align: center;
+    letter-spacing: -1px
+}
+
+#couponViewArea {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    margin-left: -451px;
+    width: 902px;
+    height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 10001
+}
+
+#couponViewArea .couponLayerTitle {
+    margin-bottom: -5px
+}
+
+.couponListView1 {
+    height: 25px;
+    line-height: 27px
+}
+
+#couponViewArea .bgOrder {
+    background: url(//img1a.coupangcdn.com/image/static/event/coupon/stripe_orderpopup_0806.png) no-repeat;
+    text-indent: -999em;
+    overflow: hidden
+}
+
+#couponViewArea .bgOrder.couponTitle {
+    float: left;
+    width: 839px;
+    height: 61px;
+    background-position: 0 0
+}
+
+#couponViewArea .bgOrder.couponClose {
+    display: block;
+    float: right;
+    width: 63px;
+    height: 61px;
+    background-position: -837px 0
+}
+
+#couponViewArea .bgOrder.btnCouponApply {
+    display: block;
+    width: 178px;
+    height: 55px;
+    margin: 0 auto;
+    background-position: 0 -100px
+}
+
+.noticeImg {
+    background: url(//img1a.coupangcdn.com/image/static/my/ico_newlogin4.png) no-repeat
+}
+
+.noticeImg.notiTxt {
+    height: 17px;
+    padding-left: 19px;
+    color: #fc0003;
+    background-position: 0 -46px;
+    line-height: 25px
+}
+
+.payContent select {
+    height: 23px;
+    width: 187px
+}
+
+.payContent .grey {
+    color: #a5a6b1
+}
+
+.payContent .dark {
+    color: #55575f
+}
+
+.payContent .orange {
+    color: #ff6c00
+}
+
+.payContent .bold {
+    font-weight: 700;
+    color: #55575f
+}
+
+.payContent .light {
+    font-weight: 400
+}
+
+.payContent .required.mark {
+    color: #e30f13;
+    position: relative;
+    left: 2px
+}
+
+.payContent li {
+    padding: 11px 0;
+    margin: 0 14px;
+    border-bottom: 1px solid #d8dae1
+}
+
+.payContent li.last {
+    border-bottom: 0;
+    position: relative
+}
+
+.payContent li>label {
+    font-size: 12px;
+    margin-right: 30px
+}
+
+.payContent li>label .square {
+    margin-right: 3px;
+    position: relative;
+    top: -3px
+}
+
+.payContent li .arrow {
+    margin-left: 0;
+    margin-right: 12px;
+    top: -1px
+}
+
+.payContent p {
+    padding: 11px 0;
+    margin: 0 14px
+}
+
+#depositBank {
+    margin-right: 85px
+}
+
+.rtxtpr5 {
+    text-align: right !important;
+    padding-right: 10px !important
+}
+
+.noticeImg {
+    background: url(//img1a.coupangcdn.com/image/static/my/ico_newlogin4.png) no-repeat
+}
+
+.noticeImg.alert {
+    height: 13px;
+    width: 13px;
+    padding-left: 33px;
+    color: #fc0003;
+    background-position: 15px -47px;
+    line-height: 25px
+}
+
+.inputDefault {
+    height: 19px;
+    padding: 4px 0 2px 5px !important;
+    border: 1px solid #ccc;
+    line-height: 16px;
+    color: #666;
+    vertical-align: middle
+}
+
+.inputFocus {
+    height: 19px;
+    padding: 4px 0 2px 5px !important;
+    border: 1px solid #30afff;
+    line-height: 16px;
+    color: #666;
+    vertical-align: middle
+}
+
+#body {
+    width: 980px;
+    margin: 0 auto 0
+}
+
+#body:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.clearfix:after,.clearfix:before {
+    content: " ";
+    display: table
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.extra-info__extra-content .dealExtraInquiry {
+    padding: 10px 0 10px 16px
+}
+
+.extra-info__extra-content>div:first-child {
+    display: none
+}
+
+.extra-info__extra-content .extra-info__extra-content-line {
+    background-color: #eee;
+    margin: 0;
+    height: 1px;
+    width: 100%
+}
+
+.extra-info__extra-content div .mb01 {
+    margin-bottom: 15px
+}
+
+.extra-info__warning {
+    display: none;
+    padding: 5px 0 0 0;
+    margin: 0;
+    font-size: 12px;
+    color: #e52528
+}
+
+.page-pc .multiple-coupon .pay-price .payCoupon .price,.page-pc .multiple-coupon .pay-price .payCoupon .unit {
+    font-size: 12px;
+    color: #ff0025
+}
+
+.page-pc .multiple-coupon .pay-price .payPrice {
+    color: #333;
+    font-size: 14px
+}
+
+.page-pc .multiple-coupon .pay-price .unit {
+    color: #111;
+    font-size: 12px;
+    font-weight: 400
+}
+
+.page-pc .pay-price tr.is-disabled td .message,.page-pc .pay-price tr.is-disabled td .message .unit,.page-pc .pay-price tr.is-disabled td .price,.page-pc .pay-price tr.is-disabled td .price .unit,.page-pc .pay-price tr.is-disabled th {
+    color: #ccc !important
+}
+
+.page-pc .pay-price tr button:disabled {
+    opacity: .5;
+    cursor: default
+}
+
+@charset "UTF-8";.mb10 {
+    margin-bottom: 10px
+}
+
+.mt10 {
+    margin-top: 10px
+}
+
+.mid {
+    vertical-align: middle
+}
+
+.ir {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    text-indent: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important
+}
+
+.nognb {
+    position: relative;
+    height: 85px;
+    border-bottom: 1px solid #e7e7e7;
+    margin: 0 auto
+}
+
+.required {
+    color: #e30f13
+}
+
+.orderBox>label {
+    float: right;
+    position: relative;
+    top: 12px
+}
+
+#totalPriceDisp {
+    color: #333
+}
+
+.rtxtpr5 {
+    text-align: right !important;
+    padding-right: 10px !important
+}
+
+.noticeImg {
+    background: url(//img1a.coupangcdn.com/image/static/my/ico_newlogin4.png) no-repeat
+}
+
+.noticeImg.alert {
+    height: 13px;
+    width: 13px;
+    padding-left: 33px;
+    color: #fc0003;
+    background-position: 15px -47px;
+    line-height: 25px
+}
+
+.inputDefault {
+    height: 19px;
+    padding: 4px 0 2px 5px !important;
+    border: 1px solid #ccc;
+    line-height: 16px;
+    color: #666;
+    vertical-align: middle
+}
+
+.inputFocus {
+    height: 19px;
+    padding: 4px 0 2px 5px !important;
+    border: 1px solid #30afff;
+    line-height: 16px;
+    color: #666;
+    vertical-align: middle
+}
+
+#body {
+    width: 1020px;
+    margin: 0 auto 20px
+}
+
+.modal-fraud-detector {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -180px;
+    margin-left: -300px;
+    z-index: 99999;
+    display: none
+}
+
+.modal-fraud-detector-contents {
+    width: 590px;
+    height: 370px;
+    text-align: center;
+    background: url(//img1a.coupangcdn.com/image/www/hp_img/member/box_mt02.png) repeat-y
+}
+
+.modal-fraud-detector-message {
+    padding: 30px 0 0 80px;
+    margin-bottom: 30px;
+    width: 450px;
+    height: 100px;
+    text-align: left;
+    font-size: 12px
+}
+
+.modal-fraud-detector-message>div {
+    font-size: 13px;
+    margin-top: 4px
+}
+
+.modal-fraud-detector-contents button {
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important
+}
+
+.modal-fraud-detector-contact-button {
+    background-image: url(//img1a.coupangcdn.com/image/coupang/order/orderForm/fds/pc_btn_contact.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 55px
+}
+
+.modal-fraud-detector-home-button {
+    background-image: url(//img1a.coupangcdn.com/image/coupang/order/orderForm/fds/pc_btn_home.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 55px
+}
+
+div[data-ajax-view=box] {
+    position: relative
+}
+
+div[data-ajax-view=screen] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+div[data-ajax-view=screen] {
+    background-color: #fff;
+    opacity: .5
+}
+
+.delivery-select__post {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #666
+}
+
+.delivery-select__addr1 {
+    width: 300px;
+    height: 19px;
+    padding: 4px 0 0 5px;
+    border: 1px solid #ccc;
+    line-height: 16px;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #666;
+    background: #f9f9f9
+}
+
+.delivery-select__addr2 {
+    width: 300px;
+    height: 19px;
+    padding: 4px 0 0 5px;
+    border: 1px solid #ccc;
+    line-height: 16px;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #333
+}
+
+.delivery-select__checkSaveDefault-message {
+    color: #333;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.delivery-select__checkSaveDefault-notice {
+    color: #888;
+    display: none;
+    font-size: 12px;
+    margin: 0
+}
+
+.submit__root {
+    width: 100%;
+    padding-top: 10px
+}
+
+.submit__submit {
+    display: block;
+    border: 1px solid #006dca;
+    line-height: 45px;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    background: #346aff;
+    box-shadow: 0 1px rgba(255,255,255,.2) inset
+}
+
+.page-mobile .delivery-request-message {
+    padding: 5px;
+    background-color: #fff
+}
+
+.page-mobile .delivery-request-message__content {
+    margin: auto 5px
+}
+
+.page-mobile .delivery-request-message__select {
+    width: 100%
+}
+
+.page-mobile .delivery-request-message__input-wrap {
+    margin: 10px 0
+}
+
+.page-mobile .delivery-request-message__label {
+    display: none
+}
+
+.page-mobile .delivery-request-message__input {
+    width: 100%
+}
+
+.page-mobile.page-order .delivery-request-message__input[type=text] {
+    height: 26px;
+    padding: 0;
+    border-color: #ddd;
+    font-size: 12px;
+    color: #333
+}
+
+.page-mobile .delivery-request-message__length {
+    text-align: right;
+    padding-top: 5px;
+    color: #848484;
+    font-size: 11px
+}
+
+.page-pc .delivery-request-message__input-wrap {
+    width: 80%;
+    padding-top: 10px
+}
+
+.page-pc .delivery-request-message__input-wrap.extra-message {
+    width: 100%;
+    padding-top: 0
+}
+
+.page-pc .delivery-request-message__label {
+    display: none
+}
+
+.page-pc .delivery-request-message__desc .warning {
+    display: block;
+    padding-top: 5px;
+    color: #f80600
+}
+
+.page-pc .delivery-request-message__input {
+    width: 100%
+}
+
+.page-pc .extra .delivery-request-message__input,.page-pc .extra-delivery-request-message__input,.page-pc .extra-message .delivery-request-message__input {
+    float: left;
+    width: 80%;
+    margin-right: 5px
+}
+
+.page-pc .delivery-request-message__length {
+    text-align: right;
+    padding: 5px 0;
+    color: #848484
+}
+
+.extra-message .delivery-request-message__length,.page-pc .extra .delivery-request-message__length {
+    text-align: left
+}
+
+.page-pc .extra-delivery-request-message__label {
+    display: none;
+    height: 20px;
+    line-height: 20px;
+    color: #888;
+    margin: 10px 0 0
+}
+
+.page-pc .extra .extra-delivery-request-message__label {
+    display: block
+}
+
+.page-pc .extra-delivery-request-message__label input {
+    vertical-align: -2px
+}
+
+.page-pc .extra-delivery-request-message__description {
+    display: none;
+    padding-top: 10px;
+    color: #888;
+    font-size: 11px
+}
+
+.page-pc .extra .extra-delivery-request-message__description {
+    display: block
+}
+
+.page-pc .extra-delivery-request-message-form {
+    display: none;
+    padding-top: 5px
+}
+
+.page-pc .delivery-request-message-form {
+    padding-top: 10px
+}
+
+.page-pc .extra-message .delivery-request-message-form {
+    display: none
+}
+
+.wrapPay .overSeasInfoTypes {
+    width: 100%;
+    overflow: hidden;
+    position: relative
+}
+
+.wrapPay .overSeasInfoTypes li {
+    display: block;
+    float: left;
+    overflow: hidden;
+    height: 35px;
+    line-height: 30px;
+    margin-right: 12px;
+    padding-left: 3px
+}
+
+.wrapPay .overSeasInfoTypes li.selected {
+    background-image: url(//img1a.coupangcdn.com/image/www/newBuy/cardPaySelector_arrowUp.gif);
+    background-repeat: no-repeat;
+    background-position: 50% bottom
+}
+
+.wrapPay .overSeasInfoTypes input {
+    vertical-align: middle
+}
+
+.wrapPay .overSeasInfoContent .overSeasInfoContentBox .title {
+    display: none
+}
+
+.wrapPay .overSeasInfoContent .overSeasInfoContentBox .payContent {
+    margin-top: -2px;
+    margin-bottom: 10px;
+    border: 2px solid #c5c7cd;
+    background-color: #f4f6fa
+}
+
+.wrapPay .overSeasInfoContent .overSeasInfoContentBox input {
+    vertical-align: middle
+}
+
+.wrapPay .overSeasInfoContent .overSeasInfoContentBox .pcccTip {
+    display: inline;
+    position: relative;
+    font-size: 11px;
+    margin-left: 5px
+}
+
+.wrapPay .overSeasInfoContent .overSeasInfoContentBox .pcccTip a {
+    color: #00a0ff;
+    font-size: 11px
+}
+
+.wrapPay .overSeasInfoContent .overSeasInfoContentBox .pcccDesc {
+    margin-top: 2px;
+    color: #95979f;
+    font-size: 11px
+}
+
+#overSeasAgreeBox #overSeasAgree {
+    float: left
+}
+
+#overSeasAgreeBox p {
+    padding-left: 1.6em;
+    color: #9a9a9a
+}
+
+#overSeasAgreeBox p.agreeDesc {
+    margin-bottom: 2px
+}
+
+#overSeasInfoAgreeCheckMessage {
+    clear: both
+}
+
+.page-pc .pay-price .payCoupon .message {
+    padding-right: 10px
+}
+
+.page-pc .pay-price .payCoupon .selected-coupon {
+    display: inline-block
+}
+
+.page-pc .pay-price .payCoupon .select-coupon-toggle {
+    display: none;
+    margin-top: -4px
+}
+
+.page-pc .pay-price .payCoupon .select-coupon-toggle.toggle-pressed {
+    box-shadow: 0 2px 0 rgba(0,0,0,.1) inset
+}
+
+.page-mobile .payCoupon-wrap .wrap-title {
+    float: left
+}
+
+.page-mobile .pay-price .payCoupon {
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 70px;
+    margin-left: 75px
+}
+
+.page-mobile .pay-price .payCoupon .title {
+    font-weight: 400
+}
+
+.page-mobile .pay-price .payCoupon .message {
+    padding-right: 10px
+}
+
+.page-mobile .pay-price .payCoupon .message .remain {
+    white-space: nowrap
+}
+
+.page-mobile .pay-price .payCoupon .select-coupon-toggle {
+    display: none;
+    color: #0198de;
+    white-space: nowrap
+}
+
+.page-mobile .pay-price .payCoupon .select-coupon-toggle.toggle-pressed {
+    box-shadow: 0 2px 0 rgba(0,0,0,.1) inset
+}
+
+.payPrice .pay-info-notice.applecare-notice {
+    border: 1px solid #ccc;
+    background: #fffeed;
+    border-radius: 2px;
+    font-weight: 400;
+    color: #333;
+    font-size: 12px;
+    margin: 0;
+    padding: 8px 11px 5px;
+    display: none
+}
+
+.payPrice .pay-info-notice.applecare-notice em {
+    font-weight: 700
+}
+
+.page-pc .pay-price .payCoupangCash .message {
+    display: inline-block;
+    padding-right: 10px
+}
+
+.page-pc .pay-price .payCoupangCash .price {
+    display: inline-block;
+    width: 100px;
+    padding-top: 10px
+}
+
+.page-pc .pay-price .payCoupangCash .remain {
+    font-weight: 400
+}
+
+.page-pc .pay-price .payCoupangCash .legal-notice {
+    margin-left: 118px;
+    margin-bottom: 10px;
+    color: #888
+}
+
+.page-pc .pay-price .payCoupangCash .insert-cash-toggle {
+    margin-top: -4px;
+    display: none;
+    white-space: nowrap
+}
+
+.page-pc .pay-price .payCoupangCash .insert-cash-toggle.toggle-pressed {
+    box-shadow: 0 2px 0 rgba(0,0,0,.1) inset
+}
+
+.page-pc .pay-price .payCoupangCash .coupang-gift-card-receive {
+    background-color: #9fc23f;
+    color: #fff;
+    border: 1px solid #87a535;
+    box-shadow: none
+}
+
+.page-pc .pay-price .payCoupangCash .coupang-gift-card-receive-count {
+    display: inline-block;
+    margin-left: 5px
+}
+
+.page-pc .pay-price .payCoupangCash .coupang-gift-card-receive-count span {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #e52528;
+    color: #fff;
+    font-size: 12px;
+    position: relative;
+    left: -10px;
+    top: -8px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 17px
+}
+
+.page-pc .pay-price .payCoupangCash .gold-info-message {
+    margin-left: 70px
+}
+
+.page-mobile .pay-price .payCoupangCash {
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 70px;
+    margin-left: 75px
+}
+
+.page-mobile .pay-price .payCoupangCash .legal-notice {
+    padding-top: 3px;
+    color: #888
+}
+
+.page-mobile .pay-price .payCoupangCash .message {
+    color: #999
+}
+
+.page-mobile .pay-price .payCoupangCash .message strong {
+    font-weight: 400
+}
+
+.page-mobile .pay-price .payCoupangCash .message .usable .unit,.page-mobile .pay-price .payCoupangCash .message .usable .value {
+    color: #333
+}
+
+.page-mobile .pay-price .payCoupangCash .message .remain {
+    white-space: nowrap
+}
+
+.page-mobile .pay-price .payCoupangCash .insert-cash-toggle {
+    display: none;
+    color: #0198de;
+    white-space: nowrap;
+    margin-left: 5px
+}
+
+.page-mobile .pay-price .payCoupangCash .insert-cash-toggle.toggle-pressed {
+    box-shadow: 0 2px 0 rgba(0,0,0,.1) inset
+}
+
+.page-pc .pay-price .payCcid-wrap th {
+    vertical-align: middle;
+    padding: 0 15px 0 0
+}
+
+.page-pc .pay-price .payCcid-wrap td {
+    padding: 10px 0 7px
+}
+
+.page-pc .pay-price .payCcid-wrap .price,.page-pc .pay-price .payCcid-wrap .unit {
+    color: #ff0025
+}
+
+.payCcid {
+    position: relative
+}
+
+.payCcid-tooltip {
+    display: none;
+    position: relative;
+    padding: 7px 7px 4px 10px;
+    border: solid 1px #ccc;
+    background: #fff
+}
+
+.payCcid-tooltip:before {
+    position: absolute;
+    top: 10px;
+    left: -8px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-right: 8px solid #ccc;
+    border-bottom: 4px solid transparent
+}
+
+.payCcid-tooltip:after {
+    position: absolute;
+    top: 10px;
+    left: -6px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-right: 8px solid #fff;
+    border-bottom: 4px solid transparent
+}
+
+.payCcid-tooltip-message {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #000
+}
+
+.payCcid-tooltip-message__txt {
+    display: inline-block
+}
+
+.payCcid-tooltip-message__link {
+    display: inline-block;
+    margin-left: 20px;
+    padding: 0 3px;
+    color: #0173e9
+}
+
+.card-benefit-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 360px;
+    min-height: 605px;
+    border: solid 1px #ccc;
+    z-index: 3100;
+    background: #fff
+}
+
+.card-benefit-popup.card-benefit-popup--is-payBox {
+    left: 158px
+}
+
+.card-benefit-popup__header {
+    position: relative;
+    padding: 11px 16px 10px;
+    border-bottom: solid 1px #ddd;
+    margin-bottom: -1px
+}
+
+.card-benefit-popup__header-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5
+}
+
+.card-benefit-popup__header-close {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -8px;
+    font-size: 20px;
+    background: url(//static.coupangcdn.com/image/static/order/btn_close.png) no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    text-indent: 99px;
+    color: transparent
+}
+
+.card-benefit-popup__content-iframe {
+    width: 360px;
+    height: 551px;
+    border: 0
+}
+
+.payCcid-wow-only-tooltip {
+    display: none;
+    position: relative;
+    padding: 7px 7px 4px 10px;
+    background: #eaf0ff
+}
+
+.payCcid-wow-only-tooltip:before {
+    position: absolute;
+    top: 10px;
+    left: -8px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-right: 8px solid #eaf0ff;
+    border-bottom: 4px solid transparent
+}
+
+.payCcid-wow-only-tooltip:after {
+    position: absolute;
+    top: 10px;
+    left: -6px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-right: 8px solid #eaf0ff;
+    border-bottom: 4px solid transparent
+}
+
+.payCcid-wow-only-tooltip-message {
+    display: inline-block;
+    font-size: 0;
+    line-height: 1.5;
+    color: #000
+}
+
+.payCcid-wow-only-tooltip__badge {
+    color: #4b86d6;
+    font-weight: 700;
+    font-size: 12px
+}
+
+.payCcid-wow-only-tooltip__txt {
+    display: inline-block;
+    font-size: 12px;
+    color: #333
+}
+
+.payCcid-wow-only-tooltip__icon {
+    display: inline-block;
+    margin-top: 1px;
+    margin-left: 2px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgb3BhY2l0eT0iLjciPgogICAgICAgIDxnIGZpbGw9IiMzMzMiPgogICAgICAgICAgICA8Zz4KICAgICAgICAgICAgICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTcgMTMuNDE3YzMuNTQ0IDAgNi40MTctMi44NzMgNi40MTctNi40MTdDMTMuNDE3IDMuNDU2IDEwLjU0NC41ODMgNyAuNTgzIDMuNDU2LjU4My41ODMgMy40NTYuNTgzIDdjMCAzLjU0NCAyLjg3MyA2LjQxNyA2LjQxNyA2LjQxN3pNNyAxNGMtMy44NjYgMC03LTMuMTM0LTctN3MzLjEzNC03IDctNyA3IDMuMTM0IDcgNy0zLjEzNCA3LTcgN3oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNTUwNiAtMzQwNSkgdHJhbnNsYXRlKDE1NTA2IDM0MDUpIi8+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNy41ODMgNS44MzN2NC4yNzhsMS4xNjcuMzg5aC0zLjVsMS4xNjYtLjM4OVY2LjI5OUw1LjI1IDUuODMzaDIuMzMzek02Ljg1NCAzLjVjLjQwMyAwIC43My4zMjYuNzMuNzMgMCAuNDAyLS4zMjcuNzI4LS43My43MjgtLjQwMyAwLS43MjktLjMyNi0uNzI5LS43MjkgMC0uNDAzLjMyNi0uNzI5LjczLS43Mjl6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTU1MDYgLTM0MDUpIHRyYW5zbGF0ZSgxNTUwNiAzNDA1KSIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    vertical-align: top
+}
+
+.payCcid-wow-only-tooltip__link {
+    display: none;
+    color: #4b86d6;
+    margin-left: 25px;
+    font-size: 12px;
+    text-decoration: none
+}
+
+.loyalty-registration {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.2);
+    z-index: 999
+}
+
+.loyalty-registration iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid #ccc;
+    background: #fff
+}
+
+.page-pc .coupon-selecter {
+    display: none;
+    padding: 10px 0 10px 115px;
+    border-top: 1px solid #eee;
+    background-color: #f8f8f8
+}
+
+.page-pc .coupon-selecter .coupons .discount-coupon {
+    padding-bottom: 10px
+}
+
+.page-pc .coupon-selecter .coupons .explain {
+    padding-left: 5px
+}
+
+.page-pc .coupon-selecter .coupons .condition.state {
+    padding: 2px;
+    font-size: 5px;
+    font-style: normal;
+    white-space: nowrap;
+    color: #fff;
+    background: #000
+}
+
+.page-pc .coupon-selecter .coupons .title {
+    display: inline-block;
+    color: #999
+}
+
+.page-pc .coupon-selecter .coupons .remain {
+    display: inline-block;
+    color: #999
+}
+
+.page-pc .coupon-selecter .coupons .price {
+    display: inline-block;
+    width: 75px;
+    padding-left: 0;
+    margin-left: 0
+}
+
+.page-pc .coupon-selecter .coupons .discount {
+    display: none
+}
+
+.page-pc .coupon-selecter .coupons .condition {
+    color: #999
+}
+
+.page-pc .coupon-selecter .coupons .condition .maximum,.page-pc .coupon-selecter .coupons .condition .required {
+    color: #999
+}
+
+.page-pc .coupon-selecter .coupons .explain {
+    display: inline-block;
+    width: 90%
+}
+
+.page-pc .coupon-selecter .coupons .enabled .title {
+    color: #333
+}
+
+.page-pc .coupon-selecter .coupons .enabled .remain {
+    color: #999
+}
+
+.page-pc .coupon-selecter .coupons .enabled .discount {
+    color: #333
+}
+
+.page-pc .coupon-selecter .coupons .button-box {
+    margin-top: 10px
+}
+
+.page-mobile .coupon-selecter {
+    display: none;
+    text-align: left;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    background-color: #f8f8f8
+}
+
+.page-mobile .coupon-selecter .coupons .discount-coupon,.page-mobile .coupon-selecter .coupons .not-use-coupon {
+    padding: 5px 3% 15px 3%
+}
+
+.page-mobile .coupon-selecter .coupons .discount-coupon input {
+    vertical-align: top
+}
+
+.page-mobile .coupon-selecter .coupons .condition.state {
+    padding: 2px;
+    font-size: 5px;
+    font-style: normal;
+    white-space: nowrap;
+    color: #fff;
+    background: #000
+}
+
+.page-mobile .coupon-selecter .coupons .title {
+    display: inline-block;
+    color: #999
+}
+
+.page-mobile .coupon-selecter .coupons .remain {
+    display: inline-block;
+    color: #999;
+    font-size: 11px
+}
+
+.page-mobile .coupon-selecter .coupons .price {
+    display: inline-block;
+    width: 60px;
+    position: inherit;
+    color: inherit
+}
+
+.page-mobile .coupon-selecter .coupons .discount {
+    display: none;
+    color: #999
+}
+
+.page-mobile .coupon-selecter .coupons .condition {
+    color: #999
+}
+
+.page-mobile .coupon-selecter .coupons .condition .maximum,.page-mobile .coupon-selecter .coupons .condition .required {
+    color: #999
+}
+
+.page-mobile .coupon-selecter .coupons .explain {
+    display: inline-block;
+    width: 90%
+}
+
+.page-mobile .coupon-selecter .coupons .enabled .remain,.page-mobile .coupon-selecter .coupons .enabled .title {
+    color: #333
+}
+
+.page-mobile .coupon-selecter .coupons .enabled .discount {
+    color: #333
+}
+
+.page-mobile .coupon-selecter .coupons .condition {
+    display: block;
+    margin-left: 62px;
+    font-size: 12px;
+    line-height: 14px
+}
+
+.page-mobile .coupon-selecter .coupons .button-box {
+    margin: 0 3%;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #efefef
+}
+
+.page-mobile .coupon-selecter .coupons .not-use-coupon .explain {
+    font-weight: 700
+}
+
+.page-pc .coupangCash-insert {
+    display: none;
+    padding: 10px 0 10px 115px;
+    border-top: 1px solid #eee;
+    background-color: #f8f8f8
+}
+
+.page-pc .coupangCash-insert .allUsingPrice {
+    display: none
+}
+
+.page-pc .coupangCash-insert .unit {
+    display: inline-block;
+    padding-left: 5px
+}
+
+.page-pc .coupangCash-insert .delimiter {
+    display: inline-block;
+    padding: 0 5px;
+    color: #aaa
+}
+
+.page-pc .coupangCash-insert .button-box {
+    margin-top: 10px
+}
+
+.page-pc .coupangCash-insert .validate-message {
+    display: none;
+    color: #f80600;
+    margin: 10px 0 0;
+    padding-left: 20px;
+    background-image: url(//img1a.coupangcdn.com/image/www/order2015/icon-alert.png);
+    background-repeat: no-repeat;
+    background-position: 0 0
+}
+
+.page-mobile .coupangCash-insert {
+    display: none;
+    text-align: left;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    background-color: #f8f8f8
+}
+
+.page-mobile .coupangCash-insert .allUsingPrice {
+    display: none
+}
+
+.page-mobile .coupangCash-insert .insert {
+    padding: 5px 3% 15px 3%
+}
+
+.page-mobile .coupangCash-insert input.using {
+    width: 75px
+}
+
+.page-mobile .coupangCash-insert .unit {
+    display: inline-block;
+    padding-left: 5px
+}
+
+.page-mobile .coupangCash-insert .delimiter {
+    display: inline-block;
+    padding: 0 5px;
+    color: #aaa
+}
+
+.page-mobile .coupangCash-insert .button-box {
+    margin: 0 3%;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #efefef
+}
+
+.page-mobile .coupangCash-insert .validate-message {
+    margin-left: 10px
+}
+
+.page-pc .pay-box .bankpay-noti {
+    position: relative;
+    margin: 0 -15px;
+    padding: 15px;
+    line-height: 17px;
+    background-color: #f9f9f9
+}
+
+.page-pc .pay-box-content {
+    display: none
+}
+
+.page-pc .pay-box-content>h3.title {
+    display: none
+}
+
+.page-pc .pay-box-content .payContent {
+    margin-top: -2px;
+    margin-bottom: 10px;
+    border: 2px solid #c5c7cd;
+    background-color: #f4f6fa
+}
+
+.page-pc .pay-box-content .subPayInfo {
+    color: #999
+}
+
+.page-pc .pay-box-content.selected-pay-type {
+    display: block
+}
+
+.page-pc .pay-type-content {
+    margin-top: -2px;
+    padding: 10px;
+    border: 2px solid #c5c7cd;
+    background-color: #f4f6fa
+}
+
+.page-pc .pay-type-content .validate-message {
+    margin-top: 10px;
+    padding-bottom: 0
+}
+
+.page-pc .pay-type-section {
+    padding: 10px 0;
+    margin: 0;
+    line-height: 21px;
+    border-top: 1px solid #e4e4e4
+}
+
+.page-pc .pay-type-section:first-child {
+    padding-top: 0;
+    border-top: 0
+}
+
+.page-pc .pay-type-section:last-child {
+    padding-bottom: 0
+}
+
+.pay-box__deactivated-payment-notice {
+    margin-top: 5px;
+    color: #e7223d
+}
+
+.pay-box__deactivated-pay2-notice {
+    margin-top: 5px;
+    color: #e7223d
+}
+
+.pay-box__deactivated-pay2-notice--star-prefix:before {
+    content: '* '
+}
+
+.pay-box__deactivated-payment-notice--margin-bottom {
+    margin-bottom: 5px
+}
+
+.page-pc .pay-type-section.last-section {
+    border-bottom: 0;
+    padding-bottom: 0
+}
+
+.page-pc .pay-type-section .line-title {
+    display: inline-block;
+    width: 90px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
+    vertical-align: middle
+}
+
+.page-pc .pay-type-section.balance-insufficient {
+    display: none
+}
+
+.page-pc .pay-type-section .line-title:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    margin-left: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+    background: #55575f
+}
+
+.page-pc .pay-type-section .line-data {
+    display: inline
+}
+
+.page-pc .pay-type-section .line-data .info-message {
+    margin-left: 20px;
+    font-size: 12px;
+    color: #111
+}
+
+.page-pc .pay-type-section .line-data .info-message-weak {
+    font-size: 12px;
+    color: #555
+}
+
+.page-pc .pay-type-section .line-note {
+    display: inline;
+    color: #555
+}
+
+.page-pc .pay-type-section select {
+    height: 23px;
+    font-size: 12px;
+    vertical-align: middle
+}
+
+.page-pc .pay-type-section select:disabled {
+    color: #ccc;
+    border-color: #ccc;
+    background: #eee
+}
+
+.page-pc .pay-type-explain {
+    margin-top: 10px;
+    padding-top: 3px
+}
+
+.page-pc .pay-type-explain:first-child {
+    margin-top: 0
+}
+
+.page-pc .pay-type-explain .cash-receipt-explain {
+    margin: 0;
+    padding: 0;
+    color: #888
+}
+
+.page-pc .pay-type-section__rnv-message {
+    color: #111;
+    font-size: 12px;
+    line-height: 19px;
+    margin-left: 4px
+}
+
+.page-mobile .pay-box {
+    padding: 0;
+    text-align: justify;
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+    border-bottom: 0
+}
+
+.page-mobile .pay-box-content {
+    display: none;
+    margin-top: -2px;
+    border-top: 1px solid #d0d0d0;
+    background: #f8f8f8
+}
+
+.page-mobile .pay-box-content:after {
+    content: "";
+    display: table
+}
+
+.page-mobile .pay-box-content>h3.title {
+    display: none
+}
+
+.page-mobile .pay-box-content.selected-pay-type {
+    display: block
+}
+
+.page-mobile .pay-type-content {
+    padding: 10px
+}
+
+.page-mobile .pay-type-section {
+    display: table;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 10px
+}
+
+.page-mobile .pay-type-section:first-child {
+    margin-top: 0
+}
+
+.page-mobile .pay-type-section .line-data,.page-mobile .pay-type-section .line-title {
+    display: table-cell
+}
+
+.page-mobile .pay-type-section .line-title {
+    width: 80px;
+    padding-left: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 34px;
+    color: #333
+}
+
+.page-mobile .pay-type-section select {
+    width: auto;
+    height: 30px;
+    padding: 0 30px 0 0;
+    text-indent: 5px;
+    box-shadow: 0 -2px rgba(54,62,71,.15) inset;
+    background-position: 100% -201px;
+    background-color: #fff
+}
+
+.page-mobile .pay-type-explain {
+    font-size: 12px;
+    color: #888;
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+.page-pc .pay-type-selector .type-selector-list-wrapper {
+    width: 845px
+}
+
+.page-pc .pay-type-selector .type-selector-list {
+    width: 845px;
+    position: relative;
+    padding-top: 4px
+}
+
+.page-pc .pay-type-selector .type-selector-list:after {
+    content: '';
+    display: block;
+    clear: both
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li {
+    display: block;
+    float: left;
+    margin-right: 9px;
+    padding: 0 0 0 2px;
+    font-size: 12px;
+    line-height: 39px;
+    letter-spacing: -1px
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li .type-selector-radio {
+    margin-right: 1px;
+    vertical-align: -1px
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li .rpay-icon-logo {
+    margin-right: -2px;
+    vertical-align: -2px
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li .rpay-icon-2percent {
+    margin-left: 3px;
+    vertical-align: -3px
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li .rpay-icon-instant-discount {
+    margin-left: 3px;
+    vertical-align: -3px;
+    display: none
+}
+
+.unified-selector-rpay-benefit-space {
+    height: 9px
+}
+
+.unified-selector-rpay-benefit-icon {
+    position: absolute;
+    left: -16px;
+    top: -21px
+}
+
+.unified-selector-rpay-icon {
+    vertical-align: -2px
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li .type-selector-label {
+    position: relative
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li .type-selector-label__text {
+    display: inline-block;
+    line-height: 39px;
+    vertical-align: middle
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li.selected-pay-type .type-selector-label__text {
+    background-image: url(//img1a.coupangcdn.com/image/www/newBuy/cardPaySelector_arrowUp.gif);
+    background-repeat: no-repeat;
+    background-position: 50% bottom
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li .type-selector-label.disabled {
+    color: #aaa
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li .payType-disable-reason {
+    display: none
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li .payType-promotion-icon {
+    display: none
+}
+
+.page-pc .pay-type-selector .type-selector-list .type-selector-li .payType-lian-benefit-2percent {
+    color: #8b0000
+}
+
+.page-pc .pay-type-selector .balloon-wrap {
+    position: relative;
+    z-index: 100
+}
+
+.page-pc .pay-type-selector .balloon-wrap .explain,.page-pc .pay-type-selector .balloon-wrap .information {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    font-size: 11px
+}
+
+.page-pc .pay-type-selector .balloon-wrap .information {
+    border: 2px solid #099be8;
+    background: #fff
+}
+
+.page-pc .pay-type-selector .balloon-wrap .information .title {
+    display: block;
+    color: #099be8;
+    margin-bottom: 5px
+}
+
+.page-pc .pay-type-selector .balloon-wrap .information .mainPayInfo {
+    display: block;
+    font-size: 11px
+}
+
+.page-pc .pay-type-selector .balloon-wrap .explain {
+    border: 2px solid #999;
+    background: #fff
+}
+
+.page-mobile .pay-type-selector .balloon-wrap {
+    display: none !important;
+    position: absolute;
+    left: -1000px
+}
+
+.page-mobile .pay-type-selector .type-selector-list {
+    line-height: 22px
+}
+
+.page-mobile .pay-type-selector .type-selector-list .type-selector-li {
+    border-bottom: 1px solid #d0d0d0;
+    position: relative;
+    background-color: #fff
+}
+
+.page-mobile .pay-type-selector .type-selector-list .type-selector-li:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.page-mobile .pay-type-selector .type-selector-list .type-selector-li .type-selector-radio {
+    float: left;
+    margin: 14px 5px 14px 14px
+}
+
+.page-mobile .pay-type-selector .type-selector-list .type-selector-li .type-selector-label.disabled {
+    color: #eee
+}
+
+.page-mobile .pay-type-selector .type-selector-list .type-selector-li .type-selector-label {
+    display: block;
+    margin-left: 43px;
+    line-height: 55px
+}
+
+.page-mobile .pay-type-selector .type-selector-list .type-selector-li .payType-disable-reason {
+    font-size: 9px;
+    padding-left: 5px
+}
+
+.page-mobile .pay-type-selector .type-selector-list .type-selector-li .payType-promotion-icon {
+    padding-left: 5px
+}
+
+.page-pc .cellphone-payment .pay-type-explain .explain {
+    padding-left: 7px;
+    text-indent: -7px
+}
+
+.page-mobile .cellphone-payment .pay-type-explain .explain {
+    padding-left: 16px;
+    line-height: 1.5;
+    text-indent: -12px
+}
+
+.page-pc .pay-type-section:first-child {
+    padding-top: 0
+}
+
+.page-pc .virtual-account-payment .cash-receipt-wrap .request-explain {
+    margin-left: 5px
+}
+
+.page-pc .virtual-account-payment .cash-receipt-wrap .request-explain .request-sub-explain {
+    display: none
+}
+
+.page-pc .virtual-account-payment .cash-receipt-wrap .setup-box {
+    display: none
+}
+
+.page-pc .virtual-account-payment .cash-receipt-wrap .oversea-deal-description {
+    color: #e52528;
+    font-size: 12px
+}
+
+.page-pc .virtual-account-payment .option-box {
+    display: block;
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid #e4e4e4;
+    padding: 10px 10px 0
+}
+
+.page-pc .virtual-account-payment .method-setup,.page-pc .virtual-account-payment .option-setup {
+    padding: 0 10px 10px
+}
+
+.page-pc .virtual-account-payment .line-data-desc {
+    display: inline;
+    vertical-align: middle
+}
+
+.page-pc .virtual-account-payment .option-setup input[type=radio] {
+    vertical-align: middle
+}
+
+.page-pc .virtual-account-payment .option-setup label {
+    padding-right: 10px
+}
+
+.page-pc .virtual-account-payment .option-setup label.disabled {
+    color: #eee
+}
+
+.page-pc .virtual-account-payment .method-title,.page-pc .virtual-account-payment .option-title {
+    display: inline-block;
+    width: 100px;
+    font-size: 12px
+}
+
+.page-pc .virtual-account-payment .method-data,.page-pc .virtual-account-payment .option-data {
+    display: inline
+}
+
+.page-pc .virtual-account-payment .insert-wrap {
+    padding-left: 10px
+}
+
+.page-pc .virtual-account-payment .insert-wrap label {
+    display: none
+}
+
+.page-pc .virtual-account-payment-explain {
+    padding-top: 5px;
+    margin-bottom: 10px
+}
+
+.page-pc .virtual-account-payment-explain dt {
+    font-weight: 700;
+    margin: 5px 0 10px
+}
+
+.page-pc .virtual-account-payment-explain dd {
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-bottom: 5px;
+    color: #888
+}
+
+.paybox-va__field-value--cash-receipt-notice {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    color: #888
+}
+
+.paybox-va__field-value--cash-receipt-notice:before {
+    content: '*';
+    margin-left: -10px
+}
+
+.page-mobile .virtual-account-payment #depositBank {
+    width: 100%
+}
+
+.page-mobile .virtual-account-payment .cash-receipt-explain {
+    margin-top: 5px;
+    padding-left: 15px;
+    text-indent: -10px;
+    font-size: 11px;
+    color: #888;
+    line-height: 1.5
+}
+
+.page-mobile .virtual-account-payment .cash-receipt-wrap {
+    padding-top: 5px;
+    border-top: 1px solid #d0d0d0
+}
+
+.page-mobile .virtual-account-payment .cash-receipt-wrap .request-explain .request-sub-explain {
+    display: none
+}
+
+.page-mobile .virtual-account-payment .setup-box {
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: -85px;
+    padding-top: 10px;
+    border-top: 1px dashed #e3e3e3
+}
+
+.page-mobile .virtual-account-payment .option-setup {
+    display: table;
+    width: 100%;
+    font-size: 12px
+}
+
+.page-mobile .virtual-account-payment .option-setup .option-data,.page-mobile .virtual-account-payment .option-setup .option-title {
+    display: table-cell
+}
+
+.page-mobile .virtual-account-payment .option-setup .option-title {
+    width: 80px;
+    font-weight: 700;
+    padding-left: 5px
+}
+
+.page-mobile .virtual-account-payment .option-setup .option-data label+input[type=radio] {
+    margin-left: 5px
+}
+
+.page-mobile .virtual-account-payment .method-setup {
+    display: table;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 10px
+}
+
+.page-mobile .virtual-account-payment .method-setup .method-data,.page-mobile .virtual-account-payment .method-setup .method-title {
+    display: table-cell
+}
+
+.page-mobile .virtual-account-payment .method-setup .method-title {
+    width: 80px;
+    font-weight: 700;
+    padding-left: 5px
+}
+
+.page-mobile .virtual-account-payment .method-setup .method-data #issueType {
+    width: 100%
+}
+
+.page-mobile .virtual-account-payment .method-setup .method-data .insert-wrap label {
+    display: none
+}
+
+.page-mobile .virtual-account-payment .method-setup .method-data #cashReceiptRequestNo {
+    width: 100%;
+    margin-top: 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.page-mobile .virtual-account-cashSafety-explain {
+    margin-top: 5px
+}
+
+.page-mobile .virtual-account-payment-explain {
+    display: none
+}
+
+.page-mobile .virtual-account-payment-explain dt {
+    font-weight: 700;
+    margin: 5px 0 10px
+}
+
+.page-mobile .virtual-account-payment-explain dd {
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-bottom: 5px;
+    color: #888
+}
+
+.page-pc .rocketpay-card .pay-type-section .rocketpay-card__cardList,.page-pc .rocketpay-card .pay-type-section .rocketpay-card__quotaList {
+    min-width: 200px
+}
+
+.page-pc .rocketpay-card .pay-type-section #rocketCard-myCard-only {
+    display: none
+}
+
+.page-pc .rocketpay-card .pay-type-section .rocketCard-add-new-card {
+    margin-left: 26px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #346aff;
+    text-decoration: underline
+}
+
+.page-pc .rocketpay-card .pay-type-section [class^=note-] {
+    display: inline-block;
+    margin-left: 26px;
+    vertical-align: middle;
+    color: #888
+}
+
+.page-pc .rocketpay-card .pay-type-section .note-install-important {
+    color: #333
+}
+
+.page-pc .rocketpay-card .validate-message {
+    line-height: 15px
+}
+
+#rocketCard-installment-notice {
+    color: #333
+}
+
+.page-pc .rocketPayCardBox .overseas-cards-unavailable-message {
+    margin-top: 6px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #333
+}
+
+#unifiedMoney-pay-typeContent .pay-type-section .line-title {
+    width: 155px
+}
+
+.unifiedMoney-pay-ul {
+    margin-top: 15px
+}
+
+.unifiedMoney-pay-li {
+    position: relative;
+    padding-left: 11px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #555
+}
+
+.unifiedMoney-pay-li:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    background: #555
+}
+
+.unifiedMoney-pay-li__sty1 {
+    color: #111
+}
+
+.unifiedMoney-info-icon {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle
+}
+
+.unifiedMoney-info-icon-img {
+    vertical-align: top
+}
+
+.unifiedMoney-info-tooltip {
+    display: none;
+    position: absolute;
+    top: 23px;
+    left: 50%;
+    width: 400px;
+    margin: 0 0 0 -200px;
+    text-align: center
+}
+
+.unifiedMoney-info-tooltip-cont {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px 20px 7px 20px;
+    text-align: left;
+    white-space: normal;
+    vertical-align: top;
+    border: 1px solid #d9d5b4;
+    background: #fffeed
+}
+
+.unifiedMoney-info-tooltip-arr {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    margin: 0 0 0 -5px
+}
+
+.unifiedMoney-info-tooltip-ft1 {
+    font-size: 12px;
+    line-height: 16px;
+    color: #333
+}
+
+.unifiedMoney-info-icon:hover .unifiedMoney-info-tooltip {
+    display: block
+}
+
+.money2MsgBox {
+    margin-left: 24px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #111
+}
+
+.money2MsgBox-ft-sty1 {
+    font-weight: 700;
+    color: #111
+}
+
+.unifiedMoney-benefit-landing-link {
+    color: #346aff;
+    font-size: 12px;
+    text-decoration: underline
+}
+
+#unifiedMoney-benefit-landing {
+    position: relative;
+    width: 400px;
+    height: 560px;
+    margin: 100px auto 0
+}
+
+.unifiedMoney-benefit-landing {
+    width: 400px;
+    height: 530px;
+    overflow: hidden;
+    overflow-y: scroll
+}
+
+.unifiedMoney-benefit-landing-img {
+    width: 400px
+}
+
+.unifiedMoney-benefit-close {
+    box-shadow: none !important;
+    border: 0 !important;
+    background: 0 0 !important;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-bottom: 10px
+}
+
+.unifiedMoney-benefit-close:after {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    content: ' ';
+    height: 30px;
+    width: 2px;
+    background-color: #fff;
+    transform: rotate(-45deg)
+}
+
+.unifiedMoney-benefit-close:before {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    content: ' ';
+    height: 30px;
+    width: 2px;
+    background-color: #fff;
+    transform: rotate(45deg)
+}
+
+.payment-promotion-banner {
+    margin-top: 10px
+}
+
+.payment-promotion-banner img {
+    width: 100%
+}
+
+.page-pc .savePaymentOption {
+    padding: 10px 0;
+    font-size: 11px
+}
+
+.page-mobile .savePaymentOption {
+    position: relative;
+    padding: 10px 0 0 0;
+    font-size: 11px
+}
+
+.page-mobile .savePaymentOption-checkbox {
+    position: absolute;
+    left: 0;
+    top: 10px
+}
+
+.page-mobile .savePaymentOption-message {
+    display: inline-block;
+    padding-left: 35px;
+    line-height: 15px;
+    vertical-align: sub
+}
+
+.real-name-verification-result {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.real-name-verification-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #dfe3e8
+}
+
+.real-name-verification-nav__title {
+    font-size: 20px;
+    color: #111
+}
+
+.real-name-verification-nav__back {
+    width: 48px;
+    height: 48px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjgxNDggMy4yNzE2OEMxNS4yMTcgMi44OTMyNCAxNS44NDk5IDIuOTEyNTMgMTYuMjI4MyAzLjMxNDc3QzE2LjU3NzcgMy42ODYwNyAxNi41ODgxIDQuMjUzODggMTYuMjcxMyA0LjYzNjdMMTYuMTg1MiA0LjcyODMzTDguNDU4OTkgMTEuOTk3TDE2LjE4NTUgMTkuMjcxOUMxNi41NTY3IDE5LjYyMTQgMTYuNjAxNSAyMC4xODc1IDE2LjMwODQgMjAuNTg4OEwxNi4yMjgxIDIwLjY4NTVDMTUuODc4NiAyMS4wNTY3IDE1LjMxMjUgMjEuMTAxNSAxNC45MTEyIDIwLjgwODRMMTQuODE0NSAyMC43MjgxTDYuMzE0NSAxMi43MjUyQzUuOTI1MDIgMTIuMzU4NSA1Ljg5NzMxIDExLjc1NzQgNi4yMzEyOCAxMS4zNTczTDYuMzE0NzcgMTEuMjY4OEwxNC44MTQ4IDMuMjcxNjhaIiBmaWxsPSIjMjEyQjM2Ii8+Cjwvc3ZnPgo=)
+}
+
+.real-name-verification-nav__close {
+    width: 48px;
+    height: 48px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjYxMjkgNC4yMDk3QzUuMjIwNjEgMy45MDQ2OCA0LjY1MzM4IDMuOTMyNDEgNC4yOTI4OSA0LjI5Mjg5QzMuOTAyMzcgNC42ODM0MiAzLjkwMjM3IDUuMzE2NTggNC4yOTI4OSA1LjcwNzExTDEwLjU4NTggMTJMNC4yOTI4OSAxOC4yOTI5TDQuMjA5NyAxOC4zODcxQzMuOTA0NjggMTguNzc5NCAzLjkzMjQxIDE5LjM0NjYgNC4yOTI4OSAxOS43MDcxQzQuNjgzNDIgMjAuMDk3NiA1LjMxNjU4IDIwLjA5NzYgNS43MDcxMSAxOS43MDcxTDEyIDEzLjQxNDJMMTguMjkyOSAxOS43MDcxTDE4LjM4NzEgMTkuNzkwM0MxOC43Nzk0IDIwLjA5NTMgMTkuMzQ2NiAyMC4wNjc2IDE5LjcwNzEgMTkuNzA3MUMyMC4wOTc2IDE5LjMxNjYgMjAuMDk3NiAxOC42ODM0IDE5LjcwNzEgMTguMjkyOUwxMy40MTQyIDEyTDE5LjcwNzEgNS43MDcxMUwxOS43OTAzIDUuNjEyOUMyMC4wOTUzIDUuMjIwNjEgMjAuMDY3NiA0LjY1MzM4IDE5LjcwNzEgNC4yOTI4OUMxOS4zMTY2IDMuOTAyMzcgMTguNjgzNCAzLjkwMjM3IDE4LjI5MjkgNC4yOTI4OUwxMiAxMC41ODU4TDUuNzA3MTEgNC4yOTI4OUw1LjYxMjkgNC4yMDk3WiIgZmlsbD0iIzIxMkIzNiIvPgo8L3N2Zz4K)
+}
+
+.real-name-verification-error {
+    display: none;
+    text-align: center
+}
+
+.real-name-verification-error__icon {
+    display: block;
+    margin: 0 auto;
+    width: 48px;
+    height: 48px;
+    background-image: url(https://img1a.coupangcdn.com/image/rds-attention.svg);
+    background-size: 100%;
+    background-repeat: no-repeat
+}
+
+.real-name-verification-error__title {
+    color: #212b36;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 24px 0 10px 0
+}
+
+.real-name-verification-error__description {
+    color: #637381;
+    font-size: 14px;
+    line-height: 19px
+}
+
+.real-name-verification-error__button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 16px;
+    padding: 13px;
+    border-radius: 4px;
+    background: #346aff;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 16px
+}
+
+.real-name-verification-alert {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    display: none
+}
+
+.real-name-verification-alert__mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.5);
+    z-index: -1;
+    content: ''
+}
+
+.real-name-verification-alert__body {
+    background: #fff;
+    margin: 0 24px;
+    width: 100%;
+    max-width: 360px;
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 5px -2px rgba(0,0,0,.12),0 2px 4px -2px rgba(0,0,0,.12);
+    filter: drop-shadow(0 1px 10px rgba(0,0,0,.1))
+}
+
+.real-name-verification-alert__message {
+    color: #637381;
+    font-size: 14px;
+    line-height: 19px;
+    white-space: pre-wrap
+}
+
+.real-name-verification-alert__button {
+    margin-top: 20px;
+    width: 100%;
+    appearance: none;
+    border: 0;
+    border-radius: 4px;
+    padding: 13px;
+    background: #346aff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700
+}
+
+.real-name-verification-result.is-popup .real-name-verification-nav {
+    border: 0;
+    align-items: flex-start
+}
+
+.real-name-verification-result.is-popup .real-name-verification-nav__back {
+    background: 0
+}
+
+.real-name-verification-result.is-popup .real-name-verification-nav__title {
+    line-height: 100px;
+    font-size: 24px
+}
+
+.real-name-verification-result.is-popup .real-name-verification-nav__close {
+    background-size: 30px;
+    cursor: pointer
+}
