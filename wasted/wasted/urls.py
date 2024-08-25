@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('buy/', MainView.as_view()),
-    path('done', DoneView.as_view(), name='done_page'),
+    path('done/<int:isPlow>', DoneView.as_view(), name='done_page'),
     path('goods', GoodsView.as_view(), name='goods_page'),
     path('rider', RiderView.as_view(), name='rider_page')
 ]

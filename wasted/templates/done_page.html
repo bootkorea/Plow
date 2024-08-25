@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko-KR">
 
@@ -11010,13 +11011,14 @@
               </script>
             </div>
             <img
-              src="https://image11.coupangcdn.com/image/cmg/oms/banner/875f8c0f-1340-4b58-9954-4b86dcf0770a_980x1179.jpg"
+              src="{% static "image_c.png" %}"
+              width="980px"
               alt="" data-v-ace8b05a>
           </div>
 
     </section>
     <div style="text-align: center; padding-bottom: 10vb;">
-      <button type="button" id="mileageUseBtn" onClick="location.href='goods'"
+      <button type="button" id="mileageUseBtn" onClick="location.href='{% url "goods_page"%}'"
         style="background-color: #3474da; padding-top: 20px; padding-bottom: 20px;  padding-left: 40px;  padding-right: 40px; color: #ffffff; border-radius: 5px; cursor: pointer;">
         마일리지 사용하기
 

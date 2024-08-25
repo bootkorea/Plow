@@ -346,13 +346,13 @@
 				</th>
 				<td id="plowTypeList" class="type-selector-list" style="padding: 10px 0px 10px 5px">
 					<li id="TruePlowBox" class="type-selector-li" style="padding: 0px 0px 0px 0px">
-						<input class="type-selector-radio" type="radio" name="plowType" id="plowType1" value="ROCKET_BANK">
+						<input class="type-selector-radio" type="radio" name="plowType" id="plowType1" value="TruePlow">
 						<label class="type-selector-label type-selector-label--bank" for="plowType8">
 							<span class="type-selector-label__text">회수</span>
 						</label>
 					</li>
 					<li id="FalsePlowBox" class="type-selector-li" style="padding: 5px 0px 0px 0px">
-						<input class="type-selector-radio" type="radio" name="plowType" id="plowType0" value="ROCKET_BALANCE">
+						<input class="type-selector-radio" type="radio" name="plowType" id="plowType0" value="FalsePlow">
 						<label class="type-selector-label type-selector-label--balance" for="payType0">
 							<span class="type-selector-label__text">회수 거부</span>
 						</label>
@@ -2246,10 +2246,6 @@
 				});
 				data['extInfo'] = etcInfoArr;
 
-				
-
-				
-
 				<!-- 리테일 상품에 대하여 선택 정보 (일반, 당일, 새벽, 2시간) 저장-->
 				data['chosenVendorItemBundleTypes[0].quantity'] = 1;
 
@@ -2258,9 +2254,6 @@
 				if ($deliveryTypeSelection.size()) {
 					data['paidSameDayShippingYn'] = ($deliveryTypeSelection.attr('id') === 'delivery-sameDay-type') ? 'Y' : 'N';
 				}
-				
-
-				
 				
 
 				
@@ -2377,7 +2370,16 @@
 							} else {
 								// alert(response.message || "주문중 오류가 발생하였습니다. 다시 시도해 주세요.");
 								alert(response.message || "주문 완료"); // TEST
-								document.location.href = "{% url 'done_page' %}" // TEST
+
+								var isPlow = document.getElementById("plowType1").checked;
+
+								if (isPlow == true)
+								{
+									document.location.href = "{% url 'done_page' isPlow=1 %}"; // TEST
+								}
+								else{
+									document.location.href = "{% url 'done_page' isPlow=0 %}";
+								}
 							}
 							payment.finishPreOrder();
 						},
