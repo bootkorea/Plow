@@ -18,7 +18,7 @@ Is Coupang free from trash issues like Over-Packaging?
 ## List of Tech Stacks
 
 - Python
-- django
+- Django
 - HTML/CSS/JS
 - Figma
 
